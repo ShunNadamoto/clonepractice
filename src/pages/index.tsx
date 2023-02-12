@@ -12,7 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <div className={styles.test}>練習用サイト</div>
+        <div className={styles.test}>練習用サイトああいうえお</div>
       </div>
     </>
   )
