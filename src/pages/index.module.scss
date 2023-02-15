@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: blueviolet;
+
+  &__test1 {
+    color: blue;
+  }
+
+  &__test2 {
+    color: red;
+  }
+}
