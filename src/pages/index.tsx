@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from './index.module.css'
+import styles from './index.module.scss'
 
 
 export default function Home() {
@@ -11,8 +11,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
-        <div className={styles.test}>練習用サイトああいうえお</div>
+      <div className={styles.container}>
+        <div className={styles.container__test1}>練習用サイト</div>
+        <div className={styles.container__test2}>練習用サイト2</div>
       </div>
     </>
   )
