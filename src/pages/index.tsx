@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
       <div className={styles.container}>
         <div className={styles.container__test1}>練習用サイト</div>
-        <div className={styles.container__test2}>練習用サイト2</div>
+        <div className={styles.container__test2}>練習用サイト2aaa</div>
       </div>
     </>
   )
