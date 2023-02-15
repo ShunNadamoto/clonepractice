@@ -1,8 +1,15 @@
 import Head from 'next/head'
 import styles from './index.module.scss'
+import {useState} from "react";
 
 
 export default function Home() {
+  const [name, setName] = useState("");
+  const [isDisplayName, setIsDisplayName] = useState(false);
+
+  console.log("---loop---");
+  console.log(name);
+  console.log(isDisplayName);
   return (
     <>
       <Head>
@@ -14,6 +21,13 @@ export default function Home() {
       <div className={styles.container}>
         <div className={styles.container__test1}>練習用サイト</div>
         <div className={styles.container__test2}>練習用サイト2</div>
+        <input className={styles.container__input} placeholder="ここに名前を入力してください" value={name} onChange={(event) => setName(event.target.value)} />
+        <button onClick={() => setIsDisplayName(!isDisplayName)} className={styles.container__button}>ボタンを押したら名前表示非表示切り替え</button>
+        {isDisplayName && <div className={styles.container__name}>{name}</div>}
+        <div className={styles.container__box}>
+          <div className={styles.container__box__text1}>プラグラミングで</div>
+          <div className={styles.container__box__text1}>人生の安定を手に入れよう</div>
+        </div>
       </div>
     </>
   )
