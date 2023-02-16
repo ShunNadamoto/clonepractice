@@ -25,8 +25,8 @@ export default function Home() {
         <button onClick={() => setIsDisplayName(!isDisplayName)} className={styles.container__button}>ボタンを押したら名前表示非表示切り替え</button>
         {isDisplayName && <div className={styles.container__name}>{name}</div>}
         <div className={styles.container__box}>
-          <div className={styles.container__box__text1}>プラグラミングで</div>
-          <div className={styles.container__box__text1}>人生の安定を手に入れよう</div>
+          <div className={styles.container__box__text1}>プログラミングで</div>
+          <div className={styles.container__box__text1}>人生の安定と収入を手に入れよう</div>
         </div>
       </div>
     </>
