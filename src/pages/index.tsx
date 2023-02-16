@@ -19,7 +19,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.container}>
-        <div className={styles.container__test1}>練習用サイト</div>
+        <div className={styles.container__test1}>練習用サイトrrr</div>
         <div className={styles.container__test2}>練習用サイト2</div>
         <input className={styles.container__input} placeholder="ここに名前を入力してください" value={name} onChange={(event) => setName(event.target.value)} />
         <button onClick={() => setIsDisplayName(!isDisplayName)} className={styles.container__button}>ボタンを押したら名前表示非表示切り替え</button>
