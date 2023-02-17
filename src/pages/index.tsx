@@ -29,8 +29,9 @@ export default function Home() {
           <div className={styles.container__box__text1}>人生の安定と収入を手に入れよう</div>
         </div>
       </div>
+      <div>
       <div className={styles.test}>奏志記録 サンプルページ</div>
-      <img src="奏志七五三画像.jpeg" alt="奏志七五三画像" width="200" />
+      <img src="child_image.jpeg" alt="奏志七五三画像" className={styles.img__test} />
       <div>奏志写真集</div> 
       <p>
       岡山県在住<br />
@@ -38,7 +39,21 @@ export default function Home() {
             <br />
             <div>奏志くん生年月日 2018年10月9日生まれ A型 天秤座</div>
       <div>現在は４歳でパズルとベビーバスを観るのが大好きです</div>
+      </div>
+      <div className={styles.header}>
+        <div className={styles.header__leftBox}>
+          <img className={styles.header__leftBox__img} alt="ロゴ" src="https://isara.life/wp-content/themes/isara_v2/img/isaralogo.png" />
+          <div className={styles.header__leftBox__title}>バンコクのノマドエンジニア育成講座</div>
+        </div>
+        <button className={styles.header__button}>お問合せ/資料請求はこちら</button>
+      </div>
+      <div className={styles.header2}>
+        <div className={styles.header2__title}>プログラミングで</div>
+        <div className={styles.header2__title}>人生の安定を手にいれよう</div>
+        <img className={styles.header2__img}  alt="ロゴ" src="https://isara.life/wp-content/themes/isara_v2/img/isaralogolarge.png" />
+        <div className={styles.header2__description1}>バンコクのノマドエンジニア育成講座</div>
+        <div className={styles.header2__description2}>iSara[イサラ]</div>
+      </div>
     </>
-    
   )
 }
