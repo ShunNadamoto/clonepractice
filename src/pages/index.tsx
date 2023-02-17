@@ -29,6 +29,16 @@ export default function Home() {
           <div className={styles.container__box__text1}>人生の安定と収入を手に入れよう</div>
         </div>
       </div>
+      <div className={styles.test}>奏志記録 サンプルページ</div>
+      <img src="奏志七五三画像.jpeg" alt="奏志七五三画像" width="200" />
+      <div>奏志写真集</div> 
+      <p>
+      岡山県在住<br />
+      両親と１歳の妹と仲良く暮らしています。</p>
+            <br />
+            <div>奏志くん生年月日 2018年10月9日生まれ A型 天秤座</div>
+      <div>現在は４歳でパズルとベビーバスを観るのが大好きです</div>
     </>
+    
   )
 }
