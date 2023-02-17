@@ -52,7 +52,6 @@
     &__text1 {
       font-size: 24px;
       font-weight: 600;
-  
     }
   }
 }
@@ -60,6 +59,81 @@
 .test {
   color: blue;
   font-size: 100px;
+}
 
+.img {
+  &__test {
+    width: 200px;
+  }
+}
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 20px 10px;
+
+  &__leftBox {
+    display:flex;
+
+    &__img {
+      width: 128px;
+    }
+
+    &__title {
+      color: #333;
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: auto;
+      margin-bottom: 3px;
+      margin-left: 7px;
+    }
+  }
+
+  &__button {
+    color: #fff;
+    padding: 11px 40px;
+    border: 0;
+    background-color: #da6b64;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    &:hover {
+      background-color: #d84940;
+  }
+}
+}
+
+.header2 {
+  background-image: url("https://isara.life/wp-content/themes/isara_v2/img/main.jpg");
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  &__img {
+    width: 317px;
+    margin-bottom: 20px;
+  }
+
+  &__description1 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  &__description2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+  }
 }
