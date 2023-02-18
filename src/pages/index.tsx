@@ -70,6 +70,15 @@ export default function Home() {
         <div className={styles.header2__description1}>バンコクのノマドエンジニア育成講座</div>
         <div className={styles.header2__description2}>iSara[イサラ]</div>
       </div>
+      <div className={styles.header}>
+        <div className={styles.header__leftBox}>
+          <img
+            className={styles.header__leftbox}
+            alt='ロゴ'
+            src='https://isara.life/wp-content/themes/isara_v2/img/isaralogo.png'
+            />
+        </div>
+      </div>
     </>
   );
 }
