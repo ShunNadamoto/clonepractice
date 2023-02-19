@@ -21,7 +21,7 @@
     margin-left: 20px;
     border-radius: 6px;
     font-size: 20px;
-    background-color:purple;
+    background-color: purple;
   }
 
   &__button {
@@ -74,7 +74,7 @@
   padding: 20px 10px;
 
   &__leftBox {
-    display:flex;
+    display: flex;
 
     &__img {
       width: 128px;
@@ -100,12 +100,12 @@
     font-size: 14px;
     &:hover {
       background-color: #d84940;
+    }
   }
-}
 }
 
 .header2 {
-  background-image: url("https://isara.life/wp-content/themes/isara_v2/img/main.jpg");
+  background-image: url('https://isara.life/wp-content/themes/isara_v2/img/main.jpg');
   background-position: center;
   display: flex;
   flex-direction: column;
@@ -135,5 +135,47 @@
     font-size: 16px;
     font-weight: 600;
     color: #333;
+  }
+}
+
+.container2 {
+  background-color: #ebb94d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
+  &__text1 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  &__text2 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  &__text3 {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #c7254e;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+  }
+  &__button {
+    cursor: pointer;
+    padding: 30px 120px;
+    background-color: #da6b64;
+    border-radius: 50px;
+    color: #fff;
+    margin: 45px auto;
+    max-width: 1028px;
+    border: none;
+    font-size: 28px;
+    text-decoration: line-through;
+
+    &:hover {
+      background-color: #d84940;
+    }
   }
 }
