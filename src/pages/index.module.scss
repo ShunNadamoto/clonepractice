@@ -138,6 +138,107 @@
   }
 }
 
+.container2 {
+  background-color: #ebb94d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
+  &__text1 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  &__text2 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  &__text3 {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #c7254e;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+  }
+  &__button {
+    cursor: pointer;
+    padding: 30px 120px;
+    background-color: #da6b64;
+    border-radius: 50px;
+    color: #fff;
+    margin: 45px auto;
+    max-width: 1028px;
+    border: none;
+    font-size: 28px;
+    text-decoration: line-through;
+
+    &:hover {
+      background-color: #d84940;
+    }
+  }
+  &__text4 {
+    color: #fff;
+    margin: 0 0 10px;
+    font-size: 150%;
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+  }
+  &__buttonBox {
+    display: flex;
+
+    &__button1 {
+      display: flex;
+      height: 20px;
+      width: 88px;
+      background-color: #1d9bf0;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      border-radius: 3px;
+      font-size: 11px;
+      align-items: center;
+      &__img {
+        width: 14px;
+        height: 14px;
+        margin-right: 4px;
+      }
+    }
+    &__button2 {
+      display: flex;
+      margin-left: 15px;
+      height: 20px;
+      width: 88px;
+      background-color: #1877f2;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      border-radius: 3px;
+      font-size: 11px;
+      align-items: center;
+      &__img {
+        width: 14px;
+        height: 14px;
+        margin-right: 4px;
+      }
+    }
+    &__button3 {
+      display: flex;
+      margin-left: 15px;
+      height: 20px;
+      width: 88px;
+      background-color: #1877f2;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      border-radius: 3px;
+      font-size: 11px;
+      align-items: center;
+    }
+  }
+}
+
 .introduction {
   background-image: url('https://isara.life/wp-content/themes/isara_v2/img/introbottom.jpg');
   background-size: cover;
