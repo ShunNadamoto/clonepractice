@@ -73,11 +73,23 @@ export default function Home() {
       <div className={styles.header__leftBox__title}>バンコクのノマドエンジニア育成講座</div>
       <div className={styles.header2__description2}>iSara[イサラ]</div>
       <img
-          className={styles.header2__img}
-          alt='ロゴ'
-          src='https://isara.life/wp-content/themes/isara_v2/img/isaralogolarge.png'
-        />
+        className={styles.header2__img}
+        alt='ロゴ'
+        src='https://isara.life/wp-content/themes/isara_v2/img/isaralogolarge.png'
+      />
 
+      <div className={styles.container2}>
+        <div className={styles.container2__text1}>まずは２０日間で、</div>
+        <div className={styles.container2__text2}>月１０万円稼げるスキルを手にいれよう。</div>
+
+        <div className={styles.container2__text3}>
+          ※受講料金は実質０円です。詳しくは資料請求をどうぞ。
+        </div>
+        <button className={styles.container2__button}> お問い合わせ＆資料請求はこちら</button>
+        <div>第６期生：2019年11月25日 ~ 2019年12月14日＊締め切りました</div>
+        <div>第７期生：2020年2月17日 ~ 2020年3月7日＊締め切りました</div>
+        <div>第８期生：次回の募集は未定です</div>
+      </div>
     </>
   );
 }
