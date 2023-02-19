@@ -237,6 +237,61 @@
       align-items: center;
     }
   }
+  &__buttonBox2 {
+    display: flex;
+
+    &__button1 {
+      display: flex;
+      justify-content: center;
+      height: 20px;
+      width: 88px;
+      background-color: #1d9bf0;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      border-radius: 3px;
+      font-size: 11px;
+      align-items: center;
+      &__img {
+        width: 14px;
+        height: 14px;
+        margin-right: 4px;
+      }
+    }
+    &__button2 {
+      display: flex;
+      justify-content: center;
+      margin-left: 20px;
+      height: 20px;
+      width: 88px;
+      background-color: #1877f2;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      border-radius: 3px;
+      font-size: 11px;
+      align-items: center;
+      &__img {
+        width: 14px;
+        height: 14px;
+        margin-right: 4px;
+      }
+    }
+    &__button3 {
+      display: flex;
+      justify-content: center;
+      margin-left: 20px;
+      height: 20px;
+      width: 88px;
+      background-color: #1877f2;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      border-radius: 3px;
+      font-size: 11px;
+      align-items: center;
+    }
+  }
 }
 
 .introduction {
