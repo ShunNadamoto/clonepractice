@@ -185,7 +185,7 @@ export default function Home() {
         <br></br>
         <div className={styles.introduction2__content__text3}>
           スキルを身につけたエンジニアは、人生をコントロールすることでより自由に。
-          <br></br> そこで必要なのが
+          <br></br> そこで必要なのが？
           {<span className={styles.introduction2__content__text3__text4}>「稼ぐ力」</span>}
           です。
         </div>
