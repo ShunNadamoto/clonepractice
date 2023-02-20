@@ -47,6 +47,7 @@ export default function Home() {
         <br />
         <div>奏志くん生年月日 2018年10月9日生まれ A型 天秤座</div>
         <div>現在は４歳でパズルとベビーバスを観るのが大好きです</div>
+        <button>いいね！お願いします</button>
       </div>
       <div className={styles.header}>
         <div className={styles.header__leftBox}>
