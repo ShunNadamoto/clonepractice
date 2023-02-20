@@ -402,16 +402,18 @@
   background-size: cover;
   background-position: center;
   height: 587px;
-  text-align: center;
   padding: 40px 0;
   box-sizing: border-box;
 
   &__description {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 24px;
     font-weight: 600;
-    position: relative;
-    padding: 50px 0px;
-    box-sizing: border-box;
+    padding: 15px 46px;
+    height: 100px;
 
     &__leftIcon {
       position: absolute;
@@ -433,6 +435,37 @@
       width: 50px;
       height: 50px;
       box-sizing: border-box;
+    }
+  }
+  &__content {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', sans-serif;
+    letter-spacing: 1.5px;
+
+    &__text1 {
+      font-size: 16px;
+      font-weight: 300;
+      text-align: center;
+      margin: 0 0 10px;
+    }
+    &__text2 {
+      font-size: 16px;
+      font-weight: 300;
+      text-align: center;
+      margin: 0 0 10px;
+    }
+    &__text3 {
+      font-size: 16px;
+      font-weight: 300;
+      text-align: center;
+      margin: 0 0 10px;
+      &__text4 {
+        border-bottom: #ebb94d;
+        font-weight: bold;
+        background: linear-gradient(transparent 70%, #ebb94d 70%);
+      }
     }
   }
 }

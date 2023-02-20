@@ -168,6 +168,27 @@ export default function Home() {
           <div className={styles.introduction2__description__rightIcon} />
           エンジニアとして本当の自由を手に入れるためには？
         </div>
+
+        <div className={styles.introduction2__content}></div>
+        <div className={styles.introduction2__content__text1}>
+          エンジニア需要の高まりに伴い、プログラミングスクールが増えています。
+          <br></br>
+          しかしそこでの学習の先は、 提携して決められた就職先に就職すること。
+        </div>
+        <br></br>
+        <div className={styles.introduction2__content__text2}>
+          これで本当にいいのですか？
+          <br></br>日本人エンジニアはアメリカと較べて給料が格段に低い。
+          <br></br>
+          その理由がここにあり、 エンジニアは自分の給料をコントロールすべきなのです。
+        </div>
+        <br></br>
+        <div className={styles.introduction2__content__text3}>
+          スキルを身につけたエンジニアは、人生をコントロールすることでより自由に。
+          <br></br> そこで必要なのが
+          {<span className={styles.introduction2__content__text3__text4}>「稼ぐ力」</span>}
+          です。
+        </div>
       </div>
     </>
   );
