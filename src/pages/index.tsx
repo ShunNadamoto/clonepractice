@@ -162,6 +162,13 @@ export default function Home() {
           エンジニアとして本当の自由を手に入れるためには？
         </div>
       </div>
+      <div className={styles.introduction2}>
+        <div className={styles.introduction2__description}>
+          <div className={styles.introduction2__description__leftIcon} />
+          <div className={styles.introduction2__description__rightIcon} />
+          エンジニアとして本当の自由を手に入れるためには？
+        </div>
+      </div>
     </>
   );
 }
