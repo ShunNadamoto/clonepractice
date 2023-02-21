@@ -469,3 +469,25 @@
     }
   }
 }
+.about {
+  padding: 0 0 40px 0;
+  background-color: #fef5e0;
+  text-align: center;
+  &__Icon {
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    top: -40px;
+    &__circle1 {
+      color: #fff;
+      background-color: #ebb94d;
+      padding: 0;
+      margin: 0;
+      width: 80px;
+      height: 80px;
+      line-height: 80px;
+      display: inline-block;
+      border-radius: 50%;
+    }
+  }
+}
