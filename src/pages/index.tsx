@@ -201,6 +201,9 @@ export default function Home() {
           <div className={styles.about__title__rightIcon} />
           ノマドエンジニア育成講座 <br></br>iSara[イサラ]とは
         </div>
+        <div className={styles.about__text}>
+          「 稼ぐこと 」にフォーカスしたWebエンジニア育成講座です。
+        </div>
       </div>
     </>
   );
