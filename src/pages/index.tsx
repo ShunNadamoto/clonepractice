@@ -249,6 +249,30 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className={styles.about2}>
+        <div className={styles.about2__text1}>基礎的なプログラミングスキルは無料で学べる時代。</div>
+        <div className={styles.about2__text2}>
+          iSaraでは、基礎知識学習は<span>事前課題</span>
+          <span>と</span>
+          <span>チャットサポート</span>
+          <span>のみ</span>
+        </div>
+        <div className={styles.about2__contentBox1}>
+          STEP.1
+          <p>【バンコク渡航前１ヶ月】</p>
+          <p>事前課題で基礎知識を学ぶ</p>
+        </div>
+        <div className={styles.about2__contentBox2}>
+          STEP.2
+          <p>【バンコク到着後】</p>
+          <p>実践的に稼ぐことに特化した学習</p>
+        </div>
+        <div className={styles.about2__contentBox3}>
+          STEP.3
+          <p>【バンコク帰国後】</p>
+          <p>講座実施後の案件獲得サポート</p>
+        </div>
+      </div>
     </>
   );
 }
