@@ -574,3 +574,35 @@
     }
   }
 }
+.about2 {
+  background-image: url('https://isara.life/wp-content/themes/isara_v2/img/aboutsecondbg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 40px 0;
+  text-align: center;
+  &__text1 {
+  }
+  &__text2 {
+  }
+  &__contentBox1 {
+    padding: 30px 30px 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 60%;
+    margin: 0 20% 20px;
+  }
+  &__contentBox2 {
+    padding: 30px 30px 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 60%;
+    margin: 0 20% 20px;
+  }
+  &__contentBox3 {
+    padding: 30px 30px 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 60%;
+    margin: 0 20% 20px;
+  }
+}
