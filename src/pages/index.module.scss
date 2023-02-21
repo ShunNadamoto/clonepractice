@@ -524,8 +524,53 @@
   }
   &__text {
     margin-top: 40px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     background-color: rgba(0, 0, 0, 0);
+  }
+  &__box {
+    width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border: 2px solid #ebb94d;
+    border-radius: 5px;
+    flex-wrap: wrap;
+
+    &__intext {
+      box-sizing: border-box;
+      width: 700px;
+      padding: 10px;
+    }
+    &__contentBox1 {
+      box-sizing: border-box;
+      display: inline-block;
+      padding: 10px;
+      font-size: 12px;
+    }
+    &__contentBox2 {
+      box-sizing: border-box;
+      display: inline-block;
+      padding: 10px;
+      font-size: 12px;
+    }
+    &__contentBox3 {
+      align-content: stretch;
+      display: inline-block;
+      padding: 10px;
+      font-size: 12px;
+    }
+    &__contentBox4 {
+      box-sizing: border-box;
+      display: inline-block;
+      padding: 10px;
+      font-size: 12px;
+    }
+    &__contentBox5 {
+      box-sizing: border-box;
+      display: inline-block;
+      padding: 10px;
+      font-size: 12px;
+    }
   }
 }

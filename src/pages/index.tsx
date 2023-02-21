@@ -204,6 +204,50 @@ export default function Home() {
         <div className={styles.about__text}>
           「 稼ぐこと 」にフォーカスしたWebエンジニア育成講座です。
         </div>
+        <div className={styles.about__box}>
+          <div className={styles.about__intext}>稼げるエンジニアに必要な５つのスキルとは？</div>
+
+          <div className={styles.about__box__contentBox1}>
+            <img src='https://isara.life/wp-content/themes/isara_v2/img/skill.jpg'></img>
+            <div className={styles.about__box__contentBox1__text}>
+              基礎的な
+              <br></br>
+              プログラミングスキル
+            </div>
+          </div>
+          <div className={styles.about__box__contentBox2}>
+            <img src='https://isara.life/wp-content/themes/isara_v2/img/sales.jpg'></img>
+            <div className={styles.about__box__contentBox1__text}>
+              案件獲得に必要な
+              <br></br>
+              営業力
+            </div>
+          </div>
+          <div className={styles.about__box__contentBox3}>
+            <img src='https://isara.life/wp-content/themes/isara_v2/img/document.jpg'></img>
+            <div className={styles.about__box__contentBox1__text}>
+              見積もり作成から
+              <br></br>
+              納品までの知識
+            </div>
+          </div>
+          <div className={styles.about__box__contentBox4}>
+            <img src='https://isara.life/wp-content/themes/isara_v2/img/plusone.jpg'></img>
+            <div className={styles.about__box__contentBox1__text}>
+              自分の付加価値を
+              <br></br>
+              高めるスキル
+            </div>
+          </div>
+          <div className={styles.about__box__contentBox5}>
+            <img src='https://isara.life/wp-content/themes/isara_v2/img/connection.jpg'></img>
+            <div className={styles.about__box__contentBox1__text}>
+              フリーランス同士の
+              <br></br>
+              横のつながり
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
