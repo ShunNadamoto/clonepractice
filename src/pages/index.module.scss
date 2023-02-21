@@ -490,4 +490,36 @@
       border-radius: 50%;
     }
   }
+  &__title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: 600;
+    padding: 15px 46px;
+    height: 140px;
+    line-height: 40px;
+
+    &__leftIcon {
+      position: absolute;
+      top: 15px;
+      left: 46px;
+      border-top: 4px solid #ebb94d;
+      border-left: 4px solid #ebb94d;
+      width: 50px;
+      height: 50px;
+      box-sizing: border-box;
+    }
+    &__rightIcon {
+      position: absolute;
+      bottom: 15px;
+      right: 46px;
+      border-bottom: 4px solid #ebb94d;
+      border-right: 4px solid #ebb94d;
+      width: 50px;
+      height: 50px;
+      box-sizing: border-box;
+    }
+  }
 }

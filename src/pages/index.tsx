@@ -196,6 +196,11 @@ export default function Home() {
         <div className={styles.about__Icon}>
           <p className={styles.about__Icon__circle1}>ABOUT</p>
         </div>
+        <div className={styles.about__title}>
+          <div className={styles.about__title__leftIcon} />
+          <div className={styles.about__title__rightIcon} />
+          ノマドエンジニア育成講座 <br></br>iSara[イサラ]とは
+        </div>
       </div>
     </>
   );
