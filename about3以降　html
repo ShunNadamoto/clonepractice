@@ -1,0 +1,21 @@
+<div className={styles.about3}>
+            <div className={styles.about3__text1}>
+              スキルアップしてもフリーランスエンジニアとして食べていくことは難しい。
+            </div>
+            <div className={styles.about3__text2}>
+              フリーランスには
+              <span className={styles.about3__text3}>プログラミングスキル以外</span>が大切。
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.study}>
+        <div className={styles.study__title}>
+          <div className={styles.study__title__text1}>
+            iSara<div></div>
+          </div>
+          <span className={styles.study__title__text2}>[イサラ]</span>
+          <div className={styles.study__title__text3}>で学べること</div>
+        </div>
+      </div>
+      </div>

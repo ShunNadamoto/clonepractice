@@ -605,14 +605,14 @@
   &__content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 50px;
+    justify-content: space-around;
+    padding: 40px;
 
     &__contentBox1 {
       background-color: #fff;
       padding: 30px 30px 20px;
       border-radius: 5px;
-      width: 400px;
+      flex-grow: 0.3;
 
       &__STEP {
         font-size: 16px;
@@ -634,7 +634,7 @@
       padding: 30px 30px 20px;
       background-color: #fff;
       border-radius: 5px;
-      width: 400px;
+      flex-grow: 0.3;
 
       &__STEP {
         font-size: 16px;
@@ -655,10 +655,10 @@
       padding: 30px 30px 20px;
       background-color: #fff;
       border-radius: 5px;
-      width: 400px;
+      flex-grow: 0.3;
 
       &__STEP {
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 600;
         background-color: #ebb94d;
         border-radius: 5px;
@@ -687,5 +687,74 @@
   }
   &__text3 {
     color: #ebb94d;
+  }
+}
+.study {
+  padding: 40px 0;
+  text-align: center;
+  &__title {
+    padding: 40px 0;
+    font-size: 28px;
+    font-weight: 600;
+
+    &__text {
+      font-size: 16px;
+    }
+  }
+  &__title2 {
+    font-size: 20px;
+    margin: 0 0 10px;
+  }
+  &__studybox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__text {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+.merit {
+  padding: 40px 0;
+  text-align: center;
+  background-color: #fef5e0;
+  &__description {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 15px 46px;
+    height: 100px;
+
+    &__text1 {
+      font-size: 20px;
+    }
+    &__leftIcon {
+      position: absolute;
+      top: 15px;
+      left: 46px;
+      border-top: 4px solid #ebb94d;
+      border-left: 4px solid #ebb94d;
+      width: 50px;
+      height: 50px;
+      box-sizing: border-box;
+    }
+
+    &__rightIcon {
+      position: absolute;
+      bottom: 15px;
+      right: 46px;
+      border-bottom: 4px solid #ebb94d;
+      border-right: 4px solid #ebb94d;
+      width: 50px;
+      height: 50px;
+      box-sizing: border-box;
+    }
+    &__text2 {
+      font-size: 28px;
+    }
   }
 }
