@@ -285,6 +285,15 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className={styles.about3}>
+        <div className={styles.about3__text1}>
+          スキルアップしてもフリーランスエンジニアとして食べていくことは難しい。
+        </div>
+        <div className={styles.about3__text2}>
+          フリーランスには
+          <span className={styles.about3__text3}>プログラミングスキル以外</span>が大切。
+        </div>
+      </div>
     </>
   );
 }

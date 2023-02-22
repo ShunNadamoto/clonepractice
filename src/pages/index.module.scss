@@ -615,7 +615,7 @@
       width: 400px;
 
       &__STEP {
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 600;
         background-color: #ebb94d;
         border-radius: 5px;
@@ -623,8 +623,10 @@
         color: #fff;
       }
       &__text1 {
+        font-size: 14px;
       }
       &__text2 {
+        font-size: 16px;
       }
     }
 
@@ -635,7 +637,7 @@
       width: 400px;
 
       &__STEP {
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 600;
         background-color: #ebb94d;
         border-radius: 5px;
@@ -643,8 +645,10 @@
         color: #fff;
       }
       &__text1 {
+        font-size: 14px;
       }
       &__text2 {
+        font-size: 16px;
       }
     }
     &__contentBox3 {
@@ -662,9 +666,26 @@
         color: #fff;
       }
       &__text1 {
+        font-size: 14px;
       }
       &__text2 {
+        font-size: 16px;
       }
     }
+  }
+}
+.about3 {
+  padding: 40px 0;
+  text-align: center;
+  background-color: #016ea9;
+  font-size: 20px;
+  &__text1 {
+    color: #fff;
+  }
+  &__text2 {
+    color: #fff;
+  }
+  &__text3 {
+    color: #ebb94d;
   }
 }
