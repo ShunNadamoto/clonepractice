@@ -250,27 +250,39 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.about2}>
-        <div className={styles.about2__text1}>基礎的なプログラミングスキルは無料で学べる時代。</div>
-        <div className={styles.about2__text2}>
-          iSaraでは、基礎知識学習は<span>事前課題</span>
+        <div className={styles.about2__text1}>
+          iSaraで「基本的なプログラミングスキル」は教えません
+        </div>
+        <div className={styles.about2__text2}>基礎的なプログラミングスキルは無料で学べる時代。</div>
+        <div className={styles.about2__text3}>
+          iSaraでは、基礎知識学習は
+          <span className={styles.about2__text3__yellow}>事前課題</span>
           <span>と</span>
-          <span>チャットサポート</span>
-          <span>のみ</span>
+          <span className={styles.about2__text3__yellow}>チャットサポート</span>
+          <span>のみ。</span>
         </div>
-        <div className={styles.about2__contentBox1}>
-          STEP.1
-          <p>【バンコク渡航前１ヶ月】</p>
-          <p>事前課題で基礎知識を学ぶ</p>
-        </div>
-        <div className={styles.about2__contentBox2}>
-          STEP.2
-          <p>【バンコク到着後】</p>
-          <p>実践的に稼ぐことに特化した学習</p>
-        </div>
-        <div className={styles.about2__contentBox3}>
-          STEP.3
-          <p>【バンコク帰国後】</p>
-          <p>講座実施後の案件獲得サポート</p>
+
+        <div className={styles.about2__content}>
+          <div className={styles.about2__content__contentBox1}>
+            <p className={styles.about2__content__contentBox1__STEP}>STEP.1</p>
+            <p className={styles.about2__content__contentBox1__text1}>【バンコク渡航前１ヶ月】</p>
+            <p className={styles.about2__content__contentBox1__text2}>事前課題で基礎知識を学ぶ</p>
+          </div>
+
+          <div className={styles.about2__content__contentBox2}>
+            <p className={styles.about2__content__contentBox2__STEP}>STEP.2</p>
+            <p className={styles.about2__content__contentBox2__text1}>【バンコク到着後】</p>
+            <p className={styles.about2__content__contentBox2__text2}>
+              実践的に稼ぐことに特化した学習
+            </p>
+          </div>
+          <div className={styles.about2__content__contentBox3}>
+            <p className={styles.about2__content__contentBox3__STEP}>STEP.3</p>
+            <p className={styles.about2__content__contentBox3__text1}>【バンコク帰国後】</p>
+            <p className={styles.about2__content__contentBox3__text2}>
+              講座実施後の案件獲得サポート
+            </p>
+          </div>
         </div>
       </div>
     </>

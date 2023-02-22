@@ -581,28 +581,90 @@
   padding: 40px 0;
   text-align: center;
   &__text1 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
   }
   &__text2 {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 10px;
   }
-  &__contentBox1 {
-    padding: 30px 30px 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    width: 60%;
-    margin: 0 20% 20px;
+  &__text3 {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    &__yellow {
+      color: #ebb94d;
+    }
   }
-  &__contentBox2 {
-    padding: 30px 30px 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    width: 60%;
-    margin: 0 20% 20px;
-  }
-  &__contentBox3 {
-    padding: 30px 30px 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    width: 60%;
-    margin: 0 20% 20px;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+
+    &__contentBox1 {
+      background-color: #fff;
+      padding: 30px 30px 20px;
+      border-radius: 5px;
+      width: 400px;
+
+      &__STEP {
+        font-size: 14px;
+        font-weight: 600;
+        background-color: #ebb94d;
+        border-radius: 5px;
+        box-sizing: border-box;
+        color: #fff;
+      }
+      &__text1 {
+      }
+      &__text2 {
+      }
+    }
+
+    &__contentBox2 {
+      padding: 30px 30px 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      width: 400px;
+
+      &__STEP {
+        font-size: 14px;
+        font-weight: 600;
+        background-color: #ebb94d;
+        border-radius: 5px;
+        box-sizing: border-box;
+        color: #fff;
+      }
+      &__text1 {
+      }
+      &__text2 {
+      }
+    }
+    &__contentBox3 {
+      padding: 30px 30px 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      width: 400px;
+
+      &__STEP {
+        font-size: 14px;
+        font-weight: 600;
+        background-color: #ebb94d;
+        border-radius: 5px;
+        box-sizing: border-box;
+        color: #fff;
+      }
+      &__text1 {
+      }
+      &__text2 {
+      }
+    }
   }
 }
