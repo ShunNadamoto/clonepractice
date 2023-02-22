@@ -294,6 +294,44 @@ export default function Home() {
           <span className={styles.about3__text3}>プログラミングスキル以外</span>が大切。
         </div>
       </div>
+      <div className={styles.study}>
+        <div className={styles.study__title}>
+          iSara
+          <span className={styles.study__title__text}>[イサラ]</span>
+          で学べること
+        </div>
+        <div className={styles.study__title2}>
+          iSaraの学習では、エンジニアとして「稼ぐ」ために必要な能力を身につけます。
+        </div>
+        <div className={styles.study__studybox}>
+          <div className={styles.study__studybox__box1}>
+            <img
+              src='https://isara.life/wp-content/themes/isara_v2/img/salesskill.jpg
+'
+            ></img>
+          </div>
+          <div className={styles.study__studybox__box2}>
+            <img src='https://isara.life/wp-content/themes/isara_v2/img/knowledge.jpg'></img>
+          </div>
+          <div className={styles.study__studybox__box3}>
+            <img src='https://isara.life/wp-content/themes/isara_v2/img/skillup.jpg'></img>
+          </div>
+          <div className={styles.study__studybox__box4}>
+            <img src='https://isara.life/wp-content/themes/isara_v2/img/freelanceconnection.jpg'></img>
+          </div>
+        </div>
+        <div className={styles.study__text}>これらを教えるのがiSaraです。</div>
+      </div>
+      <div className={styles.merit}>
+        <div className={styles.merit__description}>
+          <div className={styles.merit__description__text1}>
+            他のプログラミングスクールとここが違う！
+            <div className={styles.merit__description__leftIcon} />
+            <div className={styles.merit__description__rightIcon} />
+            <div className={styles.merit__description__text2}>iSara[イサラ]の３つのメリット</div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
