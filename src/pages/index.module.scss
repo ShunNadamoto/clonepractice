@@ -829,3 +829,33 @@
     margin: 0 0 10px;
   }
 }
+.member {
+  text-align: center;
+  color: #fff;
+  padding: 40px 0px;
+  background-image: url('https://isara.life/wp-content/themes/isara_v2/img/teacherbg.jpg');
+  &__title {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  &__text {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  &__introduction {
+    display: flex;
+    justify-content: center;
+    &__img {
+      border-radius: 50%;
+    }
+    &__intro1 {
+    }
+    &__intro2 {
+    }
+    &__intro3 {
+    }
+  }
+}
