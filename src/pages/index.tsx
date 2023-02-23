@@ -374,6 +374,49 @@ export default function Home() {
           チャットサポートのみ。従って、本気で取り組まないと結果は出ません。
         </div>
       </div>
+      <div className={styles.member}>
+        <div className={styles.member__title}>
+          <img src='id_card_icon_144637.png' width='60' height='60'></img>創業メンバー
+        </div>
+        <div className={styles.member__introduction}>
+          <div className={styles.member__introduction__intro1}>
+            <img
+              src='https://isara.life/wp-content/themes/isara_v2/img/keisuke_someya.jpg'
+              alt='染谷　佳佑'
+            ></img>
+            <div className={styles.member__introduction__intro1__text1}>フリーランス講師</div>
+            <div className={styles.member__introduction__intro1__text2}>染谷　佳佑</div>
+            <div className={styles.member__introduction__intro1__text3}>
+              ISARA（THILAND）
+              CO.,LTD.の代表です。学生起業の後にリクルートに就職、その後独立し、海外移住しました。今はフリーランスとしてリモートワークで日本円を稼ぎ、外国通貨に変えて使い、海外を旅してます。営業、ブログPVアップ(最高月間150万PV)、ビジネス構築が専門です。
+            </div>
+          </div>
+          <div className={styles.member__introduction__intro2}>
+            <img
+              src='https://isara.life/wp-content/uploads/2018/10/yuki.png'
+              alt='成田　雄輝'
+            ></img>
+            <div className={styles.member__introduction__intro2__text1}>フリーランス講師</div>
+            <div className={styles.member__introduction__intro2__text2}>成田　雄輝</div>
+            <div className={styles.member__introduction__intro2__text3}>
+              バンコクのシェアハウスのオーナーをやりながら一年の大半をタイで過ごしています。大学時代から今に至るまでネットだけで生計を立てているので、自由歴だけは講師陣の中で最長です！母親がタイ人という事もありタイには精通してますので、こちらでの生活のサポートはお任せください！
+            </div>
+          </div>
+          <div className={styles.member__introduction__intro3}>
+            <img
+              src='https://isara.life/wp-content/themes/isara_v2/img/manabu.png'
+              alt='坂内　学'
+            ></img>
+            <div className={styles.member__introduction__intro3__text1}>フリーランスエンジニア</div>
+            <div className={styles.member__introduction__intro3__text2}>坂内　学</div>
+            <div className={styles.member__introduction__intro3__text3}>
+              アドバイザーとして参画しました。新卒で海外就職して１１ヶ月後に退職。今は日本にいたり海外にいたりでゆるくフリーランスをしています。
+              <br></br>
+              お仕事はWebマーケティングとプログラミングが専門領域です。
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
