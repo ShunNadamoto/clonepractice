@@ -1,10 +1,56 @@
 import Head from 'next/head';
 import { useState } from 'react';
+import { AccordionMenu } from '../components/AccordionMenu';
 import styles from './index.module.scss';
 
-export default function Home() {
+const Home = () => {
   const [name, setName] = useState('');
   const [isDisplayName, setIsDisplayName] = useState(false);
+
+  const calculationAdd = (a: number, b: number) => {
+    return a + b;
+  };
+
+  const calculateion = (test: number, test2: number) => {
+    return test - test2;
+  };
+
+  console.log(calculationAdd(2, 6));
+  console.log(calculateion(2, 6));
+
+  const questionResponse = {
+    questionList: [
+      {
+        text: 'プログラミングスキルは必要ですか?',
+        description:
+          'いいえ、必要ありません。しかし、iSaraでは参加費以上の金額が稼げることを保障しています。 従って、事前通話面談時点で簡単なテストを実施し、場合によってはお断りをしております。この点だけはご了承ください。',
+      },
+      {
+        text: '参加費以上に稼げなかったらどうなりますか?',
+        description:
+          '宿泊費用が必要ですが、iSara提携のホステルに宿泊することになりますので心配はありません。',
+      },
+      {
+        text: '滞在中の宿泊先はどうなりますか?',
+        description:
+          '宿泊費用が必要ですが、iSara提携のホステルに宿泊することになりますので心配はありません。',
+      },
+      { text: 'aaa', description: 'cccc' },
+      { text: 'aaa', description: 'cccc' },
+      { text: 'aaa', description: 'cccc' },
+    ],
+  };
+
+  const { questionList } = questionResponse;
+
+  const test = questionList.map((elem, index) => {
+    console.log(`elem:`);
+    console.log(elem);
+    console.log(`index: ${index}`);
+    return elem.description;
+  });
+  console.log(`--test:---`);
+  console.log(test);
 
   return (
     <>
@@ -16,6 +62,11 @@ export default function Home() {
           <link rel='icon' href='/favicon.ico' />
         </Head>
         <div className={styles.container}>
+          <div className={styles.accordionWrapper}>
+            {questionResponse.questionList.map((elem, index) => (
+              <AccordionMenu key={index} text={elem.text} description={elem.description} />
+            ))}
+          </div>
           <div className={styles.container__test1}>練習用</div>
           <div className={styles.container__test2}>練習用サイト2</div>
           <input
@@ -419,4 +470,6 @@ export default function Home() {
       </div>
     </>
   );
-}
+};
+
+export default Home;
