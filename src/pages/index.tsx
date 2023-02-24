@@ -4,7 +4,7 @@ import { AccordionMenu } from '../components/AccordionMenu';
 import { IntroductionCard } from '../components/IntroductionCard';
 import styles from './index.module.scss';
 
-const Home = () => {
+export default function Home() {
   const [name, setName] = useState('');
   const [isDisplayName, setIsDisplayName] = useState(false);
 
@@ -448,6 +448,4 @@ const Home = () => {
       </div>
     </>
   );
-};
-
-export default Home;
+}
