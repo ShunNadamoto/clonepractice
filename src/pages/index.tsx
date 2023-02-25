@@ -1,23 +1,39 @@
 import Head from 'next/head';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AccordionMenu } from '../components/AccordionMenu';
 import { IntroductionCard } from '../components/IntroductionCard';
+import { sum } from '../lib/tool';
 import styles from './index.module.scss';
 
 export default function Home() {
   const [name, setName] = useState('');
   const [isDisplayName, setIsDisplayName] = useState(false);
 
+  useEffect(() => {}, []);
+
   const calculationAdd = (a: number, b: number) => {
     return a + b;
   };
 
+  const aaaa = (test1: number, test2: number, test3: number) => {
+    return test1 + test2 + test3;
+  };
+
+  // aaaa(1, 1, 1);
+
+  const array = [1, 2, 3, 4, 5, 6];
+  const newArray = array.map((elem) => {
+    return elem;
+  });
+
+  const newArray2 = array.filter((elem) => {
+    return elem < 4;
+  });
+  // console.log(newArray);
+
   const calculateion = (test: number, test2: number) => {
     return test - test2;
   };
-
-  console.log(calculationAdd(2, 6));
-  console.log(calculateion(2, 6));
 
   const questionResponse = {
     questionList: [
@@ -42,15 +58,14 @@ export default function Home() {
     ],
   };
 
+  const test2 = { test: 'aaaa', value2: [1, 3], value3: { value3: 'aaa' } };
+
   const { questionList } = questionResponse;
 
-  const test = questionList.map((elem, index) => {
-    console.log(`elem:`);
-    console.log(elem);
-    console.log(`index: ${index}`);
+  const test = questionResponse.questionList.map((elem) => {
     return elem.description;
   });
-  console.log(`--test:---`);
+
   console.log(test);
 
   return (
@@ -77,7 +92,11 @@ export default function Home() {
             onChange={(event) => setName(event.target.value)}
           />
           <button
-            onClick={() => setIsDisplayName(!isDisplayName)}
+            onClick={() => {
+              const total = sum(1, 2);
+              console.log(total);
+              setIsDisplayName(!isDisplayName);
+            }}
             className={styles.container__button}
           >
             ボタンを押したら名前表示非表示切り替え
