@@ -415,24 +415,25 @@ export default function Home() {
             />
           </div>
         </div>
-      </div>
-      <div className={styles.support}>
-        <div className={styles.support__title}>さらに！帰国後もサポート付き</div>
-        <div className={styles.support__text1}>
-          リモートワーカーのチームを作ることで受注率、受注単価が大幅に向上します。
+
+        <div className={styles.support}>
+          <div className={styles.support__title}>さらに！帰国後もサポート付き</div>
+          <div className={styles.support__text1}>
+            リモートワーカーのチームを作ることで受注率、受注単価が大幅に向上します。
+          </div>
+          <div className={styles.support__text2}>
+            iSaraは講座が終わって終了ではありません。
+            <br></br>
+            参加メンバーのチャットグループを作り、帰国後も継続的に案件参加できるようになります。
+            <br></br>
+            また、チームで働くことで継続的に稼ぎやすい仕組みづくりも構築しております。
+          </div>
         </div>
-        <div className={styles.support__text2}>
-          iSaraは講座が終わって終了ではありません。
+        <div className={styles.bottom}>
+          事前課題ができない人はお断りしております。iSaraでは、無料で学べるプログラミング基礎知識は教えません。事前課題一覧はメールで送りつつ、
           <br></br>
-          参加メンバーのチャットグループを作り、帰国後も継続的に案件参加できるようになります。
-          <br></br>
-          また、チームで働くことで継続的に稼ぎやすい仕組みづくりも構築しております。
+          チャットサポートのみ。従って、本気で取り組まないと結果は出ません。
         </div>
-      </div>
-      <div className={styles.bottom}>
-        事前課題ができない人はお断りしております。iSaraでは、無料で学べるプログラミング基礎知識は教えません。事前課題一覧はメールで送りつつ、
-        <br></br>
-        チャットサポートのみ。従って、本気で取り組まないと結果は出ません。
       </div>
 
       <div className={styles.member}>
