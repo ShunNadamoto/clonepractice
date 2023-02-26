@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { AccordionMenu } from '../components/AccordionMenu';
 import { IntroductionCard } from '../components/IntroductionCard';
+import { MeritCard } from '../components/MeritCard';
 import { sum } from '../lib/tool';
 import styles from './index.module.scss';
 
@@ -393,28 +394,28 @@ export default function Home() {
         </div>
         <div className={styles.merit__box}>
           <div className={styles.merit__box__inbox1}>
-            <img src='https://isara.life/wp-content/themes/isara_v2/img/learnfromfreelancer.jpg'></img>
-            <div className={styles.merit__box__inbox1__text1}>現役フリーランスから学べる</div>
-            <div className={styles.merit__box__inbox1__text2}>
-              他のプログラミングスクールとは違い、実際にフリーランスとして活動しているエンジニアが直接講師を勤めます。
-            </div>
+            <MeritCard
+              imageUrl='https://isara.life/wp-content/themes/isara_v2/img/learnfromfreelancer.jpg'
+              text1='現役フリーランスから学べる'
+              text2='他のプログラミングスクールとは違い、実際にフリーランスとして活動しているエンジニアが直接講師を勤めます。'
+            />
           </div>
           <div className={styles.merit__box__inbox2}>
-            <img src='https://isara.life/wp-content/themes/isara_v2/img/learnfromprojects.jpg'></img>
-            <div className={styles.merit__box__inbox2__text1}>実践を通じて学べる</div>
-            <div className={styles.merit__box__inbox2__text2}>
-              フリーランスにとって最短の学習方法は「実践」。iSaraでは実案件を通して学びます。現役フリーランサーの案件サポートに加え、クラウドソーシングを活用。初心者の自分じゃ無理と思うかもですが、現役フリーランスがサポートしますので大丈夫。
-            </div>
+            <MeritCard
+              imageUrl='https://isara.life/wp-content/themes/isara_v2/img/learnfromprojects.jpg'
+              text1='実践を通じて学べる'
+              text2='フリーランスにとって最短の学習方法は「実践」。iSaraでは実案件を通して学びます。現役フリーランサーの案件サポートに加え、クラウドソーシングを活用。初心者の自分じゃ無理と思うかもですが、現役フリーランスがサポートしますので大丈夫。'
+            />
           </div>
           <div className={styles.merit__box__inbox3}>
-            <img src='	https://isara.life/wp-content/themes/isara_v2/img/actuallyfree.jpg'></img>
-
-            <div className={styles.merit__box__inbox3__text1}>授業料が実質０円</div>
-            <div className={styles.merit__box__inbox3__text2}>
-              講座費用258,000円以上の金額が稼げるまで「永久サポート延長」があります。
-            </div>
+            <MeritCard
+              imageUrl='https://isara.life/wp-content/themes/isara_v2/img/actuallyfree.jpg'
+              text1='授業料が実質０円'
+              text2='講座費用258,000円以上の金額が稼げるまで「永久サポート延長」があります。'
+            />
           </div>
         </div>
+
         <div className={styles.support}>
           <div className={styles.support__title}>さらに！帰国後もサポート付き</div>
           <div className={styles.support__text1}>
@@ -434,6 +435,7 @@ export default function Home() {
           チャットサポートのみ。従って、本気で取り組まないと結果は出ません。
         </div>
       </div>
+
       <div className={styles.member}>
         <div className={styles.member__title}>
           <img src='id_card_icon_144637.png' width='60' height='60' />
