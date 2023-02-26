@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { AccordionMenu } from '../components/AccordionMenu';
 import { IntroductionCard } from '../components/IntroductionCard';
 import { MeritCard } from '../components/MeritCard';
+import { Profile } from '../components/Profile';
 import { sum } from '../lib/tool';
 import styles from './index.module.scss';
 
@@ -90,6 +91,77 @@ export default function Home() {
 
   console.log(test);
 
+  const profileResponse = {
+    profileList: [
+      {
+        profileImgUrl:
+          'https://faq-system.s3.amazonaws.com/information_assets/information/pictures/100000271/original_thumbnail_%282%29.png?1674531414',
+        brandImgUrl:
+          'https://faq-system.s3.amazonaws.com/information_assets/information/company_pictures/100000271/original_%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BEI-ne_logo_%281%29.png?1674120838',
+        title:
+          '「BOTANIST」や「SALONIA」を手掛けるI-ne。ecforceで新しいEC施策を実行しながらシステムコストカットに成功。',
+        industryName: 'パーソナルケア / ヘアケア',
+        companyName: '株式会社Ｉ－ｎｅ（アイエヌイー）',
+        tagList: ['システムの機能不備を解消したい', '運用コストを削減したい'],
+      },
+      {
+        profileImgUrl:
+          'https://faq-system.s3.amazonaws.com/information_assets/information/pictures/100000068/original_image.png?1664360942',
+        brandImgUrl:
+          'https://faq-system.s3.amazonaws.com/information_assets/information/company_pictures/100000068/original_%E3%82%BB%E3%83%B3%E3%83%88%E3%82%99%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE.png?1664360942',
+        title:
+          '「5年後も選ばれるブランドになるために」 ウェルネスブランド『cinque』が選んだecforceの定期コース機能',
+        industryName: 'パーソナルケア / ヘアケア',
+        companyName: 'センドグループ株式会社',
+        tagList: ['システムの機能不備を解消したい'],
+      },
+      {
+        profileImgUrl:
+          'https://faq-system.s3.amazonaws.com/information_assets/information/pictures/100000271/original_thumbnail_%282%29.png?1674531414',
+        brandImgUrl:
+          'https://faq-system.s3.amazonaws.com/information_assets/information/company_pictures/100000271/original_%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BEI-ne_logo_%281%29.png?1674120838',
+        title:
+          '「BOTANIST」や「SALONIA」を手掛けるI-ne。ecforceで新しいEC施策を実行しながらシステムコストカットに成功。',
+        industryName: 'パーソナルケア / ヘアケア',
+        companyName: '株式会社Ｉ－ｎｅ（アイエヌイー）',
+        tagList: ['システムの機能不備を解消したい', '運用コストを削減したい'],
+      },
+      {
+        profileImgUrl:
+          'https://faq-system.s3.amazonaws.com/information_assets/information/pictures/100000068/original_image.png?1664360942',
+        brandImgUrl:
+          'https://faq-system.s3.amazonaws.com/information_assets/information/company_pictures/100000068/original_%E3%82%BB%E3%83%B3%E3%83%88%E3%82%99%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE.png?1664360942',
+        title:
+          '「5年後も選ばれるブランドになるために」 ウェルネスブランド『cinque』が選んだecforceの定期コース機能',
+        industryName: 'パーソナルケア / ヘアケア',
+        companyName: 'センドグループ株式会社',
+        tagList: ['システムの機能不備を解消したい'],
+      },
+      {
+        profileImgUrl:
+          'https://faq-system.s3.amazonaws.com/information_assets/information/pictures/100000271/original_thumbnail_%282%29.png?1674531414',
+        brandImgUrl:
+          'https://faq-system.s3.amazonaws.com/information_assets/information/company_pictures/100000271/original_%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BEI-ne_logo_%281%29.png?1674120838',
+        title:
+          '「BOTANIST」や「SALONIA」を手掛けるI-ne。ecforceで新しいEC施策を実行しながらシステムコストカットに成功。',
+        industryName: 'パーソナルケア / ヘアケア',
+        companyName: '株式会社Ｉ－ｎｅ（アイエヌイー）',
+        tagList: ['システムの機能不備を解消したい', '運用コストを削減したい'],
+      },
+      {
+        profileImgUrl:
+          'https://faq-system.s3.amazonaws.com/information_assets/information/pictures/100000068/original_image.png?1664360942',
+        brandImgUrl:
+          'https://faq-system.s3.amazonaws.com/information_assets/information/company_pictures/100000068/original_%E3%82%BB%E3%83%B3%E3%83%88%E3%82%99%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE.png?1664360942',
+        title:
+          '「5年後も選ばれるブランドになるために」 ウェルネスブランド『cinque』が選んだecforceの定期コース機能',
+        industryName: 'パーソナルケア / ヘアケア',
+        companyName: 'センドグループ株式会社',
+        tagList: ['システムの機能不備を解消したい'],
+      },
+    ],
+  };
+
   return (
     <>
       <>
@@ -100,6 +172,21 @@ export default function Home() {
           <link rel='icon' href='/favicon.ico' />
         </Head>
         <div className={styles.container}>
+          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+            {profileResponse.profileList.map((eachProfile, index) => {
+              return (
+                <Profile
+                  key={index}
+                  profileImgUrl={eachProfile.profileImgUrl}
+                  brandImgUrl={eachProfile.brandImgUrl}
+                  title={eachProfile.title}
+                  industryName={eachProfile.industryName}
+                  companyName={eachProfile.companyName}
+                  tagList={eachProfile.tagList}
+                />
+              );
+            })}
+          </div>
           <div className={styles.accordionWrapper}>
             {questionResponse.questionList.map((elem, index) => (
               <AccordionMenu key={index} text={elem.text} description={elem.description} />
