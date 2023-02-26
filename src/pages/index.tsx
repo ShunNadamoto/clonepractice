@@ -20,6 +20,27 @@ export default function Home() {
     return test1 + test2 + test3;
   };
 
+  const calculation = (text1: string, text2: string) => {
+    return text1 + text2;
+  };
+  const box = calculation('こんにちは', '田中さん');
+  // console.log(calculation('こんにちは', '田中さん'));
+  console.log(box);
+
+  const ar = [10, 20, 30, 40];
+  const ar2 = ar.map((elem) => {
+    return elem * 2;
+  });
+
+  console.log(ar);
+  console.log(ar2);
+
+  const ar3 = ar.filter((elem) => {
+    return elem > 20;
+  });
+
+  console.log(ar3);
+
   // aaaa(1, 1, 1);
 
   const array = [1, 2, 3, 4, 5, 6];
