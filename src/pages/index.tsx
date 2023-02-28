@@ -24,35 +24,85 @@ export default function Home() {
   const calculation = (text1: string, text2: string) => {
     return text1 + text2;
   };
-  const box = calculation('こんにちは', '田中さん');
-  // console.log(calculation('こんにちは', '田中さん'));
-  console.log(box);
+  console.log(calculation('千里さん', 'いつも助かります'));
+  const calculation2 = (a: number, b: number) => {
+    return a + b;
+  };
+  console.log(calculation('田中さん', 'お世話になっております。'));
+  console.log(calculation('賀門さん', 'ご心配おかけします。'));
+  console.log(calculation('奏志くん', '可愛いね。'));
+  console.log(calculation('史佳ちゃん', 'ちゃんとご飯食べようね'));
+  console.log(calculation('みかん', '売り切れました。'));
+  const calculation6 = (a: number, b: number, c: number): number => {
+    return a + b + c;
+  };
+  console.log(calculation6(1, 4, 6));
+  console.log(calculation6(3, 6, 12));
 
-  const ar = [10, 20, 30, 40];
-  const ar2 = ar.map((elem) => {
-    return elem * 2;
+  const calculation7 = (a: number, b: number, c: number) => {
+    return a + b + c;
+  };
+  console.log(calculation7(2, 7, 14));
+  const caluculation8 = (a: number, b: number, c: number) => {
+    return a * b * c;
+  };
+  console.log(caluculation8(2, 4, 5));
+  console.log(caluculation8(3, 5, 6));
+  console.log(caluculation8(4, 7, 8));
+
+  const calculation9 = (a: string, b: string, c: string) => {
+    return a + b + c;
+  };
+  console.log(calculation9('中華', 'そば', '始めました'));
+  console.log(calculation9('今年の', '冬は', '暖冬です。'));
+  console.log(calculation9('松岡の', 'PCスキルは', '大学生以下'));
+  console.log(calculation9('チョコレート', 'やっぱり', '美味しいね！'));
+
+  const calculation3 = (a: number, b: number) => {
+    return a - b;
+  };
+  console.log(calculation3(8, 2));
+  const calculation4 = (a: number, b: number) => {
+    return a * b;
+  };
+  console.log(calculation4(8, 2));
+
+  const calculation5 = (a: number, b: number) => {
+    return a / b;
+  };
+  console.log(calculation5(8, 2));
+
+  const array3 = [3, 6, 9, 12, 15, 18];
+  const newArray3 = array3.map((elem) => {
+    return elem;
   });
-
-  console.log(ar);
-  console.log(ar2);
-
-  const ar3 = ar.filter((elem) => {
-    return elem > 20;
-  });
-
-  console.log(ar3);
-
-  // aaaa(1, 1, 1);
+  console.log(newArray3[0]);
 
   const array = [1, 2, 3, 4, 5, 6];
   const newArray = array.map((elem) => {
     return elem;
   });
+  console.log(array[4]);
+  console.log(array[2]);
+  console.log(newArray[4]);
 
   const newArray2 = array.filter((elem) => {
     return elem < 4;
   });
-  // console.log(newArray);
+  console.log(newArray2);
+
+  const array4 = [2, 4, 6, 8, 10];
+  const newArray4 = array4.map((elem) => {
+    return elem;
+  });
+  console.log(newArray4);
+
+  const array5 = [3, 6, 9, 12, 15];
+  const newArray5 = array5.map((elem) => {
+    return elem;
+  });
+  console.log(newArray5);
+  console.log(newArray5, [4]);
 
   const calculateion = (test: number, test2: number) => {
     return test - test2;
