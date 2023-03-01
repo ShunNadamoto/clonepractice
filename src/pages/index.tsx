@@ -1,6 +1,8 @@
+/* eslint-disable import/named */
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { AccordionMenu } from '../components/AccordionMenu';
+import { HamburgerMenu } from '../components/HamburgerMenu';
 import { IntroductionCard } from '../components/IntroductionCard';
 import { MeritCard } from '../components/MeritCard';
 import { Profile } from '../components/Profile';
@@ -141,6 +143,32 @@ export default function Home() {
 
   console.log(test);
 
+  const HamburgerResponse = {
+    HamburgerList: [
+      {
+        MenuIcon: '期間限定',
+        HamburgerImgUrl: 'https://www.mos.jp/img/menu/010611/010611_5.jpg',
+        MenuIcon2: 'https://www.mos.jp/img/sp/menu/icon/ic_termLimited.gif',
+        title: 'ハニマスのとり竜田（たつた）バーガー ～ハニーマスタードソース使用～',
+        Price: '¥450',
+      },
+      {
+        MenuIcon: '期間限定',
+        HamburgerImgUrl: 'https://www.mos.jp/img/menu/010815/010815_5.jpg',
+        MenuIcon2: 'https://www.mos.jp/img/sp/menu/icon/ic_termLimited.gif',
+        title: '和風旨（うま）だれのとり竜田（たつた）バーガー ～くし切りレモン添え～',
+        Price: '¥410',
+      },
+      {
+        MenuIcon: 'null',
+        HamburgerImgUrl: 'https://www.mos.jp/img/menu/010004/010004_5.jpg',
+        MenuIcon2: 'https://www.mos.jp/img/sp/menu/icon/ic_termLimited.gif',
+        title: 'チキンバーガー',
+        Price: '¥320',
+      },
+    ],
+  };
+
   const profileResponse = {
     profileList: [
       {
@@ -221,6 +249,24 @@ export default function Home() {
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <link rel='icon' href='/favicon.ico' />
         </Head>
+
+        <div className={styles.content}>
+          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+            {HamburgerResponse.HamburgerList.map((eachHamburger, index) => {
+              return (
+                <HamburgerMenu
+                  key={index}
+                  MenuIcon={eachHamburger.MenuIcon}
+                  HamburgerImgUrl={eachHamburger.HamburgerImgUrl}
+                  MenuIcon2={eachHamburger.MenuIcon2}
+                  title={eachHamburger.title}
+                  Price={eachHamburger.Price}
+                />
+              );
+            })}
+          </div>
+        </div>
+
         <div className={styles.container}>
           <div style={{ display: 'flex', flexWrap: 'wrap' }}>
             {profileResponse.profileList.map((eachProfile, index) => {
