@@ -1,4 +1,3 @@
-/* eslint-disable import/named */
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { AccordionMenu } from '../components/AccordionMenu';
@@ -143,28 +142,77 @@ export default function Home() {
 
   console.log(test);
 
+  type Human = { id: string; name: string; age: number };
+  const humans: Human[] = [
+    { id: '1', name: '斉藤', age: 20 },
+    { id: '2', name: '中島', age: 21 },
+    { id: '3', name: '山田', age: 50 },
+  ];
+  const HumanTag: React.FC = () => {
+    return (
+      <>
+        {humans.map((human) => {
+          return (
+            <div key={human.id}>
+              {human.name}さんは{human.age}歳です。
+            </div>
+          );
+        })}
+      </>
+    );
+  };
+
+  console.log(humans[0]);
+
   const HamburgerResponse = {
     HamburgerList: [
       {
-        MenuIcon: '期間限定',
-        HamburgerImgUrl: 'https://www.mos.jp/img/menu/010611/010611_5.jpg',
-        MenuIcon2: 'https://www.mos.jp/img/sp/menu/icon/ic_termLimited.gif',
+        menuIcon: '期間限定',
+        hamburgerImgUrl: 'https://www.mos.jp/img/menu/010611/010611_5.jpg',
+        menuIcon2: 'https://www.mos.jp/img/sp/menu/icon/ic_termLimited.gif',
         title: 'ハニマスのとり竜田（たつた）バーガー ～ハニーマスタードソース使用～',
-        Price: '¥450',
+        price: '¥450',
+        isDisplayLimitedIcon: true,
       },
       {
-        MenuIcon: '期間限定',
-        HamburgerImgUrl: 'https://www.mos.jp/img/menu/010815/010815_5.jpg',
-        MenuIcon2: 'https://www.mos.jp/img/sp/menu/icon/ic_termLimited.gif',
+        menuIcon: '期間限定',
+        hamburgerImgUrl: 'https://www.mos.jp/img/menu/010815/010815_5.jpg',
+        menuIcon2: 'https://www.mos.jp/img/sp/menu/icon/ic_termLimited.gif',
         title: '和風旨（うま）だれのとり竜田（たつた）バーガー ～くし切りレモン添え～',
-        Price: '¥410',
+        price: '¥410',
+        isDisplayLimitedIcon: true,
       },
       {
-        MenuIcon: 'null',
-        HamburgerImgUrl: 'https://www.mos.jp/img/menu/010004/010004_5.jpg',
-        MenuIcon2: 'https://www.mos.jp/img/sp/menu/icon/ic_termLimited.gif',
+        menuIcon: '期間限定',
+        hamburgerImgUrl: 'https://www.mos.jp/img/menu/010004/010004_5.jpg',
+        menuIcon2: 'https://www.mos.jp/img/sp/menu/icon/ic_termLimited.gif',
         title: 'チキンバーガー',
-        Price: '¥320',
+        price: '¥320',
+        isDisplayLimitedIcon: false,
+      },
+      {
+        menuIcon: '期間限定',
+        hamburgerImgUrl: 'https://www.mos.jp/img/menu/010320/010320_5.jpg',
+        menuIcon2: 'visibility-hidden',
+        title: 'モスバーガー',
+        price: '¥410',
+        isDisplayLimitedIcon: false,
+      },
+      {
+        menuIcon: '期間限定',
+        hamburgerImgUrl: 'https://www.mos.jp/img/menu/010340/010340_5.jpg',
+        menuIcon2: '',
+        title: 'モスチーズバーガー',
+        price: '¥440',
+        isDisplayLimitedIcon: false,
+      },
+      {
+        menuIcon: '期間限定',
+        hamburgerImgUrl: 'https://www.mos.jp/img/menu/010350/010350_5.jpg',
+        menuIcon2: '',
+        title: 'スパイシーモスバーガー',
+        price: '¥440',
+        isDisplayLimitedIcon: false,
       },
     ],
   };
@@ -249,23 +297,31 @@ export default function Home() {
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <link rel='icon' href='/favicon.ico' />
         </Head>
-
         <div className={styles.content}>
           <div style={{ display: 'flex', flexWrap: 'wrap' }}>
             {HamburgerResponse.HamburgerList.map((eachHamburger, index) => {
               return (
                 <HamburgerMenu
                   key={index}
-                  MenuIcon={eachHamburger.MenuIcon}
-                  HamburgerImgUrl={eachHamburger.HamburgerImgUrl}
-                  MenuIcon2={eachHamburger.MenuIcon2}
+                  menuIcon={eachHamburger.menuIcon}
+                  hamburgerImgUrl={eachHamburger.hamburgerImgUrl}
+                  menuIcon2={eachHamburger.menuIcon2}
                   title={eachHamburger.title}
-                  Price={eachHamburger.Price}
+                  price={eachHamburger.price}
+                  isDisplayLimitedIcon={eachHamburger.isDisplayLimitedIcon}
                 />
               );
             })}
           </div>
         </div>
+        <HumanTag />
+        {humans.map((human) => {
+          return (
+            <div key={human.id}>
+              {human.name}さんは{human.age}歳です。
+            </div>
+          );
+        })}
 
         <div className={styles.container}>
           <div style={{ display: 'flex', flexWrap: 'wrap' }}>
