@@ -2,32 +2,26 @@ import { FC } from 'react';
 import styles from './index.module.scss';
 
 type Props = {
-  newIconUrl: string;
-  panImgUrl: string;
+  itemImgUrl: string;
   releaseDate: string;
   title: string;
   isDisplayLimitedIcon: boolean;
 };
 
-export const PanMenu: FC<Props> = ({
-  newIconUrl,
-  panImgUrl,
-  releaseDate,
-  title,
-  isDisplayLimitedIcon,
-}) => {
+export const PanMenu: FC<Props> = ({ itemImgUrl, releaseDate, title, isDisplayLimitedIcon }) => {
   return (
     <div className={styles.container}>
-      {isDisplayLimitedIcon && (
-        <div className={styles.container__newIcon}>
-          <img src={newIconUrl} />
-        </div>
-      )}
-      <div className={styles.container__menuBox}>
-        <img className={styles.container__menuBox__img} src={panImgUrl} alt='パン写真' />
-        <div className={styles.container__releaseDate}>{releaseDate}</div>
-        <div className={styles.container__title}>{title}</div>
+      <img className={styles.container__itemImg} src={itemImgUrl} alt='メイン画像' />
+      <div className={styles.container__descriptionBox}>
+        <div className={styles.container__descriptionBox__releaseDate}>{releaseDate}</div>
+        {title}
       </div>
+      {isDisplayLimitedIcon && (
+        <img
+          className={styles.container__newIcon}
+          src='https://www.littlemermaid.jp/common/img/icon/icon_new.svg'
+        />
+      )}
     </div>
   );
 };

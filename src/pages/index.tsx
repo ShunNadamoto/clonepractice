@@ -80,8 +80,7 @@ export default function Home() {
               return (
                 <PanMenu
                   key={index}
-                  newIconUrl={eachPan.newIconUrl}
-                  panImgUrl={eachPan.panImgUrl}
+                  itemImgUrl={eachPan.panImgUrl}
                   releaseDate={eachPan.releaseDate}
                   title={eachPan.title}
                   isDisplayLimitedIcon={eachPan.isDisplayLimitedIcon}
