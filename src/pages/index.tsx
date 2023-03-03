@@ -1,10 +1,13 @@
+/* eslint-disable import/named */
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { AccordionMenu } from '../components/AccordionMenu';
 import { HamburgerMenu } from '../components/HamburgerMenu';
 import { IntroductionCard } from '../components/IntroductionCard';
 import { MeritCard } from '../components/MeritCard';
+import { PanMenu } from '../components/PanMenu';
 import { Profile } from '../components/Profile';
+import { questionResponse, hamburgerResponse, profileResponse, panResponse } from '../constant';
 import { sum } from '../lib/tool';
 import styles from './index.module.scss';
 
@@ -13,71 +16,6 @@ export default function Home() {
   const [isDisplayName, setIsDisplayName] = useState(false);
 
   useEffect(() => {}, []);
-
-  const calculationAdd = (a: number, b: number) => {
-    return a + b;
-  };
-
-  const aaaa = (test1: number, test2: number, test3: number) => {
-    return test1 + test2 + test3;
-  };
-
-  const calculation = (text1: string, text2: string) => {
-    return text1 + text2;
-  };
-  console.log(calculation('千里さん', 'いつも助かります'));
-  const calculation2 = (a: number, b: number) => {
-    return a + b;
-  };
-  console.log(calculation('田中さん', 'お世話になっております。'));
-  console.log(calculation('賀門さん', 'ご心配おかけします。'));
-  console.log(calculation('奏志くん', '可愛いね。'));
-  console.log(calculation('史佳ちゃん', 'ちゃんとご飯食べようね'));
-  console.log(calculation('みかん', '売り切れました。'));
-  const calculation6 = (a: number, b: number, c: number): number => {
-    return a + b + c;
-  };
-  console.log(calculation6(1, 4, 6));
-  console.log(calculation6(3, 6, 12));
-
-  const calculation7 = (a: number, b: number, c: number) => {
-    return a + b + c;
-  };
-  console.log(calculation7(2, 7, 14));
-  const caluculation8 = (a: number, b: number, c: number) => {
-    return a * b * c;
-  };
-  console.log(caluculation8(2, 4, 5));
-  console.log(caluculation8(3, 5, 6));
-  console.log(caluculation8(4, 7, 8));
-
-  const calculation9 = (a: string, b: string, c: string) => {
-    return a + b + c;
-  };
-  console.log(calculation9('中華', 'そば', '始めました'));
-  console.log(calculation9('今年の', '冬は', '暖冬です。'));
-  console.log(calculation9('松岡の', 'PCスキルは', '大学生以下'));
-  console.log(calculation9('チョコレート', 'やっぱり', '美味しいね！'));
-
-  const calculation3 = (a: number, b: number) => {
-    return a - b;
-  };
-  console.log(calculation3(8, 2));
-  const calculation4 = (a: number, b: number) => {
-    return a * b;
-  };
-  console.log(calculation4(8, 2));
-
-  const calculation5 = (a: number, b: number) => {
-    return a / b;
-  };
-  console.log(calculation5(8, 2));
-
-  const array3 = [3, 6, 9, 12, 15, 18];
-  const newArray3 = array3.map((elem) => {
-    return elem;
-  });
-  console.log(newArray3[0]);
 
   const array = [1, 2, 3, 4, 5, 6];
   const newArray = array.map((elem) => {
@@ -98,49 +36,11 @@ export default function Home() {
   });
   console.log(newArray4);
 
-  const array5 = [3, 6, 9, 12, 15];
-  const newArray5 = array5.map((elem) => {
-    return elem;
-  });
-  console.log(newArray5);
-  console.log(newArray5, [4]);
-
-  const calculateion = (test: number, test2: number) => {
-    return test - test2;
-  };
-
-  const questionResponse = {
-    questionList: [
-      {
-        text: 'プログラミングスキルは必要ですか?',
-        description:
-          'いいえ、必要ありません。しかし、iSaraでは参加費以上の金額が稼げることを保障しています。 従って、事前通話面談時点で簡単なテストを実施し、場合によってはお断りをしております。この点だけはご了承ください。',
-      },
-      {
-        text: '参加費以上に稼げなかったらどうなりますか?',
-        description:
-          '宿泊費用が必要ですが、iSara提携のホステルに宿泊することになりますので心配はありません。',
-      },
-      {
-        text: '滞在中の宿泊先はどうなりますか?',
-        description:
-          '宿泊費用が必要ですが、iSara提携のホステルに宿泊することになりますので心配はありません。',
-      },
-      { text: 'aaa', description: 'cccc' },
-      { text: 'aaa', description: 'cccc' },
-      { text: 'aaa', description: 'cccc' },
-    ],
-  };
-
-  const test2 = { test: 'aaaa', value2: [1, 3], value3: { value3: 'aaa' } };
-
   const { questionList } = questionResponse;
 
   const test = questionResponse.questionList.map((elem) => {
     return elem.description;
   });
-
-  console.log(test);
 
   type Human = { id: string; name: string; age: number };
   const humans: Human[] = [
@@ -164,130 +64,6 @@ export default function Home() {
 
   console.log(humans[0]);
 
-  const HamburgerResponse = {
-    HamburgerList: [
-      {
-        menuIcon: '期間限定',
-        hamburgerImgUrl: 'https://www.mos.jp/img/menu/010611/010611_5.jpg',
-        menuIcon2: 'https://www.mos.jp/img/sp/menu/icon/ic_termLimited.gif',
-        title: 'ハニマスのとり竜田（たつた）バーガー ～ハニーマスタードソース使用～',
-        price: '¥450',
-        isDisplayLimitedIcon: true,
-      },
-      {
-        menuIcon: '期間限定',
-        hamburgerImgUrl: 'https://www.mos.jp/img/menu/010815/010815_5.jpg',
-        menuIcon2: 'https://www.mos.jp/img/sp/menu/icon/ic_termLimited.gif',
-        title: '和風旨（うま）だれのとり竜田（たつた）バーガー ～くし切りレモン添え～',
-        price: '¥410',
-        isDisplayLimitedIcon: true,
-      },
-      {
-        menuIcon: '期間限定',
-        hamburgerImgUrl: 'https://www.mos.jp/img/menu/010004/010004_5.jpg',
-        menuIcon2: 'https://www.mos.jp/img/sp/menu/icon/ic_termLimited.gif',
-        title: 'チキンバーガー',
-        price: '¥320',
-        isDisplayLimitedIcon: false,
-      },
-      {
-        menuIcon: '期間限定',
-        hamburgerImgUrl: 'https://www.mos.jp/img/menu/010320/010320_5.jpg',
-        menuIcon2: 'visibility-hidden',
-        title: 'モスバーガー',
-        price: '¥410',
-        isDisplayLimitedIcon: false,
-      },
-      {
-        menuIcon: '期間限定',
-        hamburgerImgUrl: 'https://www.mos.jp/img/menu/010340/010340_5.jpg',
-        menuIcon2: '',
-        title: 'モスチーズバーガー',
-        price: '¥440',
-        isDisplayLimitedIcon: false,
-      },
-      {
-        menuIcon: '期間限定',
-        hamburgerImgUrl: 'https://www.mos.jp/img/menu/010350/010350_5.jpg',
-        menuIcon2: '',
-        title: 'スパイシーモスバーガー',
-        price: '¥440',
-        isDisplayLimitedIcon: false,
-      },
-    ],
-  };
-
-  const profileResponse = {
-    profileList: [
-      {
-        profileImgUrl:
-          'https://faq-system.s3.amazonaws.com/information_assets/information/pictures/100000271/original_thumbnail_%282%29.png?1674531414',
-        brandImgUrl:
-          'https://faq-system.s3.amazonaws.com/information_assets/information/company_pictures/100000271/original_%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BEI-ne_logo_%281%29.png?1674120838',
-        title:
-          '「BOTANIST」や「SALONIA」を手掛けるI-ne。ecforceで新しいEC施策を実行しながらシステムコストカットに成功。',
-        industryName: 'パーソナルケア / ヘアケア',
-        companyName: '株式会社Ｉ－ｎｅ（アイエヌイー）',
-        tagList: ['システムの機能不備を解消したい', '運用コストを削減したい'],
-      },
-      {
-        profileImgUrl:
-          'https://faq-system.s3.amazonaws.com/information_assets/information/pictures/100000068/original_image.png?1664360942',
-        brandImgUrl:
-          'https://faq-system.s3.amazonaws.com/information_assets/information/company_pictures/100000068/original_%E3%82%BB%E3%83%B3%E3%83%88%E3%82%99%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE.png?1664360942',
-        title:
-          '「5年後も選ばれるブランドになるために」 ウェルネスブランド『cinque』が選んだecforceの定期コース機能',
-        industryName: 'パーソナルケア / ヘアケア',
-        companyName: 'センドグループ株式会社',
-        tagList: ['システムの機能不備を解消したい'],
-      },
-      {
-        profileImgUrl:
-          'https://faq-system.s3.amazonaws.com/information_assets/information/pictures/100000271/original_thumbnail_%282%29.png?1674531414',
-        brandImgUrl:
-          'https://faq-system.s3.amazonaws.com/information_assets/information/company_pictures/100000271/original_%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BEI-ne_logo_%281%29.png?1674120838',
-        title:
-          '「BOTANIST」や「SALONIA」を手掛けるI-ne。ecforceで新しいEC施策を実行しながらシステムコストカットに成功。',
-        industryName: 'パーソナルケア / ヘアケア',
-        companyName: '株式会社Ｉ－ｎｅ（アイエヌイー）',
-        tagList: ['システムの機能不備を解消したい', '運用コストを削減したい'],
-      },
-      {
-        profileImgUrl:
-          'https://faq-system.s3.amazonaws.com/information_assets/information/pictures/100000068/original_image.png?1664360942',
-        brandImgUrl:
-          'https://faq-system.s3.amazonaws.com/information_assets/information/company_pictures/100000068/original_%E3%82%BB%E3%83%B3%E3%83%88%E3%82%99%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE.png?1664360942',
-        title:
-          '「5年後も選ばれるブランドになるために」 ウェルネスブランド『cinque』が選んだecforceの定期コース機能',
-        industryName: 'パーソナルケア / ヘアケア',
-        companyName: 'センドグループ株式会社',
-        tagList: ['システムの機能不備を解消したい'],
-      },
-      {
-        profileImgUrl:
-          'https://faq-system.s3.amazonaws.com/information_assets/information/pictures/100000271/original_thumbnail_%282%29.png?1674531414',
-        brandImgUrl:
-          'https://faq-system.s3.amazonaws.com/information_assets/information/company_pictures/100000271/original_%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BEI-ne_logo_%281%29.png?1674120838',
-        title:
-          '「BOTANIST」や「SALONIA」を手掛けるI-ne。ecforceで新しいEC施策を実行しながらシステムコストカットに成功。',
-        industryName: 'パーソナルケア / ヘアケア',
-        companyName: '株式会社Ｉ－ｎｅ（アイエヌイー）',
-        tagList: ['システムの機能不備を解消したい', '運用コストを削減したい'],
-      },
-      {
-        profileImgUrl:
-          'https://faq-system.s3.amazonaws.com/information_assets/information/pictures/100000068/original_image.png?1664360942',
-        brandImgUrl:
-          'https://faq-system.s3.amazonaws.com/information_assets/information/company_pictures/100000068/original_%E3%82%BB%E3%83%B3%E3%83%88%E3%82%99%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE.png?1664360942',
-        title:
-          '「5年後も選ばれるブランドになるために」 ウェルネスブランド『cinque』が選んだecforceの定期コース機能',
-        industryName: 'パーソナルケア / ヘアケア',
-        companyName: 'センドグループ株式会社',
-        tagList: ['システムの機能不備を解消したい'],
-      },
-    ],
-  };
-
   return (
     <>
       <>
@@ -297,9 +73,27 @@ export default function Home() {
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <link rel='icon' href='/favicon.ico' />
         </Head>
+
+        <div className={styles.container}>
+          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+            {panResponse.PanList.map((eachPan, index) => {
+              return (
+                <PanMenu
+                  key={index}
+                  newIconUrl={eachPan.newIconUrl}
+                  panImgUrl={eachPan.panImgUrl}
+                  releaseDate={eachPan.releaseDate}
+                  title={eachPan.title}
+                  isDisplayLimitedIcon={eachPan.isDisplayLimitedIcon}
+                />
+              );
+            })}
+          </div>
+        </div>
+
         <div className={styles.content}>
           <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-            {HamburgerResponse.HamburgerList.map((eachHamburger, index) => {
+            {hamburgerResponse.HamburgerList.map((eachHamburger, index) => {
               return (
                 <HamburgerMenu
                   key={index}
