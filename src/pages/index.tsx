@@ -1,6 +1,7 @@
 /* eslint-disable import/named */
 import axios from 'axios';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { AccordionMenu } from '../components/AccordionMenu';
 import { HamburgerMenu } from '../components/HamburgerMenu';
@@ -26,6 +27,7 @@ export default function Home() {
   const [newAge, setNewAge] = useState('');
   const [newNote, setNewNote] = useState('');
   const [refreshCount, setRefreshCount] = useState(0);
+  const router = useRouter();
 
   useEffect(() => {
     axios
@@ -106,6 +108,7 @@ export default function Home() {
       </Head>
 
       <div className={styles.container}>
+        <button onClick={() => router.push('/test')}>新しいページ</button>
         <div style={{ display: 'flex', flexWrap: 'wrap' }}>
           {panResponse.PanList.map((eachPan, index) => {
             return (
