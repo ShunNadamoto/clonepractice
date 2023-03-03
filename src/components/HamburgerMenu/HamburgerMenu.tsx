@@ -20,7 +20,7 @@ export const HamburgerMenu: FC<Props> = ({
 }) => {
   return (
     <div className={styles.content}>
-      {isDisplayLimitedIcon && <div className={styles.content__MenuIcon}> {'期間限定'} </div>}
+      {isDisplayLimitedIcon && <div className={styles.content__menuIcon}> {'期間限定'} </div>}
       <div className={styles.content__MenuBox}>
         <img src={hamburgerImgUrl} alt='ハンバーガー写真' />
         <img src={menuIcon2} alt='特徴' />
