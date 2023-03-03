@@ -21,6 +21,21 @@ export const questionResponse = {
   ],
 };
 
+export const movieResponse = {
+  movieList: [
+    {
+      movieImgUrl:
+        'https://faq-system.s3.amazonaws.com/information_assets/information/pictures/100000271/original_thumbnail_%282%29.png?1674531414',
+      ranking:
+        'https://faq-system.s3.amazonaws.com/information_assets/information/company_pictures/100000271/original_%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BEI-ne_logo_%281%29.png?1674120838',
+      title:
+        '「BOTANIST」や「SALONIA」を手掛けるI-ne。ecforceで新しいEC施策を実行しながらシステムコストカットに成功。',
+      companyName: '株式会社Ｉ－ｎｅ（アイエヌイー）',
+      introduction: '',
+      tagList: ['システムの機能不備を解消したい', '運用コストを削減したい'],
+    },
+  ],
+};
 export const hamburgerResponse = {
   HamburgerList: [
     {

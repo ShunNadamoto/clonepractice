@@ -24,7 +24,7 @@ export const PanMenu: FC<Props> = ({
         </div>
       )}
       <div className={styles.container__menuBox}>
-        <img src={panImgUrl} alt='パン写真' />
+        <img className={styles.container__menuBox__img} src={panImgUrl} alt='パン写真' />
         <div className={styles.container__releaseDate}>{releaseDate}</div>
         <div className={styles.container__title}>{title}</div>
       </div>
