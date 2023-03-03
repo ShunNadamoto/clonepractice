@@ -37,6 +37,12 @@ export default function Home() {
       .catch((error) => console.log(error));
   }, [refreshCount]);
 
+  const resetInput = () => {
+    setNewName('');
+    setNewAge('');
+    setNewNote('');
+  };
+
   console.log(personList);
 
   // const array = [1, 2, 3, 4, 5, 6];
@@ -144,6 +150,7 @@ export default function Home() {
                 registerDate: '0214-03-03T04:14:25',
               })
               .then((response) => {
+                resetInput();
                 setRefreshCount(refreshCount + 1);
               })
               .catch((error) => console.log(error))
