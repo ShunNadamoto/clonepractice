@@ -64,6 +64,18 @@ export default function Home() {
 
   console.log(humans[0]);
 
+  const array3 = [1, 2, 3, 4];
+  const newArray3 = array3.map((elem) => elem * 2);
+  const newArray5 = array3.map((elem, index) => elem * index);
+
+  const newArray6 = array3.map((elem, index) => {
+    const word = `${elem}はindex番号${index}番です`;
+    return word;
+  });
+  console.log(newArray6);
+
+  const sum = (num1: number, num2: number) => num1 + num2;
+
   return (
     <>
       <>
