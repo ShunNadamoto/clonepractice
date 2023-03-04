@@ -1,0 +1,14 @@
+.container {
+  width: 200px;
+  &__movieImgUrl {
+    margin-bottom: 10px;
+  }
+
+  &__ranking {
+    font-size: 20px;
+  }
+
+  &__title {
+    color: red;
+  }
+}

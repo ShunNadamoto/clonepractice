@@ -4,12 +4,21 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { AccordionMenu } from '../components/AccordionMenu';
+import { Book } from '../components/Book';
 import { HamburgerMenu } from '../components/HamburgerMenu';
 import { IntroductionCard } from '../components/IntroductionCard';
 import { MeritCard } from '../components/MeritCard';
+import { Movie } from '../components/Movie';
 import { PanMenu } from '../components/PanMenu';
 import { Profile } from '../components/Profile';
-import { questionResponse, hamburgerResponse, profileResponse, panResponse } from '../constant';
+import {
+  questionResponse,
+  hamburgerResponse,
+  profileResponse,
+  panResponse,
+  movieResponse,
+  bookResponse,
+} from '../constant';
 import { sum } from '../lib/tool';
 import styles from './index.module.scss';
 
@@ -47,26 +56,6 @@ export default function Home() {
 
   console.log(personList);
 
-  // const array = [1, 2, 3, 4, 5, 6];
-  // const newArray = array.map((elem) => {
-  //   return elem;
-  // });
-
-  // const newArray2 = array.filter((elem) => {
-  //   return elem < 4;
-  // });
-
-  // const array4 = [2, 4, 6, 8, 10];
-  // const newArray4 = array4.map((elem) => {
-  //   return elem;
-  // });
-
-  // const { questionList } = questionResponse;
-
-  // const test = questionResponse.questionList.map((elem) => {
-  //   return elem.description;
-  // });
-
   type Human = { id: string; name: string; age: number };
   const humans: Human[] = [
     { id: '1', name: '斉藤', age: 20 },
@@ -87,16 +76,29 @@ export default function Home() {
     );
   };
 
-  // const array3 = [1, 2, 3, 4];
-  // const newArray3 = array3.map((elem) => elem * 2);
-  // const newArray5 = array3.map((elem, index) => elem * index);
+  const sum = (a: number, b: number) => {
+    return a + b;
+  };
+  console.log(sum(1, 2));
+  console.log(sum(1, 2));
+  console.log(sum(1, 2));
 
-  // const newArray6 = array3.map((elem, index) => {
-  //   const word = `${elem}はindex番号${index}番です`;
-  //   return word;
-  // });
+  const sum1 = (a: number, b: number) => {
+    return a + b;
+  };
 
-  // const sum = (num1: number, num2: number) => num1 + num2;
+  const sum2 = (a: string, b: string) => {
+    return `${a}は${b}です。`;
+  };
+
+  console.log(sum2('田中', '人間'));
+
+  const array8 = [1, 3, 5, 7, 9];
+  const newArray8 = array8.map((elem) => {
+    return elem * 2;
+  });
+  const array9 = [1, 2, 3, 4];
+  const newArray9 = array9.map((elem) => elem * 2);
 
   return (
     <>
@@ -122,6 +124,30 @@ export default function Home() {
             );
           })}
         </div>
+      </div>
+
+      <div className={styles.container}>
+        {movieResponse.movieList.map((eachMovie, index) => (
+          <Movie
+            key={index}
+            movieImgUrl={eachMovie.movieImgUrl}
+            ranking={eachMovie.ranking}
+            title={eachMovie.title}
+          />
+        ))}
+        ;
+      </div>
+
+      <div className={styles.container}>
+        {bookResponse.bookList.map((eachBook, index) => (
+          <Book
+            key={index}
+            bookImgUrl={eachBook.bookImgUrl}
+            ranking={eachBook.ranking}
+            title={eachBook.title}
+          />
+        ))}
+        ;
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column' }}>

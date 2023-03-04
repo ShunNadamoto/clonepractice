@@ -21,21 +21,50 @@ export const questionResponse = {
   ],
 };
 
+export const bookResponse = {
+  bookList: [
+    {
+      bookImgUrl: 'https://img.honto.jp/item/1/133/180/30560227_1.webp',
+      ranking: '１位',
+      title: 'キャラ絵で学ぶ！キリスト教図鑑',
+    },
+    {
+      bookImgUrl: 'https://img.honto.jp/item/1/133/180/32247166_1.webp',
+      ranking: '２位',
+      title: '安倍晋三回顧録',
+    },
+    {
+      bookImgUrl: 'https://img.honto.jp/item/1/133/180/32280592_1.webp',
+      ranking: '３位',
+      title: 'お探し物は図書室まで',
+    },
+  ],
+};
+
 export const movieResponse = {
   movieList: [
     {
       movieImgUrl:
-        'https://faq-system.s3.amazonaws.com/information_assets/information/pictures/100000271/original_thumbnail_%282%29.png?1674531414',
-      ranking:
-        'https://faq-system.s3.amazonaws.com/information_assets/information/company_pictures/100000271/original_%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BEI-ne_logo_%281%29.png?1674120838',
-      title:
-        '「BOTANIST」や「SALONIA」を手掛けるI-ne。ecforceで新しいEC施策を実行しながらシステムコストカットに成功。',
-      companyName: '株式会社Ｉ－ｎｅ（アイエヌイー）',
-      introduction: '',
-      tagList: ['システムの機能不備を解消したい', '運用コストを削減したい'],
+        'https://eiga.k-img.com/images/movie/98737/photo/faf98fcb340e4302/160.jpg?1675127609',
+      ranking: '１位',
+      title: 'タイタニック　ジェームズ・キャメロン25周年3Dリマスター',
+    },
+    {
+      movieImgUrl:
+        'https://eiga.k-img.com/images/movie/98553/photo/ecc59400fecc4d95/160.jpg?1670914352',
+      ranking: '２位',
+      title: '「鬼滅の刃」上弦集結、そして刀鍛冶の里へ',
+    },
+    {
+      movieImgUrl: 'https://eiga.k-img.com/images/movie/96731/photo/7d87873332aab018/160.jpg',
+      ranking: '３位',
+      title: 'シャイロックの子供たち',
     },
   ],
 };
+
+// console.log(movieResponse.movieList[0].movieImgUrl);
+
 export const hamburgerResponse = {
   HamburgerList: [
     {
@@ -88,6 +117,11 @@ export const hamburgerResponse = {
     },
   ],
 };
+
+// console.log(hamburgerResponse.HamburgerList[5].title);
+
+// console.log(hamburgerResponse.HamburgerList[3].menuIcon2);
+// //
 
 export const profileResponse = {
   profileList: [

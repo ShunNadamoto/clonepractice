@@ -1,0 +1,16 @@
+.container {
+  &__movieImgUrl {
+    margin-left: 30px;
+  }
+
+  &__ranking {
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: aqua;
+  }
+
+  &__title {
+    color: blue;
+    background-color: beige;
+  }
+}
