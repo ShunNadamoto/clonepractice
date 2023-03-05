@@ -20,21 +20,51 @@ export const questionResponse = {
     { text: 'aaa', description: 'cccc' },
   ],
 };
+export const yoshinoyaResponse = {};
+
+export const sukiyaResponse = {
+  sukiyaList: [
+    {
+      icon1: 'https://www.sukiya.jp/menu/common/img/icon_menu_new.png',
+      icon2: 'https://www.sukiya.jp/menu/common/img/icon_menu_limited_time.png',
+      icon3: 'https://www.sukiya.jp/menu/common/img/icon_menu_recommend.png',
+      menu: '麻辣もやし牛丼',
+      imgUrl: 'https://www.sukiya.jp/menu/img/in/photo_gyudon_111400.jpg',
+      isDisplayLimitedIcon: true,
+    },
+    {
+      icon1: 'https://www.sukiya.jp/menu/common/img/icon_menu_new.png',
+      icon2: 'https://www.sukiya.jp/menu/common/img/icon_menu_limited_time.png',
+      icon3: 'https://www.sukiya.jp/menu/common/img/icon_menu_recommend.png',
+      menu: 'にんにく麻辣もやし牛丼',
+      imgUrl: 'https://www.sukiya.jp/menu/img/in/photo_gyudon_111500.jpg',
+      isDisplayLimitedIcon: true,
+    },
+    {
+      icon1: 'https://www.sukiya.jp/menu/common/img/icon_menu_new.png',
+      icon2: 'https://www.sukiya.jp/menu/common/img/icon_menu_limited_time.png',
+      icon3: 'https://www.sukiya.jp/menu/common/img/icon_menu_recommend.png',
+      menu: '炭火焼きほろほろチキン牛丼',
+      imgUrl: '	https://www.sukiya.jp/menu/img/in/photo_gyudon_110700.jpg',
+      isDisplayLimitedIcon: false,
+    },
+  ],
+};
 
 export const bookResponse = {
   bookList: [
     {
-      bookImgUrl: 'https://img.honto.jp/item/1/133/180/30560227_1.webp',
+      imgUrl: 'https://img.honto.jp/item/1/133/180/30560227_1.webp',
       ranking: '１位',
       title: 'キャラ絵で学ぶ！キリスト教図鑑',
     },
     {
-      bookImgUrl: 'https://img.honto.jp/item/1/133/180/32247166_1.webp',
+      imgUrl: 'https://img.honto.jp/item/1/133/180/32247166_1.webp',
       ranking: '２位',
       title: '安倍晋三回顧録',
     },
     {
-      bookImgUrl: 'https://img.honto.jp/item/1/133/180/32280592_1.webp',
+      imgUrl: 'https://img.honto.jp/item/1/133/180/32280592_1.webp',
       ranking: '３位',
       title: 'お探し物は図書室まで',
     },
@@ -44,26 +74,22 @@ export const bookResponse = {
 export const movieResponse = {
   movieList: [
     {
-      movieImgUrl:
-        'https://eiga.k-img.com/images/movie/98737/photo/faf98fcb340e4302/160.jpg?1675127609',
+      imgUrl: 'https://eiga.k-img.com/images/movie/98737/photo/faf98fcb340e4302/160.jpg?1675127609',
       ranking: '１位',
       title: 'タイタニック　ジェームズ・キャメロン25周年3Dリマスター',
     },
     {
-      movieImgUrl:
-        'https://eiga.k-img.com/images/movie/98553/photo/ecc59400fecc4d95/160.jpg?1670914352',
+      imgUrl: 'https://eiga.k-img.com/images/movie/98553/photo/ecc59400fecc4d95/160.jpg?1670914352',
       ranking: '２位',
       title: '「鬼滅の刃」上弦集結、そして刀鍛冶の里へ',
     },
     {
-      movieImgUrl: 'https://eiga.k-img.com/images/movie/96731/photo/7d87873332aab018/160.jpg',
+      imgUrl: 'https://eiga.k-img.com/images/movie/96731/photo/7d87873332aab018/160.jpg',
       ranking: '３位',
       title: 'シャイロックの子供たち',
     },
   ],
 };
-
-// console.log(movieResponse.movieList[0].movieImgUrl);
 
 export const hamburgerResponse = {
   HamburgerList: [

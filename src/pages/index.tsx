@@ -1,4 +1,3 @@
-/* eslint-disable import/named */
 import axios from 'axios';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -11,6 +10,8 @@ import { MeritCard } from '../components/MeritCard';
 import { Movie } from '../components/Movie';
 import { PanMenu } from '../components/PanMenu';
 import { Profile } from '../components/Profile';
+import { Sukiya } from '../components/Sukiya';
+import { Yoshinoya } from '../components/Yoshinoya';
 import {
   questionResponse,
   hamburgerResponse,
@@ -18,6 +19,7 @@ import {
   panResponse,
   movieResponse,
   bookResponse,
+  sukiyaResponse,
 } from '../constant';
 import { sum } from '../lib/tool';
 import styles from './index.module.scss';
@@ -79,13 +81,6 @@ export default function Home() {
   const sum = (a: number, b: number) => {
     return a + b;
   };
-  console.log(sum(1, 2));
-  console.log(sum(1, 2));
-  console.log(sum(1, 2));
-
-  const sum1 = (a: number, b: number) => {
-    return a + b;
-  };
 
   const sum2 = (a: string, b: string) => {
     return `${a}は${b}です。`;
@@ -111,6 +106,23 @@ export default function Home() {
 
       <div className={styles.container}>
         <button onClick={() => router.push('/test')}>新しいページ</button>
+
+        <div className={styles.content}>
+          {sukiyaResponse.sukiyaList.map((eachSukiya, index) => {
+            return (
+              <Sukiya
+                key={index}
+                icon1={eachSukiya.icon1}
+                icon2={eachSukiya.icon2}
+                icon3={eachSukiya.icon3}
+                menu={eachSukiya.menu}
+                imgUrl={eachSukiya.imgUrl}
+                isDisplayLimitedIcon={eachSukiya.isDisplayLimitedIcon}
+              />
+            );
+          })}
+        </div>
+
         <div style={{ display: 'flex', flexWrap: 'wrap' }}>
           {panResponse.PanList.map((eachPan, index) => {
             return (
@@ -130,7 +142,7 @@ export default function Home() {
         {movieResponse.movieList.map((eachMovie, index) => (
           <Movie
             key={index}
-            movieImgUrl={eachMovie.movieImgUrl}
+            imgUrl={eachMovie.imgUrl}
             ranking={eachMovie.ranking}
             title={eachMovie.title}
           />
@@ -142,14 +154,18 @@ export default function Home() {
         {bookResponse.bookList.map((eachBook, index) => (
           <Book
             key={index}
-            bookImgUrl={eachBook.bookImgUrl}
+            imgUrl={eachBook.imgUrl}
             ranking={eachBook.ranking}
             title={eachBook.title}
           />
         ))}
         ;
       </div>
-
+      <Book
+        imgUrl='https://img.honto.jp/item/1/133/180/30560227_1.webp'
+        ranking='cccc'
+        title='ddd'
+      />
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <input
           type='text'
