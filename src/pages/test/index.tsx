@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { Sukiya } from './components/Sukiya';
+import { Sukiya } from '../../components/Sukiya2';
 
 const Test: NextPage = () => {
   console.log('aaa');
@@ -31,7 +31,11 @@ const Test: NextPage = () => {
       <div>aaaaa</div>
       <div>reaefafad</div>
       <Sukiya
-        tagUrlList={['https://www.sukiya.jp/menu/common/img/icon_menu_new.png']}
+        tagUrlList={[
+          'https://www.sukiya.jp/menu/common/img/icon_menu_new.png',
+          'https://www.sukiya.jp/menu/common/img/icon_menu_new.png',
+          'https://www.sukiya.jp/menu/common/img/icon_menu_new.png',
+        ]}
         menu='aa'
         imgUrl='https://www.sukiya.jp/menu/img/in/photo_gyudon_111400.jpg'
       />
