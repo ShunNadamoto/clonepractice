@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import { FC } from 'react';
 
 const Test: NextPage = () => {
   console.log('aaa');
