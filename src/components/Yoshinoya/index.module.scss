@@ -1,16 +1,36 @@
 .content {
+  width: 200px;
+
   &__tag1 {
-    margin-left: 30px;
+    width: 40px;
+    font-size: 14px;
+    position: relative;
+    background: #f08300;
+    color: #fff;
   }
 
   &__tag2 {
-    font-size: 15px;
-    font-family: 'Times New Roman', Times, serif;
-    background-color: aqua;
+    float: right;
+    width: 45px;
+    font-size: 20px;
+    background-image: 'https://www.yoshinoya.com/assets/images/budge.svg';
+    background: #f08300;
+    color: #fff;
   }
 
-  &__tag3 {
-    color: blue;
-    background-color: beige;
+  &__img {
+    width: 200px;
+    margin-bottom: 10px;
+  }
+
+  &__menu {
+    font-size: 20px;
+  }
+
+  &__price1 {
+    font-size: 22px;
+  }
+  &__price2 {
+    font-size: 16px;
   }
 }
