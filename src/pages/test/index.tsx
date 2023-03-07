@@ -1,7 +1,9 @@
 import type { NextPage } from 'next';
+import { Travel } from '..//../components/Travel';
 import { Amazon } from '../../components/Amazon';
 import { Sukiya } from '../../components/Sukiya2';
 import { Yoshinoya } from '../../components/Yoshinoya';
+import styles from './index.module.scss';
 
 const Test: NextPage = () => {
   const sum2 = (a: string, b: string) => {
@@ -41,56 +43,54 @@ const Test: NextPage = () => {
         menu='牛丼'
         imgUrl='https://www.sukiya.jp/menu/img/in/photo_gyudon_100100.jpg'
       />
-      <div>
+      <div className={styles.yoshinoyaBox}>
         <Yoshinoya
-          tag1='NEW'
-          tag2='期間限定'
-          imgUrl='https://www.yoshinoya.com/wp-content/uploads/2023/02/24201838/teppan_gyu_yakiniku_teisyoku.jpg'
+          isDisplayNewTag={true}
+          isDisplayLimitedTag={false}
+          itemImgUrl='https://www.yoshinoya.com/wp-content/uploads/2023/02/24201838/teppan_gyu_yakiniku_teisyoku.jpg'
           menu='鉄板牛焼肉定食'
           price1='648円'
           price2='（税込712円)'
         />
         <Yoshinoya
-          tag1='NEW'
-          tag2='期間限定'
-          imgUrl='https://www.yoshinoya.com/wp-content/uploads/2023/02/24201839/teppan_gyu_karubi_teisyoku-1.jpg'
+          isDisplayNewTag={false}
+          isDisplayLimitedTag={true}
+          itemImgUrl='https://www.yoshinoya.com/wp-content/uploads/2023/02/24201839/teppan_gyu_karubi_teisyoku-1.jpg'
           menu='鉄板牛カルビ定食'
           price1='648円'
           price2='（税込712円)'
         />
       </div>
-      <Amazon
-        itemImgUrl='https://m.media-amazon.com/images/I/51r5bP4-KLL._AC_SR400,600_.jpg'
-        item='伊藤久右衛門 抹茶 ホワイトデー 宇治抹茶いちごチョコレートトリュフ お茶苺さん 抹茶スイーツ ギフト'
-        review='⭐︎⭐︎⭐︎⭐︎☆ 3,525'
-        sale='47%OFF 特選タイムセール'
-        price='￥889 (￥889/個) 参考価格:￥1,690'
-        descripution='初回のご注文は送料無料です。詳細'
+      <Amazon />
+
+      <Travel
+        ranking='1位'
+        place='札幌/北海道'
+        imgUrl='https://www.tour.ne.jp/j_special/ranking/images/index_spring/img-spring-area-01.jpg'
+        text='雪解けと共に花々が芽吹き出す札幌の春！　ゴールデンウィーク前後には桜が見ごろを迎えます。自然とアートが融合した、美しい景観を楽しめる「モエレ沼公園」や桜と梅が同時に咲く「北海道神宮」など桜スポットは多数。また、札幌駅から車でおよそ50分ほどの国営滝野すずらん丘陵公園では、5月下旬からチューリップが咲き乱れます◎　公園内をレンタサイクルで回り、春の訪れを感じてみましょう♪'
+        tagList={[
+          'ツアー',
+          'ホテル・旅館',
+          '航空券',
+          '航空券＋ホテル',
+          '日帰り旅行・体験プラン',
+          'レンタカー',
+        ]}
       />
-      <Amazon
-        itemImgUrl='https://m.media-amazon.com/images/I/51WrHx-ll4L._AC_.jpg'
-        item='伊藤久右衛門 抹茶 ホワイトデー 抹茶生チョコレート尽くし ( 宇治抹茶 ほうじ茶 ) 32粒入'
-        review='⭐︎⭐︎⭐︎☆☆ 419'
-        sale='20%OFF 特選タイムセール'
-        price='￥2,392 (￥2,392/個) 参考価格:￥2,999'
-        descripution='詳細'
-      />
-      <Amazon
-        itemImgUrl=' https://m.media-amazon.com/images/I/51MvcPdtU6L._AC_SR400,600_.jpg'
-        item='伊藤久右衛門 ホワイトデー 抹茶スイーツ京のはんなり(抹茶いちごトリュフ　抹茶プリン　抹茶チョコレート）詰め合わせ'
-        review='⭐︎⭐︎⭐︎☆☆ 218'
-        sale='20%OFF 特選タイムセール'
-        price='￥2,498 (￥2,498/個) 参考価格:￥3,500'
-        descripution='詳細'
-      />
-      <Amazon
-        itemImgUrl='https://m.media-amazon.com/images/I/51rIxZ7YLfL._AC_SR400,600_.jpg
-        '
-        item='伊藤久右衛門 ホワイトデー 宇治抹茶ほうじ茶ショコラコレクション9種チョコ詰合せ９個入りボンボントリュフ9種セット'
-        review='⭐︎⭐︎☆☆☆ 105'
-        sale='24%OFF 特選タイムセール'
-        price='￥3,192 (￥3,192/個) 参考価格:￥4,200'
-        descripution='詳細'
+      <Travel
+        ranking='2位'
+        place='博多/福岡'
+        imgUrl='https://www.tour.ne.jp/j_special/ranking/images/index_spring/img-spring-area-02.jpg'
+        text='もつ鍋やラーメン、鉄なべ餃子などグルメの宝庫である博多。春の穏やかな風に当たりながら屋台グルメを楽しむのも◎。地元の常連客が比較的多い天神の屋台街は、駅からも近くおすすめです！　ゴールデンウィークには200万人以上の人出でにぎわう伝統行事、「博多どんたく港まつり」が開催される予定です。さまざまな衣装を身にまとった博多どんたく隊が街中を練り歩くパレードは圧巻！　国内でも有数のお祭りを間近で体感しましょう！'
+        tagList={[
+          'ツアー',
+          'ホテル・旅館',
+          '航空券',
+          '航空券＋ホテル',
+          '新幹線＋ホテル',
+          '日帰り旅行・体験プラン',
+          'レンタカー',
+        ]}
       />
     </>
   );
