@@ -1,8 +1,25 @@
-.content {
-  &__logo {
+.container {
+  display: inline-block;
+  width: 300px;
+
+  & + & {
+    margin-left: 20px;
+  }
+  &__item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 15px;
   }
 
-  &__sale {
+  &__review {
+    font-size: 12px;
+  }
+
+  &__saleList {
+  }
+
+  &__price {
   }
 
   &__descripution {

@@ -1,26 +1,15 @@
 import type { NextPage } from 'next';
+import { Amazon } from '../../components/Amazon';
 import { Sukiya } from '../../components/Sukiya2';
 import { Yoshinoya } from '../../components/Yoshinoya';
 
 const Test: NextPage = () => {
-  const caluculation2 = (a: number, b: number) => a - b;
-  console.log(caluculation2(2, 1));
   const sum2 = (a: string, b: string) => {
     return `${a}は${b}です。`;
   };
-  const sum３ = (a: string, b: string) => `${a}は${b}です。`;
-  console.log(sum2('松岡', 'PC音痴'));
-  console.log(sum2('千里さん', '優しい人'));
-  console.log(sum2('田中さん', '愛のある指導者'));
-  const sum = (a: string, b: string) => `${a}は${b}します。`;
-  console.log(sum('松岡', 'プログラミングの勉強を'));
-
-  const array = [1, 2, 3];
-  const newArray = array.map((elem) => elem * 2);
-  console.log(newArray);
 
   return (
-    <div>
+    <>
       <div>新しいページ</div>
       <div>aaaaa</div>
       <div>reaefafad</div>
@@ -70,7 +59,40 @@ const Test: NextPage = () => {
           price2='（税込712円)'
         />
       </div>
-    </div>
+      <Amazon
+        itemImgUrl='https://m.media-amazon.com/images/I/51r5bP4-KLL._AC_SR400,600_.jpg'
+        item='伊藤久右衛門 抹茶 ホワイトデー 宇治抹茶いちごチョコレートトリュフ お茶苺さん 抹茶スイーツ ギフト'
+        review='⭐︎⭐︎⭐︎⭐︎☆ 3,525'
+        sale='47%OFF 特選タイムセール'
+        price='￥889 (￥889/個) 参考価格:￥1,690'
+        descripution='初回のご注文は送料無料です。詳細'
+      />
+      <Amazon
+        itemImgUrl='https://m.media-amazon.com/images/I/51WrHx-ll4L._AC_.jpg'
+        item='伊藤久右衛門 抹茶 ホワイトデー 抹茶生チョコレート尽くし ( 宇治抹茶 ほうじ茶 ) 32粒入'
+        review='⭐︎⭐︎⭐︎☆☆ 419'
+        sale='20%OFF 特選タイムセール'
+        price='￥2,392 (￥2,392/個) 参考価格:￥2,999'
+        descripution='詳細'
+      />
+      <Amazon
+        itemImgUrl=' https://m.media-amazon.com/images/I/51MvcPdtU6L._AC_SR400,600_.jpg'
+        item='伊藤久右衛門 ホワイトデー 抹茶スイーツ京のはんなり(抹茶いちごトリュフ　抹茶プリン　抹茶チョコレート）詰め合わせ'
+        review='⭐︎⭐︎⭐︎☆☆ 218'
+        sale='20%OFF 特選タイムセール'
+        price='￥2,498 (￥2,498/個) 参考価格:￥3,500'
+        descripution='詳細'
+      />
+      <Amazon
+        itemImgUrl='https://m.media-amazon.com/images/I/51rIxZ7YLfL._AC_SR400,600_.jpg
+        '
+        item='伊藤久右衛門 ホワイトデー 宇治抹茶ほうじ茶ショコラコレクション9種チョコ詰合せ９個入りボンボントリュフ9種セット'
+        review='⭐︎⭐︎☆☆☆ 105'
+        sale='24%OFF 特選タイムセール'
+        price='￥3,192 (￥3,192/個) 参考価格:￥4,200'
+        descripution='詳細'
+      />
+    </>
   );
 };
 
