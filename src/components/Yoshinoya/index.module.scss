@@ -1,16 +1,45 @@
-.content {
-  &__tag1 {
-    margin-left: 30px;
+.container {
+  position: relative;
+
+  & + & {
+    margin-left: 5px;
   }
 
-  &__tag2 {
+  &__newTag {
     font-size: 15px;
-    font-family: 'Times New Roman', Times, serif;
-    background-color: aqua;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #f08300;
+    padding: 5px 8px;
   }
 
-  &__tag3 {
-    color: blue;
-    background-color: beige;
+  &__limitedTag {
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    background: #f08300;
+    padding: 5px 8px;
+  }
+
+  &__img {
+    width: 300px;
+    margin-bottom: 10px;
+  }
+
+  &__menu {
+    font-size: 20px;
+  }
+
+  &__price1 {
+    font-size: 22px;
+  }
+  &__price2 {
+    font-size: 16px;
   }
 }
