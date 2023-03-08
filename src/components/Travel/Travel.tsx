@@ -11,15 +11,17 @@ type Props = {
 
 export const Travel: FC<Props> = ({ ranking, place, imgUrl, text, tagList }) => (
   <div className={styles.container}>
-    <div className={styles.container__ranking}>{ranking}</div>
-    <div className={styles.container__place}>{place}</div>
+    <div className={styles.container__rankingBox__ranking}>{ranking}</div>
+    <div className={styles.container__rankingBox__place}>{place}</div>
+
     <img className={styles.container__img} src={imgUrl} />
     <div className={styles.container__text}>{text}</div>
     <div className={styles.container__tagBox}>
       {tagList.map((eachTag, index) => (
-        <div key={index}>{eachTag}</div>
+        <button className={styles.container__tagBox__button} key={index}>
+          {eachTag}
+        </button>
       ))}
-      <button></button>
     </div>
   </div>
 );
