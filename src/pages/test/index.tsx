@@ -65,32 +65,32 @@ const Test: NextPage = () => {
 
       <div className={styles.travelBox}>
         <Travel
-          ranking='1位'
+          rank={1}
           place='札幌/北海道'
           imgUrl='https://www.tour.ne.jp/j_special/ranking/images/index_spring/img-spring-area-01.jpg'
-          text='雪解けと共に花々が芽吹き出す札幌の春！　ゴールデンウィーク前後には桜が見ごろを迎えます。自然とアートが融合した、美しい景観を楽しめる「モエレ沼公園」や桜と梅が同時に咲く「北海道神宮」など桜スポットは多数。また、札幌駅から車でおよそ50分ほどの国営滝野すずらん丘陵公園では、5月下旬からチューリップが咲き乱れます◎　公園内をレンタサイクルで回り、春の訪れを感じてみましょう♪'
+          descripution='雪解けと共に花々が芽吹き出す札幌の春！　ゴールデンウィーク前後には桜が見ごろを迎えます。自然とアートが融合した、美しい景観を楽しめる「モエレ沼公園」や桜と梅が同時に咲く「北海道神宮」など桜スポットは多数。また、札幌駅から車でおよそ50分ほどの国営滝野すずらん丘陵公園では、5月下旬からチューリップが咲き乱れます◎　公園内をレンタサイクルで回り、春の訪れを感じてみましょう♪'
           tagList={[
-            'ツアー',
-            'ホテル・旅館',
-            '航空券',
-            '航空券＋ホテル',
-            '日帰り旅行・体験プラン',
-            'レンタカー',
-          ]}
-        />
-        <Travel
-          ranking='2位'
-          place='博多/福岡'
-          imgUrl='https://www.tour.ne.jp/j_special/ranking/images/index_spring/img-spring-area-02.jpg'
-          text='もつ鍋やラーメン、鉄なべ餃子などグルメの宝庫である博多。春の穏やかな風に当たりながら屋台グルメを楽しむのも◎。地元の常連客が比較的多い天神の屋台街は、駅からも近くおすすめです！　ゴールデンウィークには200万人以上の人出でにぎわう伝統行事、「博多どんたく港まつり」が開催される予定です。さまざまな衣装を身にまとった博多どんたく隊が街中を練り歩くパレードは圧巻！　国内でも有数のお祭りを間近で体感しましょう！'
-          tagList={[
-            'ツアー',
-            'ホテル・旅館',
-            '航空券',
-            '航空券＋ホテル',
-            '新幹線＋ホテル',
-            '日帰り旅行・体験プラン',
-            'レンタカー',
+            { text: 'ツアー', href: 'https://www.tour.ne.jp/j_tour/list/?dst=1-3-37' },
+            {
+              text: 'ホテル・旅館',
+              href: 'https://www.tour.ne.jp/j_hotel/list/?area1=22&city1=10006&coty1=21&dist1=1',
+            },
+            {
+              text: '航空券',
+              href: 'https://www.tour.ne.jp/j_air/list/?arr_in=TYO&arr_out=CTS&dpt_in=CTS&dpt_out=TYO',
+            },
+            {
+              text: '航空券＋ホテル',
+              href: 'https://www.tour.ne.jp/j_dp/list/?block=3&carrier=ana&out_airport=HND-CTS&state=1',
+            },
+            {
+              text: '日帰り旅行・体験プラン',
+              href: 'https://www.tour.ne.jp/j_optional/list/?area=1-52-5201#sort=15',
+            },
+            {
+              text: 'レンタカー',
+              href: 'https://www.tour.ne.jp/j_rentacar/list/?rental_area_id=101&rental_area_type=2&return_area=0',
+            },
           ]}
         />
       </div>
