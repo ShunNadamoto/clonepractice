@@ -1,19 +1,46 @@
 .container {
-  &__ranking {
+  width: 1000px;
+  &__rankingBox {
+    display: flex;
+    &__ranking {
+      text-align: center;
+      width: 100px;
+      background-color: beige;
+    }
+    &__place {
+      font-weight: bold;
+      font-size: 25px;
+    }
   }
-
-  &__place {
-  }
-
   &__img {
+    width: 800px;
+    display: block;
+    margin: auto;
   }
 
   &__text {
+    font-style: initial;
+    width: 960x;
+    margin: 20px;
   }
 
   &__tagBox {
-    background-color: #69a30c;
-    color: #fff;
-    border-radius: 5%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 960px;
+
+    &__button {
+      background-color: #69a30c;
+      font-size: 18px;
+      font-weight: 700;
+      text-decoration: none;
+      color: #fff;
+      border-radius: 15px;
+      padding: 10px 15px;
+      width: 280px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
   }
 }
