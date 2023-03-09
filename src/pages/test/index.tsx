@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import { Travel } from '..//../components/Travel';
+import { Travel2 } from '..//../components/Travel2';
 import { Amazon } from '../../components/Amazon';
 import { Sukiya } from '../../components/Sukiya2';
 import { Yoshinoya } from '../../components/Yoshinoya';
@@ -92,6 +93,13 @@ const Test: NextPage = () => {
               href: 'https://www.tour.ne.jp/j_rentacar/list/?rental_area_id=101&rental_area_type=2&return_area=0',
             },
           ]}
+        />
+        <Travel2
+          rank={1}
+          place='aa'
+          imgUrl='https://www.tour.ne.jp/j_special/ranking/images/index_spring/img-spring-area-01.jpg'
+          descripution='ddddd'
+          tagList={[{ text: 'sss', href: 'https://www.tour.ne.jp/j_tour/list/?dst=1-3-37' }]}
         />
       </div>
     </>
