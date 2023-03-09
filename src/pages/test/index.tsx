@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { Travel } from '..//../components/Travel';
-import { Travel2 } from '..//../components/Travel2';
 import { Amazon } from '../../components/Amazon';
 import { Sukiya } from '../../components/Sukiya2';
+import { Travel } from '../../components/Travel';
+import { Travel2 } from '../../components/Travel2';
 import { Yoshinoya } from '../../components/Yoshinoya';
 import styles from './index.module.scss';
 
