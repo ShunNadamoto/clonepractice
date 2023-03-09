@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import { useRouter } from 'next/router';
 import { Travel } from '..//../components/Travel';
 import { Travel2 } from '..//../components/Travel2';
 import { Amazon } from '../../components/Amazon';
@@ -7,13 +8,11 @@ import { Yoshinoya } from '../../components/Yoshinoya';
 import styles from './index.module.scss';
 
 const Test: NextPage = () => {
-  const sum2 = (a: string, b: string) => {
-    return `${a}は${b}です。`;
-  };
-
+  const router = useRouter();
   return (
     <>
-      <div>新しいページ</div>
+      <div>testページ</div>
+      <button onClick={() => router.push('/sample')}>sampleページへ</button>
       <div>aaaaa</div>
       <div>reaefafad</div>
       <Sukiya

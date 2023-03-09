@@ -105,7 +105,7 @@ export default function Home() {
       </Head>
 
       <div className={styles.container}>
-        <button onClick={() => router.push('/test')}>新しいページ</button>
+        <button onClick={() => router.push('/test')}>testページへ</button>
 
         <div className={styles.content}>
           {sukiyaResponse.sukiyaList.map((eachSukiya, index) => {
