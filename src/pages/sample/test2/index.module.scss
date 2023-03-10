@@ -11,6 +11,19 @@
       width: 500px;
     }
   }
+
+  &__textAreaBox {
+    display: flex;
+    align-items: center;
+    textarea {
+      outline: 0;
+      border: 2px solid gray;
+      font-size: 20px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      width: 500px;
+    }
+  }
   &__test {
     color: red;
   }

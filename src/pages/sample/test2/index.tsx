@@ -19,12 +19,26 @@ const Test2: NextPage = () => {
   const [count, setCount] = useState(1);
   const [selectedRadio, setSelectedRadio] = useState(radioButtonList[0].value);
   const [name, setName] = useState('');
+  const [text, setText] = useState('');
 
   return (
     <div className={styles.container}>
       <div className={styles.container__inputBox}>
         <div>お名前：</div>
-        <input type='text' value={name} onChange={(event) => setName(event.target.value)} />
+        <input
+          type='text'
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+          placeholder='名前を入力してください'
+        />
+      </div>
+      <div className={styles.container__textAreaBox}>
+        <div>問い合わせ内容：</div>
+        <textarea
+          value={text}
+          onChange={(event) => setText(event.target.value)}
+          placeholder='問い合わせ内容を入力してください'
+        />
       </div>
       <div className={styles.container__checkBoxContainer}>
         {radioButtonList.map((eachRadio) => (
