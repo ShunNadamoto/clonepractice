@@ -3,16 +3,42 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { AccordionMenu } from '../../../components/AccordionMenu';
 import { RadioButton } from '../../../components/RadioButton';
+import { RadioButton2 } from '../../../components/RadioButton2';
 import { Tab } from '../../../components/Tab';
 
 import styles from './index.module.scss';
 
+const radioButtonList = [
+  { labelName: 'みかん', value: 'orange' },
+  { labelName: 'りんご', value: 'apple' },
+  { labelName: 'ぶどう', value: 'grape' },
+];
+
 const Test2: NextPage = () => {
   const router = useRouter();
   const [count, setCount] = useState(1);
+  const [selectedRadio, setSelectedRadio] = useState(radioButtonList[0].value);
+  console.log(selectedRadio);
 
   return (
-    <>
+    <div className={styles.container}>
+      <div className={styles.container__checkBoxContainer}>
+        {radioButtonList.map((eachRadio) => (
+          <RadioButton2
+            key={eachRadio.value}
+            id={eachRadio.value}
+            value={eachRadio.value}
+            checked={selectedRadio === eachRadio.value}
+            onChange={(event) => {
+              setSelectedRadio(event.target.value);
+            }}
+            labelName={eachRadio.labelName}
+            className={styles.container__test}
+          />
+        ))}
+      </div>
+      <div>{selectedRadio}が選択されました</div>
+
       <div>テスト2ページ</div>
       <button onClick={() => router.push('/')}>トップページへ</button>
       <Tab />
@@ -43,7 +69,7 @@ const Test2: NextPage = () => {
       <div>カウント:{count}</div>
 
       <a href='/test'>aaabbb</a>
-    </>
+    </div>
   );
 };
 

@@ -6,7 +6,6 @@ type Props = {};
 
 export const Tab: FC<Props> = () => {
   const [selectedTab, setSelectedTab] = useState('1');
-  console.log(selectedTab === '1');
 
   return (
     <div className={styles.container}>
