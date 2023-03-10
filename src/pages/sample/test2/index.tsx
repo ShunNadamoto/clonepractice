@@ -18,10 +18,14 @@ const Test2: NextPage = () => {
   const router = useRouter();
   const [count, setCount] = useState(1);
   const [selectedRadio, setSelectedRadio] = useState(radioButtonList[0].value);
-  console.log(selectedRadio);
+  const [name, setName] = useState('');
 
   return (
     <div className={styles.container}>
+      <div className={styles.container__inputBox}>
+        <div>お名前：</div>
+        <input type='text' value={name} onChange={(event) => setName(event.target.value)} />
+      </div>
       <div className={styles.container__checkBoxContainer}>
         {radioButtonList.map((eachRadio) => (
           <RadioButton2
