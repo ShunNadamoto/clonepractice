@@ -20,6 +20,9 @@ const Test2: NextPage = () => {
   const [selectedRadio, setSelectedRadio] = useState(radioButtonList[0].value);
   const [name, setName] = useState('');
   const [text, setText] = useState('');
+  const [power, setPower] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   return (
     <div className={styles.container}>
@@ -60,10 +63,7 @@ const Test2: NextPage = () => {
       <div>テスト2ページ</div>
       <button onClick={() => router.push('/')}>トップページへ</button>
       <Tab />
-      <div className='toggleButton'>
-        <input id='toggle' type='checkbox' />
-        <label htmlFor='toggle' />
-      </div>
+
       <RadioButton />
 
       <AccordionMenu text='aaa' description='gggg' />
@@ -87,6 +87,32 @@ const Test2: NextPage = () => {
       <div>カウント:{count}</div>
 
       <a href='/test'>aaabbb</a>
+
+      <div>電源{power ? 'ON' : 'OFF'}</div>
+      <button onClick={() => setPower(true)}>ON</button>
+      <button onClick={() => setPower(false)}>OFF</button>
+      <div>
+        {' '}
+        電源切替え<button onClick={() => setPower((prevState) => !prevState)}>ON/OFF</button>
+      </div>
+
+      <div>
+        E-mail
+        <input id='email' name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+      </div>
+      <div>
+        パスワード
+        <input
+          id='password'
+          name='password'
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          type='password'
+        />
+      </div>
+      <div>
+        <button type='submit'>ログイン</button>
+      </div>
     </div>
   );
 };
