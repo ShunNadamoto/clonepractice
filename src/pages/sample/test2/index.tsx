@@ -92,27 +92,19 @@ const Test2: NextPage = () => {
       <button onClick={() => setPower(true)}>ON</button>
       <button onClick={() => setPower(false)}>OFF</button>
       <div>
-        {' '}
         電源切替え<button onClick={() => setPower((prevState) => !prevState)}>ON/OFF</button>
       </div>
 
       <div>
         E-mail
-        <input id='email' name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input value={email} onChange={(e) => setEmail(e.target.value)} />
       </div>
       <div>
         パスワード
-        <input
-          id='password'
-          name='password'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          type='password'
-        />
+        <input value={password} onChange={(e) => setPassword(e.target.value)} type='password' />
       </div>
-      <div>
-        <button type='submit'>ログイン</button>
-      </div>
+
+      <button>ログイン</button>
     </div>
   );
 };
