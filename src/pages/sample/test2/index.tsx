@@ -22,6 +22,7 @@ const Test2: NextPage = () => {
   const [text, setText] = useState('');
   const [power, setPower] = useState(false);
   const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState(false);
   const [password, setPassword] = useState('');
 
   return (
@@ -97,7 +98,15 @@ const Test2: NextPage = () => {
 
       <div>
         E-mail
-        <input value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input
+          value={email}
+          onChange={(e) => {
+            console.log(isNaN(Number(e.target.value)));
+            setEmailError(isNaN(Number(e.target.value)));
+            setEmail(e.target.value);
+          }}
+        />
+        {emailError && <div>emailには数字を入力してください</div>}
       </div>
       <div>
         パスワード
