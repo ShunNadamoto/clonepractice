@@ -23,6 +23,7 @@ const Test2: NextPage = () => {
   const [power, setPower] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isChecked, setIsChecked] = useState(true);
 
   return (
     <div className={styles.container}>
@@ -105,6 +106,17 @@ const Test2: NextPage = () => {
       </div>
 
       <button>ログイン</button>
+
+      <div>
+        <label htmlFor='check'>チェック：</label>
+        <input
+          type='checkbox'
+          id='check'
+          checked={isChecked}
+          onChange={() => setIsChecked((prevState) => !prevState)}
+        />
+        <div>{isChecked ? 'Yes' : 'No'}</div>
+      </div>
     </div>
   );
 };
