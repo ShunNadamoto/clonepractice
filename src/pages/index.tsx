@@ -41,13 +41,18 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    axios
-      .get('https://umayadia-apisample.azurewebsites.net/api/persons')
-      .then((response) => {
-        console.log(response);
+    const getPersonList = async () => {
+      try {
+        const response = await axios.get(
+          'https://umayadia-apisample.azurewebsites.net/api/persons',
+        );
         setPersonList(response.data.data);
-      })
-      .catch((error) => console.log(error));
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getPersonList();
   }, [refreshCount]);
 
   const resetInput = () => {

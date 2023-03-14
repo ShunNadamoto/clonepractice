@@ -1,7 +1,8 @@
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
 import { AccordionMenu } from '../../../components/AccordionMenu';
+import { CheckBox } from '../../../components/CheckBox';
 import { RadioButton } from '../../../components/RadioButton';
 import { RadioButton2 } from '../../../components/RadioButton2';
 import { Tab } from '../../../components/Tab';
@@ -24,6 +25,22 @@ const Test2: NextPage = () => {
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState(false);
   const [password, setPassword] = useState('');
+  const [selectedFruits, setSelectedFruits] = useState<string[]>([]);
+
+  const chengeCheckBox = (event: ChangeEvent<HTMLInputElement>) => {
+    setSelectedFruits((prevState) => {
+      // value(orange)が現在のstateに含まれているかどうかを判定する
+      const isIncludeValue = prevState.includes(event.target.value);
+
+      if (isIncludeValue) {
+        // 含まれていたら、valueを除去した配列を生成して状態を更新する
+        return prevState.filter((elem) => elem !== event.target.value);
+      } else {
+        // 含まれていなければ、valueを追加した配列を生成して状態を更新する
+        return [...prevState, event.target.value];
+      }
+    });
+  };
 
   return (
     <div className={styles.container}>
@@ -114,6 +131,31 @@ const Test2: NextPage = () => {
       </div>
 
       <button>ログイン</button>
+
+      <div>チェックボックス練習</div>
+      <div>好きな食べ物</div>
+      <CheckBox
+        id='apple2'
+        value='apple'
+        checked={selectedFruits.includes('apple')}
+        labelName='りんご'
+        onChange={chengeCheckBox}
+      />
+      <CheckBox
+        id='orange2'
+        value='orange'
+        checked={selectedFruits.includes('orange')}
+        labelName='みかん'
+        onChange={chengeCheckBox}
+      />
+      <CheckBox
+        id='grape2'
+        value='grape'
+        checked={selectedFruits.includes('grape')}
+        labelName='ぶどう'
+        onChange={chengeCheckBox}
+      />
+      <div>選択されているのは、{selectedFruits.join(', ')}です</div>
     </div>
   );
 };
