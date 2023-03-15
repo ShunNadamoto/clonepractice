@@ -2,7 +2,6 @@ import axios from 'axios';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
-import { PersonList } from '../../components/PersonList';
 import styles from './index.module.scss';
 
 type Person = {
@@ -12,7 +11,7 @@ type Person = {
   registerDate: string;
 };
 
-const Test4: NextPage = () => {
+const Test5: NextPage = () => {
   const router = useRouter();
   const [personList, setPersonList] = useState<Person[]>([]);
 
@@ -26,41 +25,25 @@ const Test4: NextPage = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  // console.log(personList);
-  // console.log(personList[5].name);
-  // console.log(personList[2].registerDate);
-  // console.log(personList[3].age);
-  // console.log(personList[5].note);
-  // console.log(personList[4].name);
-
-  // console.log(personList[0].note);
-
   return (
     <div>
-      <div>test4ページ</div>
+      <div>test5ページ</div>
       <button onClick={() => router.push('/sample')}>sampleページへ</button>
 
       {personList.map((eachPerson, index) => {
         const { name, age, note, registerDate } = eachPerson;
         return (
-          <div key={index} style={{ marginTop: '20px', background: 'red' }}>
-            <div>人物プロフィール</div>
-            <div>{`名前は${name}`}</div>
-            <div>{`年齢は${age}`}</div>
-            <div>{`メモ：${note}`}</div>
-            <div>{`投稿日${registerDate}`}</div>
+          <div className={styles.container} key={index}>
+            <div className={styles.conatiner__profileBox}>人物プロフィール</div>
+            <div className={styles.conatiner__profileBox}>{`名前は${name}`}</div>
+            <div className={styles.conatiner__profileBox}>{`年齢は${age}`}</div>
+            <div className={styles.conatiner__profileBox}>{`メモ：${note}`}</div>
+            <div className={styles.conatiner__profileBox}>{`投稿日${registerDate}`}</div>
           </div>
         );
       })}
-
-      <PersonList
-        name='メフメト2世'
-        age={31}
-        note='東ローマ帝国を滅ぼす'
-        registerDate='1901-01-02T22:00:01'
-      />
     </div>
   );
 };
 
-export default Test4;
+export default Test5;
