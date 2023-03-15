@@ -20,11 +20,15 @@ const Test4: NextPage = () => {
     axios
       .get('https://umayadia-apisample.azurewebsites.net/api/persons')
       .then((response) => {
+        console.log(response);
         console.log(response.data.data);
         setPersonList(response.data.data);
       })
       .catch((error) => console.log(error));
   }, []);
+
+  const [testName, setTestName] = useState('');
+  const [personList2, setPersonList2] = useState<Person[]>([]);
 
   // console.log(personList);
   // console.log(personList[5].name);
@@ -43,13 +47,7 @@ const Test4: NextPage = () => {
       {personList.map((eachPerson, index) => {
         const { name, age, note, registerDate } = eachPerson;
         return (
-          <div key={index} style={{ marginTop: '20px', background: 'red' }}>
-            <div>人物プロフィール</div>
-            <div>{`名前は${name}`}</div>
-            <div>{`年齢は${age}`}</div>
-            <div>{`メモ：${note}`}</div>
-            <div>{`投稿日${registerDate}`}</div>
-          </div>
+          <PersonList key={index} name={name} age={age} note={note} registerDate={registerDate} />
         );
       })}
 
