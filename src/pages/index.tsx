@@ -40,6 +40,27 @@ export default function Home() {
   const [refreshCount, setRefreshCount] = useState(0);
   const router = useRouter();
 
+  const [count, setCount] = useState();
+
+  const [todo, setTodo] = useState('');
+
+  const [list, setList] = useState([]);
+
+  const [boolean, setBoolean] = useState(false);
+
+  useEffect(() => {
+    const getPersonList = async () => {
+      try {
+        const response = await axios.get(
+          'https://umayadia-apisample.azurewebsites.net/api/persons',
+        );
+        setPersonList(response.data.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  }, []);
+
   useEffect(() => {
     const getPersonList = async () => {
       try {
