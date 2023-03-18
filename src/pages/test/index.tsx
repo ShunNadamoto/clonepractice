@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { Amazon } from '../../components/Amazon';
+import { StarBucks } from '../../components/StarBucks';
 import { Sukiya } from '../../components/Sukiya2';
 import { Travel } from '../../components/Travel';
 import { Travel2 } from '../../components/Travel2';
@@ -99,6 +100,25 @@ const Test: NextPage = () => {
           imgUrl='https://www.tour.ne.jp/j_special/ranking/images/index_spring/img-spring-area-01.jpg'
           descripution='ddddd'
           tagList={[{ text: 'sss', href: 'https://www.tour.ne.jp/j_tour/list/?dst=1-3-37' }]}
+        />
+
+        <StarBucks
+          isDisplayLimitedTag={false}
+          itemImgUrl='https://asset.menu.starbucks.co.jp/public/sku_images/4524785526174/4524785526174_11_s.jpg'
+          itemName='スターバックスフラペチーノ'
+          price='¥690'
+        />
+        <StarBucks
+          isDisplayLimitedTag={false}
+          itemImgUrl='https://asset.menu.starbucks.co.jp/public/sku_images/4524785526181/4524785526181_11_s.jpg'
+          itemName='クリーミー＆スイート ミルクコーヒー'
+          price='¥550〜¥680'
+        />
+        <StarBucks
+          isDisplayLimitedTag={true}
+          itemImgUrl='https://asset.menu.starbucks.co.jp/public/sku_images/4524785519268/4524785519268_11_s.jpg'
+          itemName='ムース フォーム アイリッシュ コーヒー  ※アイリッシュ コーヒーをイメージしたビバレッジで、アルコールは入っておりません。'
+          price='￥900～￥960'
         />
       </div>
     </>
