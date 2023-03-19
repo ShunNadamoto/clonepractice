@@ -32,7 +32,6 @@ export default function Home() {
   const router = useRouter();
 
   const { data: personList, refetch: refetchPersonList } = useGetPersonList();
-  // console.log(personList);
 
   type Fruits = {
     name: string;
