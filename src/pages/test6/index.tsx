@@ -1,8 +1,9 @@
 import axios from 'axios';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Modal from 'react-modal';
+Modal.setAppElement('*'); // suppresses modal-related test warnings.
 
 type Person = {
   name: string;
@@ -15,7 +16,14 @@ const Test6: NextPage = () => {
   const router = useRouter();
   const [personList, setPersonList] = useState<Person[]>([]);
   const [refreshCount, setRefreshCount] = useState(0);
-  const [modalIsOpen, setIsOpen] = useState<boolean>(false);
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  const [text, setText] = useState('');
+  const [boolean, setBoolean] = useState(false);
+  const [list, setList] = useState([]);
+  const [name, setName] = useState('');
+  const [age, setAge] = useState('');
+  const [note, setNote] = useState('');
 
   const customStyles = {
     content: {
@@ -27,6 +35,11 @@ const Test6: NextPage = () => {
       transform: 'translate(-50%, -50%)',
     },
   };
+
+  useEffect(() => {});
+  useEffect(() => {});
+  useEffect(() => {});
+  useEffect(() => {});
 
   const openModal = () => {
     setIsOpen(true);
@@ -55,11 +68,71 @@ const Test6: NextPage = () => {
     getPersonList();
   }, [refreshCount]);
 
+  const resetInput = () => {
+    setName('');
+    setAge('');
+    setNote('');
+  };
+
   console.log(personList);
+
+  useEffect(() => {
+    document.body.style.backgroundColor = 'lightblue';
+    return () => {
+      document.body.style.backgroundColor = '';
+    };
+  }, []);
+
+  const sum = (a: number, b: number) => {
+    a + b;
+  };
+  console.log(sum(1, 2));
+  const [fruits, setFruits] = useState('');
+  const [fruitsList, setFruitsList] = useState([]);
+  useEffect(() => {}, []);
 
   return (
     <div>
       <button onClick={() => router.push('/sample')}>sampleページへ</button>
+
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <input
+          type='text'
+          value={name}
+          placeholder='人物名を入力'
+          onChange={(event) => setName(event.target.value)}
+        />
+        <input
+          type='text'
+          value={age}
+          placeholder='年齢を入力'
+          onChange={(event) => setAge(event.target.value)}
+        />
+        <input
+          type='text'
+          value={note}
+          placeholder='記事を入力'
+          onChange={(event) => setNote(event.target.value)}
+        />
+      </div>
+      <button
+        onClick={() =>
+          axios
+            .post('https://umayadia-apisample.azurewebsites.net/api/persons', {
+              name: name,
+              age: Number(age),
+              note: note,
+              registerDate: '0214-03-03T04:14:25',
+            })
+            .then((response) => {
+              resetInput();
+              setRefreshCount(refreshCount + 1);
+            })
+            .catch((error) => console.log(error))
+        }
+      >
+        新規に人物を登録する
+      </button>
 
       {personList.map((eachPerson, index) => {
         const { name, age, note, registerDate } = eachPerson;
@@ -83,6 +156,14 @@ const Test6: NextPage = () => {
       >
         ああああ<button onClick={closeModal}>close</button>
       </Modal>
+
+      <input
+        type='text'
+        value={text}
+        onChange={(e) => {
+          setText(e.target.value);
+        }}
+      />
     </div>
   );
 };
