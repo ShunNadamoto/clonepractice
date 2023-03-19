@@ -1,7 +1,6 @@
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { PizzaHat } from '..//..//components/PizzaHat';
-import { Amazon } from '../../components/Amazon';
+import { PizzaHut } from '../../components/PizzaHut';
 import { StarBucks } from '../../components/StarBucks';
 import { Sukiya } from '../../components/Sukiya2';
 import { Travel } from '../../components/Travel';
@@ -63,7 +62,6 @@ const Test: NextPage = () => {
           price2='（税込712円)'
         />
       </div>
-      <Amazon />
 
       <div className={styles.travelBox}>
         <Travel
@@ -103,7 +101,7 @@ const Test: NextPage = () => {
           tagList={[{ text: 'sss', href: 'https://www.tour.ne.jp/j_tour/list/?dst=1-3-37' }]}
         />
 
-        <div>
+        <div className={styles.starbucksBox}>
           <StarBucks
             isDisplayLimitedTag={false}
             itemImgUrl='https://asset.menu.starbucks.co.jp/public/sku_images/4524785526174/4524785526174_11_s.jpg'
@@ -123,26 +121,29 @@ const Test: NextPage = () => {
             price='￥900～￥960'
           />
         </div>
-        <PizzaHat
-          menuImgUrl='https://static.pizzahut.jp/jp/menu/single/desktop_thumbnail_f995051a-ee9f-4ae1-bfa4-17c0e4b91a53.jpg'
-          menu='侍・ベストナイン'
-          descripution='通常価格[M]3,540円 
+
+        <div className={styles.pizzahutBox}>
+          <PizzaHut
+            menuImgUrl='https://static.pizzahut.jp/jp/menu/single/desktop_thumbnail_f995051a-ee9f-4ae1-bfa4-17c0e4b91a53.jpg'
+            menu='侍・ベストナイン'
+            descripution='通常価格[M]3,540円 
 ピザハットの人気食材9種類”ベストナイン”を使った4種のピザ。'
-        />
-        <PizzaHat
-          menuImgUrl='https://static.pizzahut.jp/jp/menu/single/desktop_thumbnail_11d972dd-8007-4b4a-a151-c51b16664a90.jpg'
-          menu='二刀流！メジャーピザ'
-          descripution='通常価格[M]3,540円から
+          />
+          <PizzaHut
+            menuImgUrl='https://static.pizzahut.jp/jp/menu/single/desktop_thumbnail_11d972dd-8007-4b4a-a151-c51b16664a90.jpg'
+            menu='二刀流！メジャーピザ'
+            descripution='通常価格[M]3,540円から
 "みみ”が｢チーズ｣と｢ソーセージ｣の二刀流！トマトソース・チーズ・ペパロニのシンプルなトッピングのアメリカンピザ。'
-        />
-        <PizzaHat
-          menuImgUrl='https://static.pizzahut.jp/jp/menu/single/desktop_thumbnail_e0f0bbd9-26b4-479f-98b5-b80304fa591b.jpg'
-          menu='ピザハット・マルゲリータ／ジェノバ風ガーリックトマトのH&H
+          />
+          <PizzaHut
+            menuImgUrl='https://static.pizzahut.jp/jp/menu/single/desktop_thumbnail_e0f0bbd9-26b4-479f-98b5-b80304fa591b.jpg'
+            menu='ピザハット・マルゲリータ／ジェノバ風ガーリックトマトのH&H
         '
-          descripution='通常価格[M]2,485円から
+            descripution='通常価格[M]2,485円から
 
 『Double Face』＆『MaM』のオススメピザ！'
-        />
+          />
+        </div>
       </div>
     </>
   );
