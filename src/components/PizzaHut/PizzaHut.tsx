@@ -7,7 +7,7 @@ type Props = {
   descripution: string;
 };
 
-export const PizzaHat: FC<Props> = ({ menuImgUrl, menu, descripution }) => (
+export const PizzaHut: FC<Props> = ({ menuImgUrl, menu, descripution }) => (
   <div className={styles.container}>
     <div className={styles.container__tag}>トッピング</div>
     <img className={styles.container__img} src={menuImgUrl} />

@@ -115,7 +115,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={styles.container}>
+      <div className={styles.movieBox}>
         {movieResponse.movieList.map((eachMovie, index) => (
           <Movie
             key={index}
@@ -124,10 +124,9 @@ export default function Home() {
             title={eachMovie.title}
           />
         ))}
-        ;
       </div>
 
-      <div className={styles.container}>
+      <div className={styles.bookBox}>
         {bookResponse.bookList.map((eachBook, index) => (
           <Book
             key={index}
@@ -136,13 +135,8 @@ export default function Home() {
             title={eachBook.title}
           />
         ))}
-        ;
       </div>
-      <Book
-        imgUrl='https://img.honto.jp/item/1/133/180/30560227_1.webp'
-        ranking='cccc'
-        title='ddd'
-      />
+
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <input
           type='text'

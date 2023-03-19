@@ -16,19 +16,16 @@ const Test3: NextPage = () => {
   const [personList, setPersonList] = useState<Person[]>([]);
 
   useEffect(() => {
-    console.log('iiiii');
-    axios
-      .get('https://umayadia-apisample.azurewebsites.net/api/persons')
-      .then((response) => {
-        setPersonList(response.data.data);
-      })
-      .catch((error) => console.log(error));
+    const getPersonList = async () => {
+      try {
+        const res = await axios.get('https://umayadia-apisample.azurewebsites.net/api/persons');
+        setPersonList(res.data.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getPersonList();
   }, []);
-
-  console.log('aaaaa');
-  console.log(personList);
-
-  //   console.log(personList);
 
   return (
     <div>

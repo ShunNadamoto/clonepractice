@@ -1,3 +1,12 @@
+.movieBox {
+  display: flex;
+}
+
+.bookBox {
+  display: flex;
+  justify-content: space-between;
+}
+
 .accordionWrapper {
   display: flex;
   flex-direction: column;

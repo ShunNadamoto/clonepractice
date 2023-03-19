@@ -11,6 +11,7 @@ type Person = {
 export const useGetPersonList2 = () => {
   const [personList, setPersonList] = useState<Person[]>([]);
   const [refetchPersonList, setRefetchPersonList] = useState(false);
+
   useEffect(() => {
     axios
       .get('https://umayadia-apisample.azurewebsites.net/api/persons')
