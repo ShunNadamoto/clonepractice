@@ -11,7 +11,6 @@ import { Movie } from '../components/Movie';
 import { PanMenu } from '../components/PanMenu';
 import { Profile } from '../components/Profile';
 import { Sukiya } from '../components/Sukiya';
-import { Yoshinoya } from '../components/Yoshinoya';
 import {
   questionResponse,
   hamburgerResponse,
@@ -22,7 +21,6 @@ import {
   sukiyaResponse,
 } from '../constant';
 import { useGetPersonList } from '../lib/hooks';
-import { sum } from '../lib/tool';
 import styles from './index.module.scss';
 
 export default function Home() {
@@ -34,7 +32,7 @@ export default function Home() {
   const router = useRouter();
 
   const { data: personList, refetch: refetchPersonList } = useGetPersonList();
-  console.log(personList);
+  // console.log(personList);
 
   type Fruits = {
     name: string;
@@ -69,22 +67,11 @@ export default function Home() {
     );
   };
 
-  const sum = (a: number, b: number) => {
-    return a + b;
-  };
+  const sum = (a: number, b: number) => a + b;
+  const sum2 = (a: string, b: string) => `${a}は${b}です。`;
 
-  const sum2 = (a: string, b: string) => {
-    return `${a}は${b}です。`;
-  };
-
-  console.log(sum2('田中', '人間'));
-
-  const array8 = [1, 3, 5, 7, 9];
-  const newArray8 = array8.map((elem) => {
-    return elem * 2;
-  });
-  const array9 = [1, 2, 3, 4];
-  const newArray9 = array9.map((elem) => elem * 2);
+  const array = [1, 2, 3];
+  const newArray = array.map((elem) => elem * 3);
 
   return (
     <>

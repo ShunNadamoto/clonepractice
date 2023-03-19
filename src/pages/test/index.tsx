@@ -103,25 +103,26 @@ const Test: NextPage = () => {
           tagList={[{ text: 'sss', href: 'https://www.tour.ne.jp/j_tour/list/?dst=1-3-37' }]}
         />
 
-        <StarBucks
-          isDisplayLimitedTag={false}
-          itemImgUrl='https://asset.menu.starbucks.co.jp/public/sku_images/4524785526174/4524785526174_11_s.jpg'
-          itemName='スターバックスフラペチーノ'
-          price='¥690'
-        />
-        <StarBucks
-          isDisplayLimitedTag={false}
-          itemImgUrl='https://asset.menu.starbucks.co.jp/public/sku_images/4524785526181/4524785526181_11_s.jpg'
-          itemName='クリーミー＆スイート ミルクコーヒー'
-          price='¥550〜¥680'
-        />
-        <StarBucks
-          isDisplayLimitedTag={true}
-          itemImgUrl='https://asset.menu.starbucks.co.jp/public/sku_images/4524785519268/4524785519268_11_s.jpg'
-          itemName='ムース フォーム アイリッシュ コーヒー  ※アイリッシュ コーヒーをイメージしたビバレッジで、アルコールは入っておりません。'
-          price='￥900～￥960'
-        />
-
+        <div>
+          <StarBucks
+            isDisplayLimitedTag={false}
+            itemImgUrl='https://asset.menu.starbucks.co.jp/public/sku_images/4524785526174/4524785526174_11_s.jpg'
+            itemName='スターバックスフラペチーノ'
+            price='¥690'
+          />
+          <StarBucks
+            isDisplayLimitedTag={false}
+            itemImgUrl='https://asset.menu.starbucks.co.jp/public/sku_images/4524785526181/4524785526181_11_s.jpg'
+            itemName='クリーミー＆スイート ミルクコーヒー'
+            price='¥550〜¥680'
+          />
+          <StarBucks
+            isDisplayLimitedTag={true}
+            itemImgUrl='https://asset.menu.starbucks.co.jp/public/sku_images/4524785519268/4524785519268_11_s.jpg'
+            itemName='ムース フォーム アイリッシュ コーヒー  ※アイリッシュ コーヒーをイメージしたビバレッジで、アルコールは入っておりません。'
+            price='￥900～￥960'
+          />
+        </div>
         <PizzaHat
           menuImgUrl='https://static.pizzahut.jp/jp/menu/single/desktop_thumbnail_f995051a-ee9f-4ae1-bfa4-17c0e4b91a53.jpg'
           menu='侍・ベストナイン'

@@ -1,36 +1,22 @@
-import axios from 'axios';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+import { useCountTime, useGetPersonList2 } from '../../lib/hooks';
 import styles from './index.module.scss';
-
-type Person = {
-  name: string;
-  age: number;
-  note: string;
-  registerDate: string;
-};
 
 const Test5: NextPage = () => {
   const router = useRouter();
-  const [personList, setPersonList] = useState<Person[]>([]);
-
-  useEffect(() => {
-    axios
-      .get('https://umayadia-apisample.azurewebsites.net/api/persons')
-      .then((response) => {
-        console.log(response.data.data);
-        setPersonList(response.data.data);
-      })
-      .catch((error) => console.log(error));
-  }, []);
+  const count = useCountTime();
+  const { personList } = useGetPersonList2();
+  const filterdPersonList = personList.filter((elem) => elem.name === '織田信長');
 
   return (
     <div>
       <div>test5ページ</div>
       <button onClick={() => router.push('/sample')}>sampleページへ</button>
 
-      {personList.map((eachPerson, index) => {
+      <div>{count}</div>
+
+      {filterdPersonList.map((eachPerson, index) => {
         const { name, age, note, registerDate } = eachPerson;
         return (
           <div className={styles.container} key={index}>
