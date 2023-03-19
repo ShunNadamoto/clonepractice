@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { AccordionMenu } from '../components/AccordionMenu';
 import { Book } from '../components/Book';
 import { HamburgerMenu } from '../components/HamburgerMenu';
@@ -21,68 +21,32 @@ import {
   bookResponse,
   sukiyaResponse,
 } from '../constant';
+import { useGetPersonList } from '../lib/hooks';
 import { sum } from '../lib/tool';
 import styles from './index.module.scss';
 
 export default function Home() {
-  type Person = {
-    name: string;
-    age: number;
-    note: string;
-    registerDate: string;
-  };
-  const [personList, setPersonList] = useState<Person[]>([]);
   const [name, setName] = useState('');
   const [isDisplayName, setIsDisplayName] = useState(false);
   const [newName, setNewName] = useState('');
   const [newAge, setNewAge] = useState('');
   const [newNote, setNewNote] = useState('');
-  const [refreshCount, setRefreshCount] = useState(0);
   const router = useRouter();
 
-  const [count, setCount] = useState();
+  const { data: personList, refetch: refetchPersonList } = useGetPersonList();
 
-  const [todo, setTodo] = useState('');
+  type Fruits = {
+    name: string;
+    color: string;
+  };
 
-  const [list, setList] = useState([]);
-
-  const [boolean, setBoolean] = useState(false);
-
-  useEffect(() => {
-    const getPersonList = async () => {
-      try {
-        const response = await axios.get(
-          'https://umayadia-apisample.azurewebsites.net/api/persons',
-        );
-        setPersonList(response.data.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    const getPersonList = async () => {
-      try {
-        const response = await axios.get(
-          'https://umayadia-apisample.azurewebsites.net/api/persons',
-        );
-        setPersonList(response.data.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    getPersonList();
-  }, [refreshCount]);
+  const [list, setList] = useState<Fruits[]>([]);
 
   const resetInput = () => {
     setNewName('');
     setNewAge('');
     setNewNote('');
   };
-
-  console.log(personList);
 
   type Human = { id: string; name: string; age: number };
   const humans: Human[] = [
@@ -220,9 +184,9 @@ export default function Home() {
                 note: newNote,
                 registerDate: '0214-03-03T04:14:25',
               })
-              .then((response) => {
+              .then(() => {
                 resetInput();
-                setRefreshCount(refreshCount + 1);
+                refetchPersonList();
               })
               .catch((error) => console.log(error))
           }
