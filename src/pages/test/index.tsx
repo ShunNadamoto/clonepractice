@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
+import { NanoUniverse } from '../../components/NanoUniverse';
 import { PizzaHut } from '../../components/PizzaHut';
 import { StarBucks } from '../../components/StarBucks';
 import { Sukiya } from '../../components/Sukiya2';
@@ -142,6 +143,33 @@ const Test: NextPage = () => {
             descripution='通常価格[M]2,485円から
 
 『Double Face』＆『MaM』のオススメピザ！'
+          />
+        </div>
+
+        <div className={styles.nanoUniverseBox}>
+          <NanoUniverse
+            imgUrl='https://img.store.nanouniverse.jp/img/goods/S/6683118206_010.jpg'
+            itemName='セットアップ'
+            price='¥22,000'
+            isDisplayedNewTag={true}
+          />
+          <NanoUniverse
+            imgUrl='https://img.store.nanouniverse.jp/img/goods/S/6693116301_120.jpg'
+            itemName='ジャケット'
+            price='¥17,050'
+            isDisplayedNewTag={false}
+          />
+          <NanoUniverse
+            imgUrl='	https://img.store.nanouniverse.jp/img/goods/S/6683118204_040.jpg'
+            itemName='セットアップ'
+            price='¥19,800'
+            isDisplayedNewTag={false}
+          />
+          <NanoUniverse
+            imgUrl='	https://img.store.nanouniverse.jp/img/goods/S/6683118205_180.jpg'
+            itemName='セットアップ'
+            price='¥19,800'
+            isDisplayedNewTag={false}
           />
         </div>
       </div>
