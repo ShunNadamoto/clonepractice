@@ -13,7 +13,7 @@ export const NanoUniverse: FC<Props> = ({ imgUrl, itemName, price, isDisplayedNe
     <img className={styles.container__img} src={imgUrl} />
     <div className={styles.container__likeTag}>
       <div className={styles.container__likeTag__circle}>
-        <div className={styles.container__likeTag__circle__heart}></div>
+        <div className={styles.container__likeTag__circle__heart} />
       </div>
     </div>
     <div className={styles.container__section}>LB. 03 Section</div>

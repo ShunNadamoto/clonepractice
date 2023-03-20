@@ -19,8 +19,12 @@
       background-color: #fff;
       bottom: 60px;
       right: 20px;
+
       &__heart {
         background: url(https://img.store.nanouniverse.jp/img/pc/common/fav_line.png);
+        background-repeat: no-repeat;
+        width: 17px;
+        height: 15px;
       }
     }
   }
