@@ -1,0 +1,37 @@
+.container {
+  &__character {
+    display: flex;
+
+    &__characterImg {
+    }
+
+    &__actorImg {
+      width: 370px;
+      height: 390px;
+    }
+  }
+
+  &__introduction {
+    display: flex;
+
+    &__nameBox {
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+
+      &__characterName1 {
+        font-size: 15px;
+        text-align: justify;
+      }
+
+      &__characterName2 {
+        font-size: 60px;
+      }
+    }
+    &__note {
+      display: flex;
+      text-align: left;
+      padding: 30px 40px;
+    }
+  }
+}
