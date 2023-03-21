@@ -4,6 +4,7 @@ import { NanoUniverse } from '../../components/NanoUniverse';
 import { PizzaHut } from '../../components/PizzaHut';
 import { StarBucks } from '../../components/StarBucks';
 import { Sukiya } from '../../components/Sukiya2';
+import { Suzume } from '../../components/Suzume';
 import { Travel } from '../../components/Travel';
 import { Travel2 } from '../../components/Travel2';
 import { Yoshinoya } from '../../components/Yoshinoya';
@@ -170,6 +171,27 @@ const Test: NextPage = () => {
             itemName='セットアップ'
             price='¥19,800'
             isDisplayedNewTag={false}
+          />
+        </div>
+
+        <div>
+          <Suzume
+            characterImgUrl='	https://suzume-tojimari-movie.jp/assets/images/ver3/character/image1.jpg'
+            actorImgUrl='https://suzume-tojimari-movie.jp/assets/images/ver3/character/cast1@2x.jpg?ver=1'
+            characterName1='いわとすずめ'
+            characterName2='岩戸鈴芽'
+          />
+          <Suzume
+            characterImgUrl='	https://suzume-tojimari-movie.jp/assets/images/ver3/character/image1.jpg'
+            actorImgUrl='https://suzume-tojimari-movie.jp/assets/images/ver3/character/cast1@2x.jpg?ver=1'
+            characterName1='いわとすずめ'
+            characterName2='岩戸鈴芽'
+          />
+          <Suzume
+            characterImgUrl='	https://suzume-tojimari-movie.jp/assets/images/ver3/character/image1.jpg'
+            actorImgUrl='https://suzume-tojimari-movie.jp/assets/images/ver3/character/cast1@2x.jpg?ver=1'
+            characterName1='いわとすずめ'
+            characterName2='岩戸鈴芽'
           />
         </div>
       </div>
