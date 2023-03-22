@@ -20,5 +20,8 @@ export const NanoUniverse: FC<Props> = ({ imgUrl, itemName, price, isDisplayedNe
     <div className={styles.container__item}>{itemName}</div>
     <div className={styles.container__price}>{price}</div>
     {isDisplayedNewTag && <div className={styles.container__newTag}>[新入荷・予約商品]</div>}
+    <div className={styles.container__list}>
+      <div className={'list-title'}>SAVE</div>
+    </div>
   </div>
 );
