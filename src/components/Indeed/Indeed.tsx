@@ -25,7 +25,7 @@ export const Indeed: FC<Props> = ({
   descripution,
   sponsor,
 }) => {
-  console.log(tagList2.slice(0, 3));
+  const overCount = tagList2.length - 3;
 
   return (
     <div className={styles.container}>
@@ -40,9 +40,16 @@ export const Indeed: FC<Props> = ({
         ))}
       </div>
       <div className={styles.container__tagList2}>
-        {tagList2.slice(0, 3).map((eachTagName, index) => (
-          <div key={index}>{eachTagName}</div>
-        ))}
+        {tagList2.slice(0, 3).map((eachTagName, index) => {
+          const isDisplayOverCount = index === 2 && overCount > 0;
+
+          return (
+            <div key={index} style={{ display: 'flex' }}>
+              <div>{eachTagName}</div>
+              {isDisplayOverCount && <div>{`+${overCount}`}</div>}
+            </div>
+          );
+        })}
       </div>
       <div className={styles.container__application}>{application}</div>
       {isDisplayResponseTag && (
