@@ -39,21 +39,25 @@ export const Indeed: FC<Props> = ({
           </div>
         ))}
       </div>
-      <div className={styles.container__tagList2}>
+      <div className={styles.container__tagList2Box}>
         {tagList2.slice(0, 3).map((eachTagName, index) => {
           const isDisplayOverCount = index === 2 && overCount > 0;
-
           return (
-            <div key={index} style={{ display: 'flex' }}>
+            <div key={index} className={styles.container__tagList2Box__tag}>
               <div>{eachTagName}</div>
               {isDisplayOverCount && <div>{`+${overCount}`}</div>}
             </div>
           );
         })}
       </div>
-      <div className={styles.container__application}>{application}</div>
+      <div className={styles.container__application}>
+        <span className={styles.container__application__applicationIcon}></span>
+        {application}
+      </div>
       {isDisplayResponseTag && (
-        <div className={styles.container__responseTag}>返信率の高い企業</div>
+        <div className={styles.container__responseTag}>
+          <span className={styles.container__responseTag__responseIcon}></span>返信率の高い企業
+        </div>
       )}
       <div className={styles.container__descripution}>{descripution}</div>
       <div className={styles.container__sponsor}>{sponsor}</div>

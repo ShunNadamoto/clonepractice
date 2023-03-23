@@ -197,36 +197,53 @@ const Test: NextPage = () => {
         </div>
         <div>
           <Indeed
-            jobTitle='PHPプログラマー|自社システムのメンテナンス担当'
-            companyName='三和マッチ株式会社'
+            jobTitle='岡山で働きやすいプログラマー【若手中心】 【第2新卒可】'
+            companyName='株式会社システムラボ'
             place='岡山県 岡山市'
-            tagList1={['交通費支給', '昇給・昇格あり', '勤務開始時期調整', '面接時マスク着用']}
-            tagList2={['月給20万円〜35万円', '正社員', '残業あり', 'あああ', 'iiiii']}
+            tagList1={['駅近5分以内', '交通費支給']}
+            tagList2={['月給27万円〜40万円', '正社員', '休憩60分', 'あああ', 'iiiii']}
             application='プロフィールだけでカンタン応募'
             isDisplayResponseTag={true}
-            descripution=''
+            descripution='仕事内容
+            システムラボについて
+            【ITシステムの総合相談窓口事業】
+            岡山県内の中小企業をメイン顧客としてITシステム導入の相談からソリューション提供まで行っています。'
             sponsor='スポンサー・30+日前'
           />
           <Indeed
-            jobTitle='プログラマー'
-            companyName='株式会社エイシーティ'
-            place='岡山県 岡山市 北区 岡山駅'
-            tagList1={[]}
-            tagList2={['年収300万円', '正社員', '年間休日120日以上', 'aaaa']}
+            jobTitle='エンジニア'
+            companyName='株式会社ユーナ'
+            place='岡山県 岡山市 北区'
+            tagList1={['交通費支給', '昇給・昇格あり', '在宅OK']}
+            tagList2={[
+              '月給22万円〜50万円',
+              '正社員',
+              '年間休日120日以上',
+              'aaaa',
+              'ss',
+              'kkk',
+              'eee',
+              'rr',
+            ]}
             application='この求人にカンタン応募'
             isDisplayResponseTag={false}
-            descripution=''
-            sponsor='スポンサー・30+日前'
+            descripution='【仕事内容】
+            弊社では IT未経験からスタートしている 先輩社員がたくさんいます。
+            実務経験がゼロだけど「IT業界に興味がある」 、「チャレンジしたい」方であれば、 未経験から成長しているんです。'
+            sponsor='19時間前'
           />
           <Indeed
-            jobTitle='プログラマー'
-            companyName='株式会社アリオンシステム'
-            place='岡山県 岡山市 北区 柳町'
-            tagList1={[]}
-            tagList2={['月給21万円〜40万円', '正社員', '残業あり']}
-            application=''
-            isDisplayResponseTag={false}
-            descripution=''
+            jobTitle='WEBプログラマー、エンジニア'
+            companyName='株式会社YMK'
+            place='岡山県 岡山市'
+            tagList1={['高収入', '交通費支給', '昇給・昇格あり']}
+            tagList2={['月給20万円〜35万円', '正社員', '完全週休2日制']}
+            application='プロフィールだけでカンタン応募'
+            isDisplayResponseTag={true}
+            descripution='仕事内容
+            PHPやMysqlなどを使いWEBサイトの構築が中心です。
+            ご希望に応じて新サービスを作ったり大規模なWEBサービスにジョインすることも可能です。
+            自動車、バイクなどでの通勤もできますのでライフスタイルに合わせて仕事ができます。'
             sponsor='スポンサー・30+日前'
           />
         </div>
