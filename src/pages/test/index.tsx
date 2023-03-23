@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
+import { Indeed } from '../../components/Indeed';
 import { NanoUniverse } from '../../components/NanoUniverse';
 import { PizzaHut } from '../../components/PizzaHut';
 import { StarBucks } from '../../components/StarBucks';
@@ -192,6 +193,41 @@ const Test: NextPage = () => {
             actorImgUrl='https://suzume-tojimari-movie.jp/assets/images/ver3/character/cast1@2x.jpg?ver=1'
             characterName1='いわとすずめ'
             characterName2='岩戸鈴芽'
+          />
+        </div>
+        <div>
+          <Indeed
+            jobTitle='PHPプログラマー|自社システムのメンテナンス担当'
+            companyName='三和マッチ株式会社'
+            place='岡山県 岡山市'
+            tagList1={['交通費支給', '昇給・昇格あり', '勤務開始時期調整', '面接時マスク着用']}
+            tagList2={['月給20万円〜35万円', '正社員', '残業あり']}
+            application='プロフィールだけでカンタン応募'
+            isDisplayResponseTag={true}
+            descripution=''
+            sponsor='スポンサー・30+日前'
+          />
+          <Indeed
+            jobTitle='プログラマー'
+            companyName='株式会社エイシーティ'
+            place='岡山県 岡山市 北区 岡山駅'
+            tagList1={[]}
+            tagList2={['年収300万円', '正社員', '年間休日120日以上']}
+            application='この求人にカンタン応募'
+            isDisplayResponseTag={false}
+            descripution=''
+            sponsor='スポンサー・30+日前'
+          />
+          <Indeed
+            jobTitle='プログラマー'
+            companyName='株式会社アリオンシステム'
+            place='岡山県 岡山市 北区 柳町'
+            tagList1={[]}
+            tagList2={['月給21万円〜40万円', '正社員', '残業あり']}
+            application=''
+            isDisplayResponseTag={false}
+            descripution=''
+            sponsor='スポンサー・30+日前'
           />
         </div>
       </div>
