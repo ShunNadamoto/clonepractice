@@ -201,7 +201,7 @@ const Test: NextPage = () => {
             companyName='三和マッチ株式会社'
             place='岡山県 岡山市'
             tagList1={['交通費支給', '昇給・昇格あり', '勤務開始時期調整', '面接時マスク着用']}
-            tagList2={['月給20万円〜35万円', '正社員', '残業あり']}
+            tagList2={['月給20万円〜35万円', '正社員', '残業あり', 'あああ']}
             application='プロフィールだけでカンタン応募'
             isDisplayResponseTag={true}
             descripution=''

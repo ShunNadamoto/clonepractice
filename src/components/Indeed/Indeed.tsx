@@ -24,24 +24,32 @@ export const Indeed: FC<Props> = ({
   isDisplayResponseTag,
   descripution,
   sponsor,
-}) => (
-  <div className={styles.container}>
-    <div className={styles.container__jobtitle}>{jobTitle}</div>
-    <div className={styles.container__companyName}>{companyName}</div>
-    <div className={styles.container__place}>{place}</div>
-    <div className={styles.container__tagList1}>
-      {tagList1.map((eachTagName, index) => (
-        <div key={index}>{eachTagName}</div>
-      ))}
+}) => {
+  console.log(tagList2.slice(0, 3));
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.container__jobtitle}>{jobTitle}</div>
+      <div className={styles.container__companyName}>{companyName}</div>
+      <div className={styles.container__place}>{place}</div>
+      <div className={styles.container__tagList1Box}>
+        {tagList1.map((eachTagName, index) => (
+          <div key={index} className={styles.container__tagList1Box__tag}>
+            {eachTagName}
+          </div>
+        ))}
+      </div>
+      <div className={styles.container__tagList2}>
+        {tagList2.slice(0, 3).map((eachTagName, index) => (
+          <div key={index}>{eachTagName}</div>
+        ))}
+      </div>
+      <div className={styles.container__application}>{application}</div>
+      {isDisplayResponseTag && (
+        <div className={styles.container__responseTag}>返信率の高い企業</div>
+      )}
+      <div className={styles.container__descripution}>{descripution}</div>
+      <div className={styles.container__sponsor}>{sponsor}</div>
     </div>
-    <div className={styles.container__tagList2}>
-      {tagList2.map((eachTagName, index) => (
-        <div key={index}>{eachTagName}</div>
-      ))}
-    </div>
-    <div className={styles.container__application}>{application}</div>
-    {isDisplayResponseTag && <div className={styles.container__responseTag}>返信率の高い企業</div>}
-    <div className={styles.container__descripution}>{descripution}</div>
-    <div className={styles.container__sponsor}>{sponsor}</div>
-  </div>
-);
+  );
+};
