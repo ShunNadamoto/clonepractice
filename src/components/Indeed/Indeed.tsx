@@ -46,6 +46,7 @@ export const Indeed: FC<Props> = ({
             <div key={index} className={styles.container__tagList2Box__tag}>
               <div>
                 {eachTag.imgType === 'salery' && (
+                  // <div>aaa</div>
                   <svg xmlns='http://www.w3.org/2000/svg' width='16px' height='13px'>
                     <path
                       fill='#595959'
