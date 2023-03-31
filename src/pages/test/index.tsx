@@ -214,6 +214,25 @@ const Test: NextPage = () => {
             岡山県内の中小企業をメイン顧客としてITシステム導入の相談からソリューション提供まで行っています。'
             sponsor='スポンサー・30+日前'
           />
+          <Indeed
+            jobTitle='システムエンジニアプログラマー'
+            companyName='倉敷電子工業株式会社'
+            place='岡山県 倉敷市球場前駅'
+            tagList1={['駅近徒歩10分', '交通費不支給', 'aaa']}
+            tagList2={[
+              { name: '月給iii', imgType: 'salery' },
+              { name: '正社員', imgType: 'jobType' },
+              { name: '年間休日120日以上', imgType: 'time' },
+              { name: 'eee', imgType: 'ttt' },
+            ]}
+            application='この求人にカンタン応募'
+            isDisplayResponseTag={false}
+            descripution='仕事内容
+            システムラボについて
+            【ITシステムの総合相談窓口事業】
+            岡山県内の中小企業をメイン顧客としてITシステム導入の相談からソリューション提供まで行っています。'
+            sponsor='スポンサー・30+日前'
+          />
         </div>
       </div>
     </>

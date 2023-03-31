@@ -26,6 +26,9 @@ export const Indeed: FC<Props> = ({
   sponsor,
 }) => {
   const overCount = tagList2.length - 3;
+  console.log(tagList1);
+  console.log(tagList2);
+  console.log(isDisplayResponseTag);
 
   return (
     <div className={styles.container}>
@@ -33,12 +36,20 @@ export const Indeed: FC<Props> = ({
       <div className={styles.container__companyName}>{companyName}</div>
       <div className={styles.container__place}>{place}</div>
       <div className={styles.container__tagList1Box}>
+        {tagList1.map((eachTag, index) => (
+          <div key={index} className={styles.container__tagList1Box__tag}>
+            {eachTag}
+          </div>
+        ))}
+      </div>
+      <div className={styles.container__tagList1Box}>
         {tagList1.map((eachTagName, index) => (
           <div key={index} className={styles.container__tagList1Box__tag}>
             {eachTagName}
           </div>
         ))}
       </div>
+
       <div className={styles.container__tagList2Box}>
         {tagList2.slice(0, 3).map((eachTag, index) => {
           const isDisplayOverCount = index === 2 && overCount > 0;

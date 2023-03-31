@@ -1,0 +1,66 @@
+.container {
+  box-sizing: border-box;
+  border: 0 solid #e5e7eb;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
+    var(--tw-shadow);
+  --tw-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 3%;
+  width: 230px;
+  cursor: pointer;
+
+  &__menuImg {
+    cursor: pointer;
+  }
+
+  &__restaurantName {
+    margin-bottom: 6px;
+    margin-left: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #561a8c;
+    cursor: pointer;
+  }
+
+  &__evaluation {
+    display: inline-block;
+    font-size: 11px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    text-align: center;
+    width: 55px;
+    padding: 2px 4px;
+    margin-left: 6px;
+    border-radius: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  &__minimumPrice {
+    font-size: 8px;
+    margin-bottom: 9px;
+    margin-left: 6px;
+  }
+
+  &__demaecanTagBox {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 6px;
+
+    &__deliveryImg {
+      display: flex;
+      align-items: center;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    &__deliveryBox {
+      &__time {
+        font-size: 18px;
+        margin-right: 8px;
+        font-weight: bolder;
+      }
+      &__minute {
+        font-size: 11px;
+      }
+    }
+  }
+}
