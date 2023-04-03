@@ -14,7 +14,6 @@ const Test10: NextPage = () => {
   const router = useRouter();
   const [personList, setPersonList] = useState<Person[]>([]);
   const [refetchPersonList, setRefetchPersonList] = useState(false);
-  const refetch = () => setRefetchPersonList(!refetchPersonList);
   const [name, setNewName] = useState('');
   const [age, setNewAge] = useState('');
   const [note, setNewNote] = useState('');
@@ -125,7 +124,8 @@ const Test10: NextPage = () => {
               note: note,
               registerDate: '0214-03-03T04:14:25',
             })
-            .then((res) => {
+            .then(() => {
+              setRefetchPersonList(!refetchPersonList);
               resetInput();
             })
             .catch((error) => console.log(error));

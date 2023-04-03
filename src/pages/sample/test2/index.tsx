@@ -164,8 +164,6 @@ const Test2: NextPage = () => {
 
       <div>カウント:{count}</div>
 
-      <a href='/test'>aaabbb</a>
-
       <div>電源{power ? 'ON' : 'OFF'}</div>
       <button onClick={() => setPower(true)}>ON</button>
       <button onClick={() => setPower(false)}>OFF</button>

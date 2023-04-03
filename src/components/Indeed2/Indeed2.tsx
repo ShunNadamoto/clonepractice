@@ -1,40 +1,57 @@
-import { type } from 'os';
 import { FC } from 'react';
 import styles from './index.module.scss';
 
 type Props = {
-  jobTitle: string;
+  jobName: string;
   companyName: string;
-  place: string;
+  workPlace: string;
   tagList1: string[];
-  tagList2: { name: string; imgType: string }[];
+  tagList2: { title: string; logoType: string }[];
   application: string;
-  isDisplayResponseTag: boolean;
+  isDisplayTag: boolean;
   descripution: string;
   sponsor: string;
 };
 
-export const Indeed: FC<Props> = ({
-  jobTitle,
+export const Indeed2: FC<Props> = ({
+  jobName,
   companyName,
-  place,
+  workPlace,
   tagList1,
   tagList2,
   application,
-  isDisplayResponseTag,
+  isDisplayTag,
   descripution,
   sponsor,
 }) => {
   const overCount = tagList2.length - 3;
-  console.log(tagList1);
-  console.log(tagList2);
-  console.log(isDisplayResponseTag);
 
   return (
     <div className={styles.container}>
-      <div className={styles.container__jobtitle}>{jobTitle}</div>
+      <div className={styles.container__jobName}>{jobName}</div>
       <div className={styles.container__companyName}>{companyName}</div>
-      <div className={styles.container__place}>{place}</div>
+      <div className={styles.container__workPlace}>{workPlace}</div>
+      {/* <div className={styles.container__tagList1Box}>
+        {tagList1.map((eachTag, index) => (
+          <div key={index} className={styles.container__tagList1Box__tag}>
+            {eachTag}
+          </div>
+        ))}
+      </div> */}
+      {/* <div className={styles.container__tagList1Box}>
+        {tagList1.map((eachTag, index) => (
+          <div key={index} className={styles.container__tagList1Box__tag}>
+            {eachTag}
+          </div>
+        ))}
+      </div> */}
+      {/* <div className={styles.container__tagList1Box}>
+        {tagList1.map((eachTag, index) => (
+          <div key={index} className={styles.container__tagList1Box__tag}>
+            {eachTag}
+          </div>
+        ))}
+      </div> */}
       <div className={styles.container__tagList1Box}>
         {tagList1.map((eachTag, index) => (
           <div key={index} className={styles.container__tagList1Box__tag}>
@@ -48,8 +65,7 @@ export const Indeed: FC<Props> = ({
           return (
             <div key={index} className={styles.container__tagList2Box__tag}>
               <div>
-                {eachTag.imgType === 'salery' && (
-                  // <div>aaa</div>
+                {eachTag.logoType === 'salery' && (
                   <svg xmlns='http://www.w3.org/2000/svg' width='16px' height='13px'>
                     <path
                       fill='#595959'
@@ -59,7 +75,7 @@ export const Indeed: FC<Props> = ({
                     ></path>
                   </svg>
                 )}
-                {eachTag.imgType === 'jobType' && (
+                {eachTag.logoType === 'jobType' && (
                   <svg xmlns='http://www.w3.org/2000/svg' width='14px' height='13px'>
                     <path
                       fill='#595959'
@@ -73,7 +89,7 @@ export const Indeed: FC<Props> = ({
                     ></path>
                   </svg>
                 )}
-                {eachTag.imgType === 'time' && (
+                {eachTag.logoType === 'time' && (
                   <svg xmlns='http://www.w3.org/2000/svg' width='14px' height='15px'>
                     <path
                       fill-rule='evenodd'
@@ -83,9 +99,13 @@ export const Indeed: FC<Props> = ({
                     ></path>
                   </svg>
                 )}
-                {eachTag.name}
+                {eachTag.title}
               </div>
-              {isDisplayOverCount && <div>{`+${overCount}`}</div>}
+              {isDisplayOverCount && (
+                <span
+                  className={styles.container__tagList2Box__tag__overCount}
+                >{`+${overCount}`}</span>
+              )}
             </div>
           );
         })}
@@ -94,7 +114,7 @@ export const Indeed: FC<Props> = ({
         <span className={styles.container__application__applicationIcon}></span>
         {application}
       </div>
-      {isDisplayResponseTag && (
+      {isDisplayTag && (
         <div className={styles.container__responseTag}>
           <span className={styles.container__responseTag__responseIcon}></span>返信率の高い企業
         </div>

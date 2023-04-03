@@ -236,6 +236,7 @@ export default function Home() {
             <AccordionMenu key={index} text={elem.text} description={elem.description} />
           ))}
         </div>
+
         <div className={styles.container__test1}>練習用</div>
         <div className={styles.container__test2}>練習用サイト2</div>
         <input
@@ -246,8 +247,6 @@ export default function Home() {
         />
         <button
           onClick={() => {
-            const total = sum(1, 2);
-            console.log(total);
             setIsDisplayName(!isDisplayName);
           }}
           className={styles.container__button}
