@@ -34,7 +34,7 @@ const Test12: NextPage = () => {
 
   return (
     <>
-      <div>{personList.map(() => ['松岡', '41歳', '仕事がしたい', '2023/4/3'])}</div>　
+      <div>{personList.map(() => ['松岡', '41歳', '仕事がしたい', '2023/4/3'])}</div>
       <button onClick={() => router.push('/')}>topページへ</button>
       <div>
         <input

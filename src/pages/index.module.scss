@@ -879,3 +879,15 @@
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: row;
+    color: red;
+    font-size: 40px;
+
+    button {
+      color: red;
+    }
+  }
+}

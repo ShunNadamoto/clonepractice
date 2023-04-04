@@ -40,11 +40,28 @@ const Test11: NextPage = () => {
   }, [refetchPersonList]);
   // console.log(personList);
 
+  // const filteredPersonList = personList.filter((elem) => elem.name === '織田信長');
+
   return (
     <>
-      <div>{personList.map(() => ['田中', '33歳', '婚活中', '2023/3/31'])}</div>
-      <div>{personList.map(() => ['松岡', '41歳', 'プログラミング修行中', '2023/4/1'])}</div>
-      <div>{personList.map(() => ['そうし', '4歳', 'ベビーバス', '2023'])}</div>
+      <div>
+        {personList
+          .filter((elem) => Number(elem.age) < 21) //personlistからfiterで絞り込む
+          .map(
+            (
+              elem,
+              index, //上で絞り込んだ配列をmapで値を返す
+            ) => (
+              <div key={index}>
+                <div>{elem.name}</div>
+                <div>{elem.age}</div>
+                <div>{elem.note}</div>
+                <div>{elem.registerDate}</div>
+              </div>
+            ),
+          )}
+      </div>
+
       <div>
         <input
           type='text'
