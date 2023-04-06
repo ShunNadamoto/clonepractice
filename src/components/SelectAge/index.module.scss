@@ -1,0 +1,41 @@
+.container {
+  border-radius: 4px;
+  background: #eaeaea;
+  padding: 16px;
+  max-width: 680px;
+  margin: 30px auto;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 40px;
+    right: 580px;
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #666666;
+    pointer-events: none;
+  }
+
+  select {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  select,
+  option {
+    font-size: 20px;
+    border: rgb(0, 119, 255);
+    padding: 16px 14px;
+    cursor: pointer;
+    width: 130px;
+    border-radius: 4px;
+  }
+
+  &--open {
+    transform: rotate(225deg);
+  }
+}

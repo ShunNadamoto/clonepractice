@@ -1,0 +1,26 @@
+.container {
+  &__tabBox {
+    display: flex;
+    border-bottom: 1px solid #f0f0f0;
+    width: fit-content;
+    padding: 0 12px;
+
+    &__tab {
+      background-color: #fff;
+      border: none;
+      padding: 12px 0;
+
+      &--selected {
+        border-bottom: 2px solid #1890ff;
+      }
+
+      & + & {
+        margin-left: 32px;
+      }
+
+      &:hover {
+        color: #40a9ff;
+      }
+    }
+  }
+}

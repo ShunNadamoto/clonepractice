@@ -1,13 +1,13 @@
-import cn from 'classnames';
+import classNames from 'classnames';
 import { FC, useState } from 'react';
 import styles from './index.module.scss';
 
-type Props = {
+type TestProps = {
   text: string;
   description: string;
 };
 
-export const AccordingMenu2: FC<Props> = ({ text, description }) => {
+export const AccordingMenu3: FC<TestProps> = ({ text, description }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -15,7 +15,7 @@ export const AccordingMenu2: FC<Props> = ({ text, description }) => {
       <button className={styles.container__textBox} onClick={() => setIsOpen(!isOpen)}>
         {text}
         <div
-          className={cn(styles.container__textBox__arrow, {
+          className={classNames(styles.container__textBox__arrow, {
             [styles['container__textBox__arrow--open']]: isOpen,
           })}
         ></div>
