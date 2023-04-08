@@ -2,10 +2,12 @@ import axios from 'axios';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
+import { useForm } from 'react-hook-form';
 import { AccordingMenu2 } from '../../components/AccordionMenu2';
 import { AccordingMenu3 } from '../../components/AccordionMenu3';
 import { RadioButton3 } from '../../components/RadioButton3';
 import { Tab2 } from '../../components/Tab2';
+// eslint-disable-next-line import/no-unresolved
 import styles from './index.module.scss';
 import { SelectAge } from '@/components/SelectAge/SelectAge';
 import { Tab } from '@/components/Tab';
@@ -136,6 +138,20 @@ const Test12: NextPage = () => {
       <div>{selectedRadio}が選択されました</div>
 
       <SelectAge />
+
+      <div className='form-container'>
+        <form>
+          <h1>Login Form</h1>
+          <label htmlFor='名前'>名前</label>
+          <input id='name' type='text' />
+          <label htmlFor='メールアドレス'>メールアドレス</label>
+          <input id='email' type='e-mail' />
+          <label htmlFor='パスワード'>パスワード</label>
+          <input id='password' type='password' />
+
+          <button type='submit'>送信</button>
+        </form>
+      </div>
     </>
   );
 };
