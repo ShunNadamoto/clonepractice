@@ -28,8 +28,12 @@
   "devDependencies": {
     "@types/react-modal": "^3.13.1",
     "eslint-config-prettier": "^8.6.0",
+    "msw": "^1.2.1",
     "prettier": "^2.8.4",
     "react-modal": "^3.16.1",
     "sass": "^1.58.1"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
