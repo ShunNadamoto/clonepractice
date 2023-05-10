@@ -8,6 +8,7 @@ import styles from './index.module.scss';
 const Test5: NextPage = () => {
   const router = useRouter();
   const count = useCountTime();
+
   const { data: personList, refetch: refetchPersonList } = useGetPersonList2();
   const filterdPersonList = personList.filter((elem) => elem.name === '織田信長');
   const filterdPersonList2 = personList.filter((elem) => elem.age === '12');
