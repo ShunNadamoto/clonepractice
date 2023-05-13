@@ -4,10 +4,11 @@ type Props = {
   jobTitle: string;
 };
 
-export const IndeedTest: FC<Props> = (props) => {
+export const IndeedTest: FC<Props> = ({ jobTitle }) => {
   return (
     <div>
-      <div>{props.jobTitle}</div>
+      <div>{jobTitle}</div>
+      <button onClick={() => console.log('aaaaaa')}>onClickTest</button>
     </div>
   );
 };
