@@ -1,0 +1,19 @@
+.container {
+  text-align: center;
+  width: 220px;
+  display: inline-block;
+  padding: 10px;
+  &__tag {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__menu {
+    font-size: 15px;
+    color: #0066cc;
+    margin-top: 10px;
+  }
+  &__img {
+    width: 220px;
+  }
+}

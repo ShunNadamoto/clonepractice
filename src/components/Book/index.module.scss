@@ -1,0 +1,18 @@
+.container {
+  width: 250px;
+
+  &__img {
+    align-items: center;
+  }
+
+  &__ranking {
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: aqua;
+  }
+
+  &__title {
+    color: blue;
+    background-color: beige;
+  }
+}

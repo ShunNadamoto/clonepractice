@@ -1,0 +1,31 @@
+.container {
+  width: 600px;
+
+  &__textBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &__arrow {
+      border-top: 5px solid red;
+      border-left: 5px solid red;
+      width: 10px;
+      height: 10px;
+      transform: rotate(45deg);
+
+      &--open {
+        transform: rotate(225deg);
+      }
+    }
+  }
+
+  &__description {
+    padding: 15px;
+  }
+}

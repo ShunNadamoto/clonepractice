@@ -1,0 +1,56 @@
+.container {
+  & + & {
+    margin-left: 10px;
+    position: relative;
+  }
+
+  &__likeTag {
+    top: 35px;
+    position: relative;
+
+    &__circle {
+      display: flex;
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      bottom: 60px;
+      right: 20px;
+
+      &__heart {
+        background: url(https://img.store.nanouniverse.jp/img/pc/common/fav_line.png);
+        background-repeat: no-repeat;
+        width: 17px;
+        height: 15px;
+      }
+    }
+  }
+
+  &__section {
+    margin-bottom: 8px;
+    color: #888;
+    font-size: 9px;
+  }
+
+  &__item {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  &__price {
+    font-size: 11px;
+  }
+
+  &__newTag {
+    font-size: 11px;
+    margin-top: 3px;
+  }
+
+  &__list {
+    transform: translateY(-100);
+  }
+}

@@ -1,0 +1,22 @@
+.content {
+  display: block;
+  display: inline-block;
+  width: 220px;
+  align-items: center;
+
+  &__icon1 {
+    display: flex;
+    display: inline-block;
+    justify-content: space-around;
+  }
+
+  &__menu {
+    font-size: 15px;
+    color: blue;
+    text-align: center;
+  }
+
+  &__img {
+    width: 220px;
+  }
+}

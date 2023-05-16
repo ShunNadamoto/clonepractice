@@ -1,0 +1,46 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  height: 280px;
+  padding-bottom: 5px;
+
+  & + & {
+    margin-left: 20px;
+  }
+  &__MenuIcon {
+    position: absolute;
+    border-radius: 5px;
+    top: 0;
+    background: #00a728;
+    font-size: 13px;
+    color: #fff;
+    line-height: 28px;
+    padding: 0 0.75em;
+    font-weight: bold;
+  }
+
+  &__MenuBox {
+    &__HamburgerImgUrl {
+      width: 160px;
+      height: 140px;
+    }
+    &__MenuIcon2 {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      text-align: left;
+    }
+    &__title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+      padding: 0 17px;
+    }
+
+    &__Price {
+      margin-bottom: 0.5em;
+      padding: 0 17px;
+    }
+  }
+}
