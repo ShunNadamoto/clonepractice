@@ -1,14 +1,31 @@
 import { FC } from 'react';
 
-type Props = {
-  jobTitle: string;
+type Human = {
+  name: string;
+  age: number;
 };
 
-export const IndeedTest: FC<Props> = ({ jobTitle }) => {
+type Props = {
+  jobTitle: string;
+  onClickTestButton: () => void;
+  humanList: Human[];
+};
+
+const test = { name: 'aaa', age: 20 };
+
+const person2 = { name: 'kkk', age: 34 };
+
+export const IndeedTest: FC<Props> = ({ jobTitle, onClickTestButton, humanList }) => {
   return (
     <div>
       <div>{jobTitle}</div>
-      <button onClick={() => console.log('aaaaaa')}>onClickTest</button>
+      <button onClick={onClickTestButton}>onClickTest</button>
+      {humanList.map((elem, index) => (
+        <div key={index}>
+          <div>{elem.name}</div>
+          <div>{elem.age}</div>
+        </div>
+      ))}
     </div>
   );
 };

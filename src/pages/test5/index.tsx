@@ -20,6 +20,21 @@ const Test5: NextPage = () => {
     setNewNote('');
   };
 
+  const count2 = () => {
+    console.log('aaa');
+  };
+  const test = () => setNewName('');
+
+  const count3 = (num1: number, num2: number) => num1 + num2;
+  console.log(count3(1, 3));
+
+  type Person = {
+    name: string;
+    age: number;
+  };
+
+  const [personList2, setPersonList2] = useState<Person[]>([]);
+
   return (
     <div>
       <div>test5ページ</div>
@@ -63,6 +78,20 @@ const Test5: NextPage = () => {
       >
         新規登録
       </button>
+
+      {personList.map((elem, index) => {
+        const { age, name, note, registerDate } = elem;
+        return (
+          <div key={index}>
+            <div>{age}</div>
+            <div>{name}</div>
+            <div>{note}</div>
+            <div>{registerDate}</div>
+            <div>{`${name}は${age}歳です`}</div>
+            <div>{age === '20歳' ? '20歳です' : 'ハズレ'}</div>
+          </div>
+        );
+      })}
     </div>
   );
 };
