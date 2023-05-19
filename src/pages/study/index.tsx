@@ -1,9 +1,9 @@
+import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import { useQuery } from 'react-query';
 
 type Person = {
   name: string;
@@ -15,14 +15,14 @@ type Person = {
 const Study: NextPage = () => {
   const router = useRouter();
 
-  // const { isLoading, error, data } = useQuery({
-  //   queryKey: ['repoData'],
-  //   queryFn: () =>
-  //     axios.get('https://umayadia-apisample.azurewebsites.net/api/persons').then((res) => res),
-  // });
-  // console.log(isLoading);
-  // console.log(data);
-  // console.log(error);
+  const { isLoading, error, data } = useQuery({
+    queryKey: ['repoData'],
+    queryFn: () =>
+      axios.get('https://umayadia-apisample.azurewebsites.net/api/persons').then((res) => res),
+  });
+  console.log(isLoading);
+  console.log(data);
+  console.log(error);
 
   return (
     <>
