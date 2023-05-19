@@ -14,9 +14,6 @@ export const Primary = Template.bind({});
 Primary.args = {
   testName: 'あああ',
   testAge: 20,
-  humanList: [
-    { name: 'そうし', age: 4, gender: '男の子' },
-    { name: 'ふみか', age: 1, gender: '女の子' },
-  ],
+
   testOnClick: () => alert('onClickボタンが押されました'),
 };

@@ -1,10 +1,12 @@
+import axios from 'axios';
 import React, { FC, useState, useEffect } from 'react';
 
-type Human = {
+interface Person {
   name: string;
   age: number;
-  gender: string;
-};
+  note: string;
+  registerDate: string;
+}
 
 type props = { name: string; list: string[]; list2: { aa: string; bb: string }[] };
 
@@ -15,7 +17,8 @@ const sum2 = (num1: number, num2: number) => {
 };
 console.log(sum(1, 2));
 
-const person2 = (name: string, age: number) => {
+//関数の返り値の型定義サンプル
+const person2 = (name: string, age: number): string => {
   return `${name}は${age}歳です。`;
 };
 
@@ -25,7 +28,6 @@ const [num1, num2, num3] = numberList;
 console.log(num1, num2, num3);
 const week = [];
 week[0] = '日曜日';
-console.log(week[0]);
 
 //連想配列練習
 const person = { name: 'ccc', age: 28 };
@@ -49,7 +51,6 @@ const people = [
   { name: 'Jiro', age: 20, address: 'Osaka' },
   { name: 'Saburo', age: 30, address: 'Fukuoka' },
 ];
-console.log(people[0].name);
 console.log(people[1].address);
 console.log(people[2].age);
 
@@ -71,19 +72,41 @@ console.log(persons.Yamada.weight);
 type Props = {
   testName: string;
   testAge: number;
-  humanList: Human[];
   testOnClick: () => void;
 };
 
 export const DayStudy: FC<Props> = (props) => {
-  // useState,useEffect入力練習
-  const [isOpen, setIsOpen] = useState(false);
-  const [title, setTitle] = useState('');
-  const [list, setList] = useState([]);
-  useEffect(() => {});
+  // useState,useEffect入力、発動練習
 
-  const { testName, testAge, humanList, testOnClick } = props;
+  const [name2, setName2] = useState('');
+  const [humanList2, setHUmanList2] = useState<Person[]>([]);
+  const [name, setName] = useState('');
+  const [age, setAge] = useState('');
+  const [note, setNote] = useState('');
+  const resetInput = () => {
+    setName('');
+    setAge('');
+    setNote('');
+  };
+  const [refreshCount, setRefreshCount] = useState(0);
+  const [refresh, setRefresh] = useState(false);
+  const [humanList, setHumanList] = useState<Person[]>([]);
 
+  //APIのGet練習
+  useEffect(() => {
+    axios
+      .get('https://umayadia-apisample.azurewebsites.net/api/persons')
+      .then((response) => {
+        console.log(response);
+
+        setHumanList(response.data.data);
+      })
+      .catch((error) => console.log(error));
+  }, [refresh]);
+
+  const { testName, testAge, testOnClick } = props;
+
+  //map、filter、テンプレートリテラル、三項演算子の入力練習、APIのPOST通信
   return (
     <div>
       <div>{testName}</div>
@@ -92,18 +115,56 @@ export const DayStudy: FC<Props> = (props) => {
       <div>{testAge === 41 ? '正解！' : 'ハズレ'}</div>
       <div>{testAge < 30 ? '悟り世代' : ''}</div>
       <div>{testAge >= 30 ? 'ゆとり世代' : ''}</div>
-
-      <div>
-        {humanList.map((elem, index) => (
-          <div key={index}>
-            <div>{elem.name}</div>
-            <div>{`${elem.age}歳`}</div>
-            <div>{elem.gender}</div>
-          </div>
-        ))}
+      <div style={{ padding: '20px', background: 'gray' }}>
+        {humanList
+          .filter((elem) => elem.age == 32)
+          .map((elem, index) => (
+            <div key={index}>
+              <div>{elem.name}</div>
+              <div>{elem.note}</div>
+            </div>
+          ))}
       </div>
-
       <button onClick={testOnClick}>OnclickTestボタン</button>
+
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <input
+          type='text'
+          value={name}
+          placeholder='人物名を入力'
+          onChange={(event) => setName(event.target.value)}
+        />
+        <input
+          type='text'
+          value={age}
+          placeholder='年齢を入力'
+          onChange={(event) => setAge(event.target.value)}
+        />
+        <input
+          type='text'
+          value={note}
+          placeholder='記事を入力'
+          onChange={(event) => setNote(event.target.value)}
+        />
+      </div>
+      <button
+        onClick={() =>
+          axios
+            .post('https://umayadia-apisample.azurewebsites.net/api/persons', {
+              name: name,
+              age: Number(age),
+              note: note,
+              registerDate: '0214-03-03T04:14:25',
+            })
+            .then((response) => {
+              resetInput();
+              setRefreshCount(refreshCount + 1);
+            })
+            .catch((error) => console.log(error))
+        }
+      >
+        新規に人物を登録する
+      </button>
     </div>
   );
 };
