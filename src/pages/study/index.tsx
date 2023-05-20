@@ -4,6 +4,8 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
+import { DayStudy2 } from '../../components/DayStudy2';
+import { Practice11 } from '@/components/Practice11';
 
 type Person = {
   name: string;
@@ -34,6 +36,9 @@ const Study: NextPage = () => {
       </Head>
 
       <button onClick={() => router.push('http://localhost:3000/')}>元ページへ</button>
+      <DayStudy2 />
+
+      <Practice11 name={'史佳'} age={1} sex={'女の子'} />
     </>
   );
 };
