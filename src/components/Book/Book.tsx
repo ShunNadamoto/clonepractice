@@ -7,10 +7,12 @@ type Props = {
   title: string;
 };
 
-export const Book: FC<Props> = ({ imgUrl, ranking, title }) => (
-  <div className={styles.container}>
-    <img className={styles.container__img} src={imgUrl} />
-    <div className={styles.container__ranking}>{ranking}</div>
-    <div className={styles.container__title}>{title}</div>
-  </div>
-);
+export const Book: FC<Props> = ({ imgUrl, ranking, title }) => {
+  return (
+    <div className={styles.container}>
+      <img className={styles.container__img} src={imgUrl} />
+      <div className={styles.container__ranking}>{ranking}</div>
+      <div className={styles.container__title}>{title}</div>
+    </div>
+  );
+};
