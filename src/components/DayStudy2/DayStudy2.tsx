@@ -3,7 +3,13 @@ import { FC, ReactHTML, SetStateAction, useState } from 'react';
 
 export const DayStudy2 = () => {
   const [name, setName] = useState('');
+  const [note, setNote] = useState('');
+  const [tel, setTel] = useState('');
+  const [date, setDate] = useState('');
+
   console.log('name:', name);
+  console.log('note:', note);
+  console.log('tel:', tel);
 
   const areaList = [
     { value: '1', label: '東北地方' },
@@ -44,13 +50,45 @@ export const DayStudy2 = () => {
     <>
       <div style={{ marginBottom: '20px', fontWeight: 'bold' }}>入力フォーム、State系練習</div>
 
-      <div>名前入力フォーム</div>
-      <input
-        type='text'
-        value={name}
-        placeholder='名前を入力して下さい'
-        onChange={(event) => setName(event.target.value)}
-      />
+      <div>
+        入力フォーム
+        <form style={{ display: 'flex', flexDirection: 'column' }}>
+          <input
+            type='text'
+            value={name}
+            placeholder='名前を入力して下さい（必須）'
+            onChange={(event) => setName(event.target.value)}
+          />
+          {name.length > 10 && <div>10文字以内で入力して下さい。</div>}
+          {name.length === 0 && <div>入力は必須です。</div>}
+          <textarea
+            id='textArea'
+            value={note}
+            placeholder='備考欄（何かあれば入力して下さい）'
+            onChange={(event) => setNote(event.target.value)}
+          />
+          <input
+            type='text'
+            value={tel}
+            placeholder='電話番号を入力して下さい'
+            onChange={(event) => {
+              console.log(event.target.value);
+              setTel(event.target.value);
+            }}
+          />
+          {tel.length === 0 && <div>入力は必須です。</div>}
+          {!/^[0-9]+$/.test(tel) && <div>半角数字で入力して下さい。</div>}
+          <input
+            type='date'
+            value={date}
+            placeholder='入力日を記入して下さい。'
+            onChange={(event) => {
+              console.log(event.target.value);
+              setDate(event.target.value);
+            }}
+          />
+        </form>
+      </div>
 
       <div>住んでいる地域を選択</div>
 
@@ -86,74 +124,6 @@ export const DayStudy2 = () => {
       <div>{`住んでいるところは${
         prefectureList.filter((elem) => elem.value === selectedPrefecture)[0].label
       }です。`}</div>
-
-      <select value={selectedArea} onChange={(e) => setSelectedArea(e.target.value)}>
-        <option value=''>未選択</option>
-        {areaList.map((elem) => (
-          <option key={elem.value} value={elem.value}>
-            {elem.label}
-          </option>
-        ))}
-      </select>
-
-      <select value={selectedArea} onChange={(e) => setSelectedArea(e.target.value)}>
-        <option value=''>未選択</option>
-        <option value='1'>東北地方</option>
-        <option value='2'>関東地方</option>
-        <option value='3'>中部地方</option>
-        <option value='4'>関西地方</option>
-        <option value='5'>中国地方</option>
-      </select>
-
-      <select value={selectedArea} onChange={(e) => setSelectedArea(e.target.value)}>
-        <option value=''>未選択</option>
-        {areaList.map((elem) => {
-          return (
-            <option key={elem.label} value={elem.value}>
-              {elem.label}
-            </option>
-          );
-        })}
-      </select>
-
-      <select value={selectedArea} onChange={(e) => setSelectedArea(e.target.value)}>
-        <option value=''>未選択</option>
-        <option value='1'>東北地方</option>
-        <option value='2'>関東地方</option>
-        <option value='3'>中部地方</option>
-        <option value='4'>関西地方</option>
-        <option value='5'>中国地方</option>
-      </select>
-
-      <label>
-        <input
-          type='radio'
-          value='employee'
-          checked={workingStyle === 'employee'}
-          onChange={(e) => setWorkingStyle(e.target.value)}
-        />
-        会社員
-      </label>
-
-      <label>
-        <input
-          type='radio'
-          value='executive'
-          checked={workingStyle === 'executive'}
-          onChange={(e) => setWorkingStyle(e.target.value)}
-        />
-        会社役員
-      </label>
-
-      <label>
-        <input
-          type='radio'
-          value='free'
-          checked={workingStyle === 'free'}
-          onChange={(e) => setWorkingStyle(e.target.value)}
-        />
-        無職
-      </label>
 
       <label>
         <input
@@ -244,6 +214,38 @@ export const DayStudy2 = () => {
       </div>
 
       <div>
+        <label>
+          <input
+            type='radio'
+            value='employee'
+            checked={workingStyle === 'employee'}
+            onChange={(e) => setWorkingStyle(e.target.value)}
+          />
+          会社員
+        </label>
+
+        <label>
+          <input
+            type='radio'
+            value='executive'
+            checked={workingStyle === 'executive'}
+            onChange={(e) => setWorkingStyle(e.target.value)}
+          />
+          会社役員
+        </label>
+
+        <label>
+          <input
+            type='radio'
+            value='free'
+            checked={workingStyle === 'free'}
+            onChange={(e) => setWorkingStyle(e.target.value)}
+          />
+          無職
+        </label>
+      </div>
+
+      <div>
         {workingStyleList.map((elem) => (
           <label key={elem.value}>
             <input
@@ -279,6 +281,7 @@ export const DayStudy2 = () => {
             {elem.label}
           </label>
         ))}
+        {workingStyleCheckBox.length < 2 && <div>必ず2つ選択して下さい。</div>}
       </div>
     </>
   );
