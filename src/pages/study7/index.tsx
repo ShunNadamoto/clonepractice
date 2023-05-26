@@ -106,7 +106,7 @@ const Study7: NextPage = () => {
         </label>
       ))}
       <br></br>
-      {/* <label>
+      <label>
         <input
           type='radio'
           value='男性'
@@ -123,7 +123,7 @@ const Study7: NextPage = () => {
           onChange={() => setSelectSex('女性')}
         />
         女性
-      </label> */}
+      </label>
       <br></br>
       <div>年齢の選択</div>
 
