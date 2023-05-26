@@ -10,14 +10,16 @@ type Props = {
   tagList: string[];
 };
 
-export const Profile: FC<Props> = ({
-  profileImgUrl,
-  brandImgUrl,
-  title,
-  industryName,
-  companyName,
-  tagList,
-}) => {
+export const Profile: FC<Props> = (props) => {
+  const { profileImgUrl, brandImgUrl, title, industryName, companyName, tagList } = props;
+  const testList = [1, 2, 3];
+  const [num1, num2, num3] = testList;
+
+  const testList2 = [2, 4, 6];
+  const [num4, num5, num6] = testList2;
+  console.log(num1, num2, num3);
+  console.log(num4, num5, num6);
+
   return (
     <div className={styles.container}>
       <img src={profileImgUrl} alt='プロフ画像' />
