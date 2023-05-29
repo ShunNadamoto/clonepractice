@@ -8,7 +8,7 @@ const Study7: NextPage = () => {
   const [selectCity, setSelectCity] = useState('');
   const [note, setNote] = useState('');
   const [ageCheckBox, setAgeCheckBox] = useState<string[]>([]);
-  const [selectSex, setSelectSex] = useState('');
+
   const [selectedWorkingStyle, setSelectedWorkingStyle] = useState('employee');
   const workingStyleList = [
     { value: 'employee', label: '会社員' },
@@ -22,11 +22,36 @@ const Study7: NextPage = () => {
     { value: '3', label: '玉野市' },
     { value: '4', label: 'その他' },
   ];
-  const sexList = [
-    { value: '男性', label: '男性' },
-    { value: '女性', label: '女性' },
-    { value: '答えたくない', label: '答えたくない' },
-  ];
+  //   if (name === 'あああ') {
+  //     return null;
+  //   }
+  //   if (name.length > 4) {
+  //     console.log('あああ');
+  //   } else {
+  //     console.log('aaaaa');
+  //   }
+
+  //   if (name.length < 5) {
+  //     console.log('4文字以下です。');
+  //   } else if (name.length <= 10 && name.length >= 5) {
+  //     if (name === 'あああああああ') {
+  //       console.log('ハズレ');
+  //     }
+  //     console.log('5文字以上10文字以下です。');
+  //   } else {
+  //     console.log('11文字以上です。');
+  //   }
+
+  if (telNo.length === 0) {
+    console.log('入力必須です。');
+  } else if (telNo.length === 10) {
+    console.log('市外局番が入力されています');
+  } else if (telNo.length === 11) {
+    console.log('携帯電話番号が入力されています。');
+  } else {
+    console.log('不正な値です。');
+  }
+
   const ageList = [
     { value: '10代', label: '10代' },
     { value: '20代', label: '20代' },
@@ -93,37 +118,6 @@ const Study7: NextPage = () => {
         onChange={(event) => setNote(event.target.value)}
       />
 
-      <div>性別の選択</div>
-      {sexList.map((elem) => (
-        <label key={elem.value}>
-          <input
-            type='radio'
-            value={elem.value}
-            checked={selectSex === elem.value}
-            onChange={() => setSelectSex(elem.value)}
-          />
-          {elem.label}
-        </label>
-      ))}
-      <br></br>
-      <label>
-        <input
-          type='radio'
-          value='男性'
-          checked={selectSex === '男性'}
-          onChange={() => setSelectSex('男性')}
-        />
-        男性
-      </label>
-      <label>
-        <input
-          type='radio'
-          value='女性'
-          checked={selectSex === '女性'}
-          onChange={() => setSelectSex('女性')}
-        />
-        女性
-      </label>
       <br></br>
       <div>年齢の選択</div>
 

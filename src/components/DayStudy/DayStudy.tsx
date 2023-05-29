@@ -96,7 +96,6 @@ export const DayStudy: FC<Props> = (props) => {
   // useState,useEffect入力、発動練習
 
   const [name2, setName2] = useState('');
-  const [humanList2, setHUmanList2] = useState<Person[]>([]);
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [note, setNote] = useState('');

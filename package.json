@@ -13,6 +13,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@hookform/error-message": "^2.0.1",
     "@next/font": "13.1.6",
     "@tanstack/react-query": "^4.29.7",
     "@types/node": "18.13.0",
