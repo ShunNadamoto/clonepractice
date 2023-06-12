@@ -69,17 +69,6 @@ const persons = {
 };
 console.log(persons.Yamada.weight);
 
-const person3 = {
-  name: 'aaa',
-  age: 20,
-};
-const person4 = { name: 'ccc', age: 2 };
-const person5 = { name: 'ddd', gender: '男性' };
-const person6 = { height: 1.8, weight: 70 };
-const apple = { name: 'apple', color: 'red' };
-const rice = { name: '米', color: '白' };
-const dog = { name: 'taro', type: '犬' };
-console.log(person6.height);
 const personList6 = [
   { name: '太郎', age: 5, note: '子供', registerDate: '20230519' },
   { name: '二郎', age: 13, note: '中学生', registerDate: '20230524' },
