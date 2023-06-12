@@ -7,25 +7,39 @@ import Parent from '@/ContextPractice/ContextComponents/Parent';
 //発火のタイミングを決めることが出来る。変数が変化したとき？マウント（ページがリロード）された時？アンマウントされた時？
 
 const DayStudyReact: NextPage = () => {
-  const [count, setCount] = useState(100);
+  console.log('aaa');
+  const [count, setCount] = useState(0);
+  const [count2, setCount2] = useState(0);
+  const [power, setPower] = useState(false);
   const handleClick = () => {
-    setCount(count + 1);
+    setCount(count * 2);
   };
   useEffect(() => {
-    //ページがリロードしたときに発火
-    console.log('Hello Hooks');
-    //countの変数が更新されたとき。set関数を入れると延々とcountの状態が続いて何度も発動、無限ループになってしまう。
-  }, [count]);
+    console.log('useEffectが実行されました');
+  }, []);
   return (
     <div>
-      <p>useState, useEffect</p>
-      <button style={{ width: '60px', height: '30px' }} onClick={handleClick}>
-        {count}
+      <p>useState練習</p>
+
+      <div>
+        <h1>Counter</h1>
+        <h2>カウント: {count}</h2>
+        <button onClick={() => setCount(count + 1)}>＋</button>
+        <button onClick={() => setCount(count - 1)}>ー</button>
+      </div>
+
+      <button style={{ width: '100px', height: '30px' }} onClick={handleClick}>
+        2倍{count}
       </button>
 
-      <Parent />
+      <h1>電源 {power ? 'ON' : 'OFF'} </h1>
+      <button onClick={() => setPower((prevState) => !prevState)}>ON/OFF</button>
 
-      <hr />
+      <h1>Learn useEffect</h1>
+      <h2>Count: {count}</h2>
+      <button onClick={() => setCount2(count + 1)}>+</button>
+
+      <Parent />
     </div>
   );
 };
