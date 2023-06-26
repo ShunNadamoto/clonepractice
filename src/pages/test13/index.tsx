@@ -1,6 +1,7 @@
 import { NextPage } from 'next';
-import { ReactNode } from 'react';
+import { ReactNode, useContext } from 'react';
 import { useForm } from 'react-hook-form';
+import { UserCountContext } from '../_app';
 import styles from './index.module.scss';
 
 interface LoginForm {
@@ -20,6 +21,7 @@ const Test13: NextPage = () => {
   const onSubmit = (data: LoginForm) => {
     console.log(data);
   };
+  const { count, setCount } = useContext(UserCountContext);
 
   return (
     <>
