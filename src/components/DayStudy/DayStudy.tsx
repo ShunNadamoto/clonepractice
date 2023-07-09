@@ -125,7 +125,7 @@ export const DayStudy: FC<Props> = (props) => {
       <div>{testAge >= 30 ? 'ゆとり世代' : ''}</div>
       <div style={{ padding: '20px', background: 'gray' }}>
         {humanList
-          .filter((elem) => elem.age == 32)
+          .filter((elem) => elem.age === 32)
           .map((elem, index) => (
             <div key={index}>
               <div>{elem.name}</div>
