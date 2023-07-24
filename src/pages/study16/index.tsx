@@ -1,94 +1,136 @@
 import { NextPage } from 'next';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import ContextPractice from '../../components/ContextPractice';
+import ContextPractice2 from '../../components/ContextPractice2';
 
-const Study13: NextPage = () => {
+const Study16: NextPage = () => {
   const [name, setName] = useState('');
   const [telNo, setTelNo] = useState('');
-  const [seleceAge, setSelectAge] = useState('');
+  const foodList = [
+    { value: '1', label: 'カレー' },
+    { value: '2', label: 'ラーメン' },
+    { value: '3', label: '焼肉' },
+    { value: '4', label: '寿司' },
+  ];
+  const [selectedFoodList, setSelectedFoodList] = useState<string[]>([]);
+
   const ageList = [
     { value: '1', label: '10代' },
     { value: '2', label: '20代' },
     { value: '3', label: '30代' },
     { value: '4', label: '40代' },
-    { value: '5', label: '50代' },
   ];
-  const [city, setCity] = useState('');
-  const cityList = [
-    { value: '1', label: 'Tokyo' },
-    { value: '2', label: 'Oomiya' },
-    { value: '3', label: 'Hiroshima' },
-    { value: '4', label: 'okayama' },
+  const [selectAge, setSelectAge] = useState('');
+  const investList = [
+    { value: '1', label: '現金' },
+    { value: '2', label: 'ideco' },
+    { value: '3', label: 'NISA' },
+    { value: '4', label: 'S&P500' },
   ];
-
-  const [selectedPetList, setSelectedPetList] = useState<string[]>([]);
-  const petList = [
-    { value: '1', label: '犬' },
-    { value: '2', label: '猫' },
-    { value: '3', label: 'ウサギ' },
+  const [invest, setInvest] = useState('');
+  const [selectedPlanList, setSelectedPlanList] = useState<string[]>([]);
+  const planList = [
+    { value: '0', label: '契約なし' },
+    { value: '1', label: 'マンスリー' },
+    { value: '2', label: '週1' },
+    { value: '3', label: '1号認定' },
   ];
 
   return (
     <>
-      <div>入力フォーム練習</div>
+      <div>入力フォーム周り練習</div>
 
       <input
         type='text'
+        placeholder='名前の入力欄'
         value={name}
-        placeholder='名前を入力して下さい'
-        onChange={(event) => setName(event.target.value)}
+        onChange={(e) => setName(e.target.value)}
       />
-      {name.length === 0 && <div>入力は必須</div>}
+      {name.length === 0 && '入力は必須です'}
+      {name.length >= 10 && '10文字以内で入力して下さい。'}
 
-      <div>
-        <input type='text' value={telNo} onChange={(event) => setTelNo(event.target.value)} />
-        {telNo.length === 0 && <div>入力は必須</div>}
-        {!/^(0{1}\d{9,10})$/.test(telNo) && <div>電話番号は10桁か11桁です</div>}
-      </div>
+      <div></div>
 
-      <div>年代選択</div>
+      <input
+        type='tel'
+        placeholder='電話番号入力欄'
+        value={telNo}
+        onChange={(e) => setTelNo(e.target.value)}
+      />
+      {!/^(0{1}\d{9,10})$/.test(telNo) && '電話番号は10桁もしくは11桁です。'}
+
+      <div></div>
+      <div>投資を始めた年齢</div>
       {ageList.map((elem) => (
         <label key={elem.value}>
           <input
             type='radio'
             value={elem.value}
-            checked={seleceAge === elem.value}
-            onChange={(event) => setSelectAge(event.target.value)}
+            checked={selectAge === elem.value}
+            onChange={(e) => setSelectAge(e.target.value)}
           />
           {elem.label}
         </label>
       ))}
 
-      <div>住んでいる街を選択</div>
-      <select value={city} onChange={(event) => setCity(event.target.value)}>
-        <option value='0'>選択されていません</option>
-        {cityList.map((elem) => (
+      <div></div>
+      <div>購入商品</div>
+      <select value={invest} onChange={(e) => setInvest(e.target.value)}>
+        <option value='0'>未選択</option>
+        {investList.map((elem) => (
           <option key={elem.value}>{elem.label}</option>
         ))}
       </select>
 
       <div>チェックボックス練習</div>
-
-      {petList.map((elem) => (
+      {foodList.map((elem) => (
         <label key={elem.value}>
           <input
             type='checkbox'
             value={elem.value}
-            checked={selectedPetList.includes(elem.value)}
+            checked={selectedFoodList.includes(elem.value)}
             onChange={(event) => {
-              let newSelectedPetList: string[];
+              let newSelectedFoodList: string[];
               if (event.target.checked) {
-                newSelectedPetList = [...selectedPetList, event.target.value];
+                newSelectedFoodList = [...selectedFoodList, event.target.value];
               } else {
-                newSelectedPetList = selectedPetList.filter((elem) => elem !== event.target.value);
+                newSelectedFoodList = selectedFoodList.filter(
+                  (elem) => elem !== event.target.value,
+                );
               }
-              setSelectedPetList(newSelectedPetList);
+              setSelectedFoodList(newSelectedFoodList);
             }}
           />
           {elem.label}
         </label>
       ))}
+
+      <select value={invest} onChange={(e) => setInvest(e.target.value)}>
+        <option value='0'>選択されていません</option>
+        {investList.map((elem) => (
+          <option key={elem.value}>{elem.label}</option>
+        ))}
+      </select>
+
+      <input
+        type='checkbox'
+        value='0'
+        checked={selectedPlanList.includes('0')}
+        onChange={(e) => {
+          let newSelectedPlanList: string[];
+          if (e.target.checked) {
+            newSelectedPlanList = [...selectedPlanList, e.target.value];
+          } else {
+            newSelectedPlanList = selectedPlanList.filter((elem) => elem !== e.target.value);
+          }
+          setSelectedPlanList(newSelectedPlanList);
+        }}
+      />
+      <ContextPractice />
+
+      <ContextPractice2 />
     </>
   );
 };
 
-export default Study13;
+export default Study16;
