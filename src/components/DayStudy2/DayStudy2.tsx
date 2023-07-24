@@ -1,6 +1,9 @@
 import axios from 'axios';
 import { FC, ReactHTML, SetStateAction, useState } from 'react';
 
+const test = NaN ? 'aaa' : 'bbb';
+console.log(test);
+
 export const DayStudy2 = () => {
   const [name, setName] = useState('');
   const [note, setNote] = useState('');
