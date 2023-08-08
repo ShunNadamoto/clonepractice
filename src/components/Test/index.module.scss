@@ -1,0 +1,43 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  margin-bottom: 20px;
+
+  & + & {
+    margin-left: 20px;
+  }
+
+  &__tag {
+    position: absolute;
+    padding: 5px;
+    left: 170px;
+    top: 10px;
+    font-size: 12px;
+    background-color: #fff;
+    border-radius: 10%;
+  }
+
+  &__img {
+    width: 250px;
+  }
+
+  &__menu {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  &__descripution {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  &__size {
+    font-size: 12px;
+  }
+
+  &__material {
+    font-size: 12px;
+  }
+}

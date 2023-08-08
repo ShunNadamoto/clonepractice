@@ -84,6 +84,7 @@ export default function Home() {
       <div className={styles.container}>
 
         <div className={styles.container__test2}>練習用サイト2</div>
+        <div>aaaa</div>
         <input
           className={styles.container__input}
           placeholder='ここに名前を入力してください'
