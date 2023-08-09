@@ -1,28 +1,16 @@
 import '../styles/globals.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
-import { Dispatch, SetStateAction, createContext, useState } from 'react';
+import { GlobalProvider } from '@/lib/context/GlobalContext';
 
-type UserCountContextType = {
-  count: number;
-  setCount: Dispatch<SetStateAction<number>>;
-};
-
-export const UserCountContext = createContext<UserCountContextType>({} as UserCountContextType);
 const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [count, setCount] = useState(100);
-  const value = {
-    count,
-    setCount,
-  };
-
   return (
     <QueryClientProvider client={queryClient}>
-      <UserCountContext.Provider value={value}>
+      <GlobalProvider>
         <Component {...pageProps} />
-      </UserCountContext.Provider>
+      </GlobalProvider>
     </QueryClientProvider>
   );
 }
