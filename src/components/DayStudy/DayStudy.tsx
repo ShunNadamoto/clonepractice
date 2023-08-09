@@ -53,6 +53,8 @@ const people = [
 ];
 console.log(people[1].address);
 console.log(people[2].age);
+const people2 = [{ name: 'tanaka', age: 34, address: 'Omiya' }];
+console.log(people2[0].age);
 
 //連想配列の中の配列
 const foods_group = {
@@ -74,6 +76,7 @@ const personList6 = [
   { name: '二郎', age: 13, note: '中学生', registerDate: '20230524' },
   { name: '三郎', age: 7, note: '小学生', registerDate: '20230522' },
 ];
+console.log(personList6[0].note);
 
 type Props = {
   testName: string;
@@ -122,7 +125,7 @@ export const DayStudy: FC<Props> = (props) => {
       <div>{testAge >= 30 ? 'ゆとり世代' : ''}</div>
       <div style={{ padding: '20px', background: 'gray' }}>
         {humanList
-          .filter((elem) => elem.age == 32)
+          .filter((elem) => elem.age === 32)
           .map((elem, index) => (
             <div key={index}>
               <div>{elem.name}</div>
@@ -131,6 +134,12 @@ export const DayStudy: FC<Props> = (props) => {
           ))}
       </div>
       <button onClick={testOnClick}>OnclickTestボタン</button>
+
+      {humanList.map((elem, index) => (
+        <div key={index}>
+          <div>{elem.registerDate}</div>
+        </div>
+      ))}
 
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <input

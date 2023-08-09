@@ -1,0 +1,39 @@
+.table-responsive .wrap_scroll_table {
+  width: 400px;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  margin: 0 auto;
+}
+
+.table-responsive .scroll_table {
+  margin-top: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.table-responsive .scroll_table,
+.table-responsive .scroll_table td,
+.table-responsive .scroll_table th {
+  border: 1px solid #cbced2;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.table-responsive .scroll_table th {
+  background: #01214d;
+  color: #fff;
+  padding: 4px 12px;
+}
+
+.table-responsive .scroll_table td {
+  background: #f5f6f8;
+  padding: 4px 12px;
+}
+
+.table-responsive .txt {
+  width: 400px;
+  margin: 0 auto;
+  font-size: 14px;
+  font-size: 1.4rem;
+  margin-top: 2px;
+}

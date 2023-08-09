@@ -1,6 +1,7 @@
 /* eslint-disable import/named */
 import { NextPage } from 'next';
-import { useState, useEffect, createContext } from 'react';
+import Image from 'next/image';
+import { useState, useEffect, ChangeEvent, useRef } from 'react';
 import Parent from '@/ContextPractice/ContextComponents/Parent';
 
 //useEffect 第1引数にコールバック関数、第2引数に依存配列
@@ -14,11 +15,42 @@ const DayStudyReact: NextPage = () => {
   const handleClick = () => {
     setCount(count * 2);
   };
+  const [displayImage, setDisplayImage] = useState('');
+
+  const fileTagRef = useRef<HTMLInputElement>(null);
+  const onChangeFile = (event: ChangeEvent<HTMLInputElement>) => {
+    if (!event.target.files) return null;
+    const file = event.target?.files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      setDisplayImage(reader.result as string);
+    };
+    reader.readAsDataURL(file);
+  };
+
   useEffect(() => {
     console.log('useEffectが実行されました');
   }, []);
   return (
     <div>
+      <div
+        onClick={() => {
+          if (fileTagRef && fileTagRef.current) {
+            fileTagRef.current.click();
+          }
+        }}
+      >
+        プロフィール写真変更
+      </div>
+      <input
+        type='file'
+        accept='image/*'
+        onChange={onChangeFile}
+        ref={fileTagRef}
+        style={{ display: 'none' }}
+      />
+      <Image src={displayImage} alt='プロフィール画像' width='150' height='150' />
+
       <p>useState練習</p>
 
       <div>

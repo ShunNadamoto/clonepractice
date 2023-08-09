@@ -1,15 +1,71 @@
 import axios from 'axios';
 import { FC, ReactHTML, SetStateAction, useState } from 'react';
 
+const test = NaN ? 'aaa' : 'bbb';
+console.log(test);
+
 export const DayStudy2 = () => {
   const [name, setName] = useState('');
   const [note, setNote] = useState('');
   const [tel, setTel] = useState('');
   const [date, setDate] = useState('');
 
-  console.log('name:', name);
-  console.log('note:', note);
-  console.log('tel:', tel);
+  const test = NaN ? 'truthy' : 'falsy';
+  console.log(test);
+
+  enum Direction {
+    Up = 'UP',
+    Down = 'DOWN',
+    Right = 'Right',
+    Left = 'Left',
+  }
+  const DirectionRitht = Direction.Right;
+  console.log(DirectionRitht);
+
+  const sum = (num1: number, num2: number) => num1 + num2;
+  const sum2 = (num1: number, num2: number) => {
+    num1 + num2;
+  };
+  console.log(sum(1, 2));
+
+  const person = (name: string, age: number): string => {
+    return `${name}さんは${age}歳です。`;
+  };
+  console.log(person('松岡', 41));
+
+  const numberList = [1, 2, 3, 4, 5];
+  const [num1, num2, num3, num4, num5] = numberList;
+  console.log(num1, num2, num3, num4, num5);
+
+  const person2 = { name: '佐伯', age: 32 };
+  console.log(person2.age, person2.name);
+  const Fruits = { a: 'apple', b: 'banana', o: 'orange' };
+  Fruits['b'] = 'banana2';
+  console.log(Fruits.a, Fruits.b);
+
+  const animals = [
+    ['犬', '猫', '鳥'],
+    ['ライオン', 'キリン', 'ゾウ'],
+  ];
+  console.log(animals[0][0]);
+  console.log(animals[1][2]);
+
+  const people = [
+    { name: '太郎', age: 20, address: '東京' },
+    { name: '一郎', age: 30, address: '岡山' },
+  ];
+  console.log(people[0].name);
+  const drink_group = {
+    juice: ['オレンジ', 'りんご', 'ばなな'],
+    alcol: ['ビール', '日本酒', '焼酎'],
+  };
+  console.log(drink_group.juice[1]);
+
+  const brothers = {
+    Hiroki: { height: 1.75, weight: 63 },
+    Hideki: { height: 1.7, weight: 61 },
+  };
+  console.log(brothers.Hideki.height);
 
   const areaList = [
     { value: '1', label: '東北地方' },
@@ -26,12 +82,9 @@ export const DayStudy2 = () => {
   ];
   const [selectedArea, setSelectedArea] = useState('');
   const [selectedPrefecture, setSelectedPrefecture] = useState('');
-  console.log('selectedArea:', selectedArea);
 
   const [workingStyle, setWorkingStyle] = useState('employee');
   const [workingStyleCheckBox, setWorkingStyleCheckBox] = useState<string[]>([]);
-  console.log('workingStyle:', workingStyle);
-  console.log('workingStyleCheckBox:', workingStyleCheckBox);
 
   const workingStyleList = [
     { value: 'employee', label: '会社員' },
