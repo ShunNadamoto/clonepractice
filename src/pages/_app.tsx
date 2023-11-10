@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
 import { Dispatch, SetStateAction, createContext, useState } from 'react';
+import { RecoilRoot } from 'recoil';
 
 type UserCountContextType = {
   count: number;
@@ -20,9 +21,11 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <UserCountContext.Provider value={value}>
-        <Component {...pageProps} />
-      </UserCountContext.Provider>
+      <RecoilRoot>
+        <UserCountContext.Provider value={value}>
+          <Component {...pageProps} />
+        </UserCountContext.Provider>
+      </RecoilRoot>
     </QueryClientProvider>
   );
 }
