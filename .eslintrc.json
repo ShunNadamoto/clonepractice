@@ -12,10 +12,18 @@
     "import/order": [
       "error",
       {
-        "alphabetize": {
-          "order": "asc"
-        }
+        "groups": [
+          "index",
+          "sibling",
+          "parent",
+          "internal",
+          "external",
+          "builtin",
+          "object",
+          "type"
+        ]
       }
-    ]
+    ],
+    "import/no-unresolved": "off"
   }
 }
