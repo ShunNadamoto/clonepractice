@@ -2,44 +2,38 @@
 import { AxiosError, AxiosResponse } from 'axios';
 import React, { useState, useEffect } from 'react';
 import axios from '@/lib/axiosInstance';
+import { useQuery, useMutation } from 'react-query';
+import { useGetBookList, useGetBookList2 } from '@/lib/hooks/useGetBookList';
+import { usePostBook } from '@/lib/hooks/usePostBook';
 
 const baseURL = '/api/books';
 type Book = { title: string; author: string };
 
 const Main = () => {
-  const [bookList, setBookList] = useState<Book[]>([]);
   const [newBookTitle, setNewBookTitle] = useState('');
   const [newBookBody, setNewBookBody] = useState('');
-  const [refetch, setRefetch] = useState(false);
 
-  useEffect(() => {
-    // const getData = async () => {
-    //   try {
-    //     const result = await axios.get<Book[]>('/api/books');
-    //     setBookList(result.data);
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    // };
-    // getData();
-    axios
-      .get(baseURL)
-      .then((response: AxiosResponse<Book[]>) => {
-        console.log(response);
-        setBookList(response.data);
-      })
-      .catch((error: AxiosError<{ error: string }>) => {
-        console.log(error);
-      });
-  }, [refetch]);
+  const { data, isLoading, isError, refetch, error } = useGetBookList2();
 
-  if (!bookList) return null;
+  const { mutate } = usePostBook({
+    onSuccess: (data) => {
+      refetch();
+      console.log('POSTが成功しました');
+      setNewBookTitle('');
+      setNewBookBody('');
+    },
+    onError: (data) => {
+      console.error('Error creating data:', error);
+      console.error('Error posting data:', error);
+      console.log('POSTが失敗しました');
+    },
+  });
 
   return (
     <div>
-      {bookList.map((elem) => {
+      {data?.map((elem, index) => {
         return (
-          <div key={elem.title}>
+          <div key={index}>
             <div>タイトル：{elem.title}</div>
             <div>著者：{elem.author}</div>
           </div>
@@ -61,17 +55,10 @@ const Main = () => {
         />
 
         <button
-          onClick={async () => {
-            const requestBody = { title: newBookTitle, author: newBookBody };
-            try {
-              await axios.post(baseURL, requestBody);
-              console.log('POSTが成功しました');
-              setNewBookTitle('');
-              setNewBookBody('');
-              setRefetch(!refetch);
-            } catch (error) {
-              console.error('POSTが失敗しました');
-            }
+          disabled={!(newBookTitle && newBookBody)}
+          onClick={() => {
+            const requestBody: Book = { title: newBookTitle, author: newBookBody };
+            mutate(requestBody);
           }}
         >
           投稿する
