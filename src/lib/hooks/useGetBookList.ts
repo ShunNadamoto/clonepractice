@@ -29,6 +29,6 @@ export const useGetBookList = () => {
 
 export const useGetBookList2 = () =>
   useQuery<Book[]>('/api/books', async () => {
-    const res = await axios.get(baseURL);
+    const res = await axios.get('/api/books');
     return res.data;
   });
