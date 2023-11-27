@@ -23,8 +23,10 @@
     "@types/node": "18.13.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.10",
+    "@types/react-query": "^1.2.9",
     "axios": "^1.6.1",
     "classnames": "^2.3.2",
+    "dayjs": "^1.11.10",
     "eslint": "^8.53.0",
     "eslint-config-next": "13.1.6",
     "eslint-plugin-import": "^2.29.0",
@@ -56,6 +58,7 @@
     "msw": "^1.2.1",
     "prettier": "^2.8.4",
     "react-modal": "^3.16.1",
+    "react-toastify": "^9.1.3",
     "sass": "^1.58.1",
     "storybook": "^7.0.10",
     "ts-jest": "^29.1.1"
