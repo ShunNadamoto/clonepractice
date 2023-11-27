@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import router, { useRouter } from 'next/router';
 
 //要素の追加関数
 //push():配列の末尾に要素を追加
@@ -50,12 +49,38 @@ const accessElement = myArray6[1];
 console.log(accessElement);
 const accessElement2 = myArray6[9];
 console.log(accessElement2);
-// const accessElement3 = myArray6[-1];
-// console.log(accessElement3);
+
+//連想配列（オブジェクト）のプロパティ操作
+
+let personList = { name: '山田', age: 20, sex: '男性' };
+
+console.log(personList.name); // "value1"
+console.log(personList['sex']); // "value2"
+personList.name = '鈴木';
+console.log(personList);
+
+type MyObject = {
+  key1: string;
+  key2: string;
+  key3: string;
+};
+
+let obj: MyObject = {
+  key1: 'value1',
+  key2: 'value2',
+  key3: 'value3',
+};
+
+// 新しいオブジェクトを作成して既存のオブジェクトをマージ
+let newObj: MyObject & { key4: string } = {
+  ...obj,
+  key4: 'value4',
+};
+console.log(newObj);
 
 //条件分岐（if, else, switch）
 //if 指定した条件が真の場合にコードブロック
-// if (条件)　{
+// if (条件) {
 //条件が真の場合に実行するコード
 // }
 

@@ -1,17 +1,17 @@
-import axios from '@/lib/axiosInstance';
 import { useMutation } from 'react-query';
+import axios from '@/lib/axiosInstance';
 
 type Book = { title: string; author: string };
 type QueryOptionsType = {
-  onSuccess?: (data: Book) => void;
+  onSuccess?: (data: any) => void;
   onError?: (error: any) => void;
 };
 
-export const usePostBook = (queryOptions?: QueryOptionsType) => {
+export const usePostBook5 = (queryOptions?: QueryOptionsType) => {
   return useMutation(
     async (postData: Book) => {
-      const response = await axios.post('api/books', postData);
-      return response.data;
+      const res = await axios.post('/api/books', postData);
+      return res.data;
     },
     {
       onSuccess: queryOptions?.onSuccess,
