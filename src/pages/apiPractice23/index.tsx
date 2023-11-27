@@ -11,6 +11,7 @@ const BookPage = () => {
   const [book, setBook] = useState<Book>({ title: '', author: '', thumbnail: null });
   const [newBookTitle, setNewBookTitle] = useState('');
   const [newBookAuthor, setNewBookAuthor] = useState('');
+  const [newFile, setNewFile] = useState<File | null>(null);
 
   const { mutate } = usePostBook({
     onSuccess: (data) => {
@@ -52,7 +53,12 @@ const BookPage = () => {
     const files = event.target.files;
     if (files && files.length > 0) {
       const selectedFile = files[0];
-      setBook((prevState) => ({ ...prevState, thumbnail: selectedFile }));
+      setNewFile(selectedFile);
+      setBook((prevState) => ({
+        author: prevState.author,
+        title: prevState.title,
+        thumbnail: selectedFile,
+      }));
     }
   };
 
@@ -95,29 +101,29 @@ const BookPage = () => {
         </div>
       ))}
 
-      <form onSubmit={handleSubmit}>
-        <input type='text' value={newBookTitle} onChange={handleInputChange} name='title' />
-        <br />
-        <input type='text' value={newBookAuthor} onChange={handleInputChange} name='author' />
-        <br />
-        <input type='file' onChange={handleChange} />
+      {/* <form onSubmit={handleSubmit}> */}
+      <input type='text' value={newBookTitle} onChange={handleInputChange} name='title' />
+      <br />
+      <input type='text' value={newBookAuthor} onChange={handleInputChange} name='author' />
+      <br />
+      <input type='file' onChange={handleChange} />
 
-        <button
-          disabled={!(newBookTitle && newBookAuthor)}
-          onClick={() => {
-            console.log(book.thumbnail);
-            const requestBody: Book = {
-              title: newBookTitle,
-              author: newBookAuthor,
-              thumbnail: book.thumbnail,
-            };
-            mutate(requestBody);
-          }}
-          type='submit'
-        >
-          投稿する
-        </button>
-      </form>
+      <button
+        disabled={!(newBookTitle && newBookAuthor)}
+        onClick={() => {
+          console.log(book.thumbnail);
+          const requestBody: Book = {
+            title: newBookTitle,
+            author: newBookAuthor,
+            thumbnail: book.thumbnail,
+          };
+          mutate(requestBody);
+        }}
+        type='button'
+      >
+        投稿する
+      </button>
+      {/* </form> */}
     </div>
   );
 };
