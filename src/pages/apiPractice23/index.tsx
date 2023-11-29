@@ -5,12 +5,11 @@ import { usePostBook } from '@/lib/hooks/usePostBook';
 
 type Book = { title: string; author: string; thumbnail: File | null };
 const baseURL = '/api/books';
-const book = { title: 'sampleBook', author: 'samplePerson' };
 
 const BookPage = () => {
-  const [book, setBook] = useState<Book>({ title: '', author: '', thumbnail: null });
   const [newBookTitle, setNewBookTitle] = useState('');
   const [newBookAuthor, setNewBookAuthor] = useState('');
+  const [newBookThumbnail, setNewBookThumbnail] = useState<File | null>(null);
 
   const { mutate } = usePostBook({
     onSuccess: (data) => {
@@ -18,6 +17,7 @@ const BookPage = () => {
       console.log('POSTが成功しました');
       setNewBookTitle('');
       setNewBookAuthor('');
+      setNewBookThumbnail(null);
     },
     onError: (data) => {
       console.log('POSTが失敗しました');
@@ -52,15 +52,22 @@ const BookPage = () => {
     const files = event.target.files;
     if (files && files.length > 0) {
       const selectedFile = files[0];
-      setBook((prevState) => ({ ...prevState, thumbnail: selectedFile }));
+      const MAX_FILE_SIZE = 10;
+      console.log('aaa');
+      console.log(selectedFile.size);
+      if (selectedFile.size > MAX_FILE_SIZE) {
+        alert(`ファイルのサイズが${selectedFile.size}のため、大きすぎます。`);
+      } else {
+        setNewBookThumbnail(selectedFile);
+      }
     }
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // フォームの送信処理や、API呼び出しなどをここで行う
-    console.log('Book:', book);
-  };
+  // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  //   event.preventDefault();
+  //   // フォームの送信処理や、API呼び出しなどをここで行う
+  //   console.log('Book:', book);
+  // };
 
   // useEffect(() => {
   //   const getBookList = async () => {
@@ -95,29 +102,29 @@ const BookPage = () => {
         </div>
       ))}
 
-      <form onSubmit={handleSubmit}>
-        <input type='text' value={newBookTitle} onChange={handleInputChange} name='title' />
-        <br />
-        <input type='text' value={newBookAuthor} onChange={handleInputChange} name='author' />
-        <br />
-        <input type='file' onChange={handleChange} />
+      {/* <form onSubmit={handleSubmit}> */}
+      <input type='text' value={newBookTitle} onChange={handleInputChange} name='title' />
+      <br />
+      <input type='text' value={newBookAuthor} onChange={handleInputChange} name='author' />
+      <br />
+      <input type='file' onChange={handleChange} />
 
-        <button
-          disabled={!(newBookTitle && newBookAuthor)}
-          onClick={() => {
-            console.log(book.thumbnail);
-            const requestBody: Book = {
-              title: newBookTitle,
-              author: newBookAuthor,
-              thumbnail: book.thumbnail,
-            };
-            mutate(requestBody);
-          }}
-          type='submit'
-        >
-          投稿する
-        </button>
-      </form>
+      <button
+        disabled={!(newBookTitle && newBookAuthor)}
+        onClick={() => {
+          const requestBody: Book = {
+            title: newBookTitle,
+            author: newBookAuthor,
+            thumbnail: newBookThumbnail,
+          };
+          console.log(requestBody);
+          mutate(requestBody);
+        }}
+        // type='submit'
+      >
+        投稿する
+      </button>
+      {/* </form> */}
     </div>
   );
 };
