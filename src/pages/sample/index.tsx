@@ -30,6 +30,11 @@ const Sample: NextPage = () => {
       .catch((error) => console.log(error));
   }, [refresh]);
 
+  const calc = (num1: number, num2: number) => {
+    return num1 + num2;
+  };
+  console.log(calc(1, 3));
+
   const resetInput = () => {
     setNewName('');
     setNewAge('');
