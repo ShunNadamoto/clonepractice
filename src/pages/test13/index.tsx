@@ -1,8 +1,8 @@
 import { NextPage } from 'next';
 import { ReactNode, useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { UserCountContext } from '../_app';
 import styles from './index.module.scss';
+import { useGlobalContext } from '@/lib/context/GlobalContext';
 
 interface LoginForm {
   name: string;
@@ -21,11 +21,13 @@ const Test13: NextPage = () => {
   const onSubmit = (data: LoginForm) => {
     console.log(data);
   };
-  const { count, setCount } = useContext(UserCountContext);
+  const { count, setCount, userId, setUserId } = useGlobalContext();
 
   return (
     <>
       <div className={styles.container}>
+        <div>{count}</div>
+        <button onClick={() => setCount(count + 1)}>カウントアップ</button>
         <form onSubmit={handleSubmit(onSubmit)}>
           <h1>Login Form</h1>
           <label className={styles.container__input} htmlFor='名前'>

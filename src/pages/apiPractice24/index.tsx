@@ -1,7 +1,8 @@
 import axios from '@/lib/axiosInstance';
 import { useState, useEffect } from 'react';
 import { useQuery, useMutation } from 'react-query';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm, SubmitHandler, Controller } from 'react-hook-form';
+import { title } from 'process';
 
 type Book = { title: string; author: string };
 const baseURL = '/api/books';
@@ -11,15 +12,14 @@ const BookPage = () => {
   //   const [refetch, setRefetch] = useState(false);
   const [newBookTitle, setNewBookTitle] = useState('');
   const [newBookAuthor, setNewBookAuthor] = useState('');
-  //   const {
-  //     register,
-  //     handleSubmit,
-  //     formState: { errors },
-  //   } = useForm<Book[]>();
-
-  //   const onSubmit: SubmitHandler<Book[]> = (data) => {
-  //     console.log(data); // フォームのデータを取得
-  //   };
+  const {
+    register,
+    getValues,
+    watch,
+    handleSubmit,
+    formState: { errors },
+    control,
+  } = useForm<Book>();
 
   const {
     data: bookListData,
@@ -75,36 +75,67 @@ const BookPage = () => {
 
   return (
     <div>
-      {bookList.map((elem) => (
-        <div>
+      {bookList.map((elem, index) => (
+        <div key={index}>
           <div>{elem.title}</div>
           <div>{elem.author}</div>
         </div>
       ))}
 
-      {/* <form onSubmit={handleSubmit(onSubmit)}>
       <div>
-        <label htmlFor="title">Title:</label>
-        <input type="text" id="title" {...register('title', { required: true })} />
-        {errors.title && <span>Title is required</span>}
+        <label>
+          <Controller
+            control={control}
+            name='title'
+            rules={{
+              required: `必須項目です`,
+              maxLength: {
+                value: 255,
+                message: `255文字以内で入力してください`,
+              },
+            }}
+            render={({ field: { onChange, onBlur, value, name } }) => (
+              <input
+                type='text'
+                name={name}
+                onBlur={onBlur}
+                onChange={(event) => {
+                  console.log(errors.title?.message);
+                  onChange(event.target.value);
+                }}
+                value={value}
+                data-testid='title'
+              />
+            )}
+          />
+          <p>{errors.title?.message}</p>
+        </label>
+
+        <label>
+          <Controller
+            control={control}
+            name='author'
+            render={({ field: { onChange, onBlur, value, name } }) => (
+              <input
+                type='text'
+                name={name}
+                onBlur={onBlur}
+                onChange={onChange}
+                value={value}
+                data-testid='author'
+              />
+            )}
+          />
+        </label>
       </div>
 
-      <div>
-        <label htmlFor="author">Author:</label>
-        <input type="text" id="author" {...register('author', { required: true })} />
-        {errors.author && <span>Author is required</span>}
-      </div>
-
-      <button type="submit">Submit</button>
-    </form> */}
-
-      <input type='text' value={newBookTitle} onChange={(e) => setNewBookTitle(e.target.value)} />
+      {/* <input type='text' value={newBookTitle} onChange={(e) => setNewBookTitle(e.target.value)} />
       <br />
-      <input type='text' value={newBookAuthor} onChange={(e) => setNewBookAuthor(e.target.value)} />
+      <input type='text' value={newBookAuthor} onChange={(e) => setNewBookAuthor(e.target.value)} /> */}
 
       <button
         onClick={() => {
-          mutate({ title: newBookTitle, author: newBookAuthor });
+          mutate({ title: getValues('title'), author: getValues('author') });
         }}
       >
         新規に追加

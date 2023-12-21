@@ -4,25 +4,23 @@ import type { AppProps } from 'next/app';
 import { Dispatch, SetStateAction, createContext, useState } from 'react';
 import { RecoilRoot } from 'recoil';
 import { queryClient } from '@/config/reactQuery';
+import useUserCount from '@/hooks/useUserCount';
 
 type UserCountContextType = {
   count: number;
-  setCount: Dispatch<SetStateAction<number>>;
+  increment: () => void;
+  decrement: () => void;
 };
 
 export const UserCountContext = createContext<UserCountContextType>({} as UserCountContextType);
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [count, setCount] = useState(100);
-  const value = {
-    count,
-    setCount,
-  };
+  const userCountValue = useUserCount();
 
   return (
     <QueryClientProvider client={queryClient}>
       <RecoilRoot>
-        <UserCountContext.Provider value={value}>
+        <UserCountContext.Provider value={userCountValue}>
           <Component {...pageProps} />
         </UserCountContext.Provider>
       </RecoilRoot>
