@@ -55,6 +55,8 @@ const Test111: NextPage = () => {
     console.log('useEffect');
   }, []);
 
+  const test = ['aaa', 'iii', 'uuu', 'eee'];
+
   return (
     <div className={styles.container}>
       check!
@@ -67,7 +69,7 @@ const Test111: NextPage = () => {
           isDisplayExcelent={elem.isExcelent}
         />
       ))}
-      <Profile2 name='aaaa' age={13} isDisplayExcelent />
+      <Profile2 name='aaaa' age={14} isDisplayExcelent />
       <div className={styles.container__header}>header</div>
       <button className={styles.container__button}>押してください</button>
       <div className={styles.container__positionSample}>
@@ -81,8 +83,38 @@ const Test111: NextPage = () => {
           </div>
         );
       })}
+      {testData.map((elem) => (
+        <div key={elem.id}>{elem.name}</div>
+      ))}
+      {testData.map((elem) => (
+        <div key={elem.id}>{elem.name}</div>
+      ))}
+      {testData.map((elem) => (
+        <div key={elem.id}>{elem.name}</div>
+      ))}
+      {testData.map((elem) => (
+        <div key={elem.id}>{elem.name}</div>
+      ))}
+      <div>aaa</div>
+      <div>aaa</div>
+      <div>aaa</div>
+      <div>aaa</div>
+      {testData.map((elem) => {
+        return <div key={elem.id}>{elem.name}</div>;
+      })}
       <div className={styles.container__flexBox}>
+        {/* const test = ['aaa', 'iii', 'uuu', 'eee']; */}
+
+        {test.map((elem, index) => (
+          <div key={index} className={styles.container__flexBox__item}>
+            {elem}
+          </div>
+        ))}
         <div className={styles.container__flexBox__item}>aaa</div>
+        <div className={styles.container__flexBox__item}>iii</div>
+        <div className={styles.container__flexBox__item}>uuu</div>
+        <div className={styles.container__flexBox__item}>eee</div>
+        {/* <div className={styles.container__flexBox__item}>aaa</div>
         <div className={styles.container__flexBox__item}>iiii</div>
         <div className={styles.container__flexBox__item}>uuuu</div>
         <div className={styles.container__flexBox__item}>aaa</div>
@@ -96,7 +128,7 @@ const Test111: NextPage = () => {
         <div className={styles.container__flexBox__item}>uuuu</div>
         <div className={styles.container__flexBox__item}>aaa</div>
         <div className={styles.container__flexBox__item}>iiii</div>
-        <div className={styles.container__flexBox__item}>uuuu</div>
+        <div className={styles.container__flexBox__item}>uuuu</div> */}
       </div>
     </div>
   );

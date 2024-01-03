@@ -9,7 +9,6 @@ export const Profile2: FC<Props> = ({ name, age, isDisplayExcelent = false }) =>
       <div>名前は:{name}</div>
       <div>年齢は：{age}歳です</div>
       {isDisplayExcelent && <div>優秀です！</div>}
-      <></>
     </div>
   );
 };
