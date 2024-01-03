@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import { useState } from 'react';
+import SeleryBox from '@/components/SeleryBox/SeleryBox';
 
 const WeeklyTest: NextPage = () => {
   const test = (params1: number, params2: number) => {
@@ -38,6 +39,8 @@ const WeeklyTest: NextPage = () => {
   console.log(test4);
   console.log(testList.includes(5));
 
+  const [name, setName] = useState('');
+
   return (
     <>
       <div>テスト練習</div>
@@ -50,6 +53,20 @@ const WeeklyTest: NextPage = () => {
       })}
 
       <button onClick={() => setIsDisplayName(!isDisPlayName)}>ON/OFF切り替え</button>
+
+      <SeleryBox
+        industry='データ入力'
+        averageSelery='平均給与 ￥3,990,953 年収'
+        recruiting='求人'
+      />
+
+      <input
+        type='text'
+        value={name}
+        placeholder='名前の入力'
+        onChange={(event) => setName(event.target.value)}
+      />
+      {name.length === 0 && <div>入力は必須</div>}
     </>
   );
 };

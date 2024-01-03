@@ -2,14 +2,12 @@ import axios from 'axios';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { AccordionMenu } from '../components/AccordionMenu';
 import { Book } from '../components/Book';
 import { HamburgerMenu } from '../components/HamburgerMenu';
 import { IntroductionCard } from '../components/IntroductionCard';
 import { MeritCard } from '../components/MeritCard';
 import { Movie } from '../components/Movie';
 import { PanMenu } from '../components/PanMenu';
-import { Profile } from '../components/Profile';
 import { Sukiya } from '../components/Sukiya';
 import {
   questionResponse,
@@ -22,6 +20,10 @@ import {
 } from '../constant';
 import { useGetPersonList } from '../lib/hooks';
 import styles from './index.module.scss';
+import AccordionMenu3, {
+  AccordionMenu,
+  AccordionMenu2,
+} from '@/components/AccordionMenu/AccordionMenu';
 
 export default function Home() {
   const [name, setName] = useState('');
@@ -82,7 +84,6 @@ export default function Home() {
       </Head>
 
       <div className={styles.container}>
-
         <div className={styles.container__test2}>練習用サイト2</div>
         <input
           className={styles.container__input}
