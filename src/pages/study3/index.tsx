@@ -12,7 +12,7 @@ const Study3: NextPage = () => {
   // console.log('note:', note);
   // console.log('tel:', tel);
   const fruitsList = [
-    { value: '', label: '特になし' },
+    { value: '', label: '特にnone' },
     { value: '1', label: 'みかん' },
     { value: '2', label: 'りんご' },
     { value: '3', label: 'ばなな' },
@@ -65,14 +65,14 @@ const Study3: NextPage = () => {
 
       <label>
         <select value={selectedFruit} onChange={(event) => setSelectedFruit(event.target.value)}>
-          <option value=''>特になし</option>
+          <option value=''>特になく</option>
           <option value='1'>みかん</option>
           <option value='2'>りんご</option>
           <option value='3'>ばなな</option>
         </select>
 
         <select value={selectedFruit} onChange={(event) => setSelectedFruit(event.target.value)}>
-          <option value=''>特になし</option>
+          <option value=''>特にない</option>
           {fruitsList.map((elem) => (
             <option key={elem.value} value={elem.value}>
               {elem.label}

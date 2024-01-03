@@ -73,14 +73,12 @@ const Test111: NextPage = () => {
       <div className={styles.container__positionSample}>
         <div className={styles.container__positionSample__absolute}>absolute</div>
       </div>
-      {testData.map((elem, index) => {
-        return (
-          <div key={index}>
-            <div>なまえ：{elem.name}</div>
-            <div>年齢：{elem.age}</div>
-          </div>
-        );
-      })}
+      {testData.map((elem, index) => (
+        <div key={index}>
+          <div>なまえ：{elem.name}</div>
+          <div>年齢：{elem.age}</div>
+        </div>
+      ))}
       <div className={styles.container__flexBox}>
         <div className={styles.container__flexBox__item}>aaa</div>
         <div className={styles.container__flexBox__item}>iiii</div>
