@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '@/lib/axiosInstance2';
 import { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 import styles from './index.module.scss';
@@ -13,7 +13,7 @@ const Test113: NextPage = () => {
   useEffect(() => {
     console.log('-----useEffect-------');
     axios
-      .get('https://shop-ivx3.onrender.com/api/books')
+      .get('api/books')
       .then((res) => {
         console.log(res);
         setBookList(res.data);
@@ -44,7 +44,7 @@ const Test113: NextPage = () => {
       <button
         onClick={() => {
           axios
-            .post('https://shop-ivx3.onrender.com/api/books', {
+            .post('/api/books', {
               title: newTitle,
               author: newAuthor,
             })
