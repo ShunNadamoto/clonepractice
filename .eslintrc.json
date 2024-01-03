@@ -1,4 +1,5 @@
 {
+  "plugins": ["import"],
   "extends": [
     "next/core-web-vitals",
     "plugin:import/recommended",
@@ -7,13 +8,22 @@
     "plugin:storybook/recommended"
   ],
   "rules": {
+    "import/named": ["error", { "name": "AxiosResponse" }],
     "import/order": [
       "error",
       {
-        "alphabetize": {
-          "order": "asc"
-        }
+        "groups": [
+          "index",
+          "sibling",
+          "parent",
+          "internal",
+          "external",
+          "builtin",
+          "object",
+          "type"
+        ]
       }
-    ]
+    ],
+    "import/no-unresolved": "off"
   }
 }
