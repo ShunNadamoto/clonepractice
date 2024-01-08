@@ -9,7 +9,7 @@ const Study3: NextPage = () => {
   const [note, setNote] = useState('');
   const [tel, setTel] = useState('');
   // console.log('name:', name);
-  // console.log('note:', note);
+  console.log('note:', note);
   // console.log('tel:', tel);
   const fruitsList = [
     { value: '', label: '特にnone' },
@@ -17,6 +17,15 @@ const Study3: NextPage = () => {
     { value: '2', label: 'りんご' },
     { value: '3', label: 'ばなな' },
   ];
+
+  const petList = [
+    { value: '', label: '特になし' },
+    { value: '1', label: '犬' },
+    { value: '2', label: '猫' },
+    { value: '3', label: '鳥' },
+  ];
+  const [selectedPet, setSelectedPet] = useState('');
+
   const [selectedFruit, setSelectedFruit] = useState('');
   console.log('selectedFruit:', selectedFruit);
   const foodsList = [
@@ -26,11 +35,12 @@ const Study3: NextPage = () => {
     { value: '4', label: 'お魚' },
   ];
   const [selectedFood, setSelectedFood] = useState('');
+  console.log(selectedPet);
 
   const [workingStyle, setWorkingStyle] = useState('employee');
   const [workingStyleCheckBox, setWorkingStyleCheckBox] = useState<string[]>([]);
-  console.log('workingStyle:', workingStyle);
-  console.log('workingStyleCheckBox:', workingStyleCheckBox);
+  // console.log('workingStyle:', workingStyle);
+  // console.log('workingStyleCheckBox:', workingStyleCheckBox);
 
   const workingStyleList = [
     { value: 'employee', label: '会社員' },
@@ -58,7 +68,7 @@ const Study3: NextPage = () => {
         <textarea
           id='textArea'
           value={note}
-          placeholder='備考'
+          placeholder='備考欄'
           onChange={(event) => setNote(event.target.value)}
         />
         <input
@@ -69,6 +79,21 @@ const Study3: NextPage = () => {
         />
       </form>
       <label>
+        <select value={selectedPet} onChange={(event) => setSelectedPet(event.target.value)}>
+          <option value=''>特になし</option>
+          <option value='1'>犬</option>
+          <option value='2'>猫</option>
+          <option value='3'>鳥</option>
+        </select>
+
+        <select value={selectedPet} onChange={(event) => setSelectedPet(event.target.value)}>
+          {petList.map((elem) => (
+            <option key={elem.value} value={elem.value}>
+              {elem.label}
+            </option>
+          ))}
+        </select>
+
         <select value={selectedFruit} onChange={(event) => setSelectedFruit(event.target.value)}>
           {testArray.map((elem) => (
             <option key={elem.value} value={elem.value}>

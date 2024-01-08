@@ -2,7 +2,6 @@ import axios from '@/lib/axiosInstance';
 import { useState, useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { Book2 } from '../../components/Book2';
-import { Modal2 } from '../../components/Modal2';
 
 type Book = { title: string; author: string };
 const baseURL = '/api/books';
