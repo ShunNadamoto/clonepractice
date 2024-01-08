@@ -5,6 +5,7 @@ import { Dispatch, SetStateAction, createContext, useState } from 'react';
 import { RecoilRoot } from 'recoil';
 import { queryClient } from '@/config/reactQuery';
 import useUserCount from '@/hooks/useUserCount';
+import { ToastProvider } from 'react-toast-notifications';
 
 type UserCountContextType = {
   count: number;
@@ -21,7 +22,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={queryClient}>
       <RecoilRoot>
         <UserCountContext.Provider value={userCountValue}>
-          <Component {...pageProps} />
+          <ToastProvider>
+            <Component {...pageProps} />
+          </ToastProvider>
         </UserCountContext.Provider>
       </RecoilRoot>
     </QueryClientProvider>
