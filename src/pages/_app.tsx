@@ -23,7 +23,7 @@ export const GlobalContext = createContext<GlobalContextType>({} as GlobalContex
 
 export default function App({ Component, pageProps }: AppProps) {
   const [count, setCount] = useState(0);
-  
+
   const userCountValue = useUserCount();
 
   return (
