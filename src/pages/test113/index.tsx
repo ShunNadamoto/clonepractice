@@ -1,7 +1,9 @@
 import axios from '@/lib/axiosInstance2';
 import { NextPage } from 'next';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import styles from './index.module.scss';
+import router from 'next/router';
+import { GlobalContext } from '@/pages/_app';
 
 const Test113: NextPage = () => {
   type Book = { id: number; title: string; author: string; created_at: string };
@@ -9,6 +11,7 @@ const Test113: NextPage = () => {
   const [newTitle, setNewTitle] = useState('');
   const [newAuthor, setNewAuthor] = useState('');
   const [refetchBookList, setRefetchBookList] = useState(false);
+  const { count, setCount } = useContext(GlobalContext);
 
   useEffect(() => {
     console.log('-----useEffect-------');
@@ -25,6 +28,9 @@ const Test113: NextPage = () => {
 
   return (
     <div className={styles.container}>
+      <div>カウント:{count}</div>
+      <button onClick={() => setCount(count - 1)}>カウントダウン</button>
+      <button onClick={() => router.push('/test115')}>ページtest115へ</button>
       {bookList.map((elem) => (
         <div key={elem.id}>
           <div>タイトル：{elem.title}</div>

@@ -2,6 +2,10 @@ import axios from '@/lib/axiosInstance2';
 import { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 import styles from './index.module.scss';
+import AccordionMenu3, {
+  AccordionMenu,
+  AccordionMenu2,
+} from '@/components/AccordionMenu/AccordionMenu';
 
 const Test114: NextPage = () => {
   type Book = { id: number; title: string; author: string; created_at: string };
@@ -23,6 +27,7 @@ const Test114: NextPage = () => {
         console.log('-----エラー発生------');
       }
     };
+    
     console.log('-----今から関数実行するよ！！！！！------');
     getData();
     console.log('------注目！！！！-----');

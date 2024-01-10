@@ -12,17 +12,28 @@ type UserCountContextType = {
   decrement: () => void;
 };
 
+type GlobalContextType = {
+  count: number;
+  setCount: Dispatch<SetStateAction<number>>;
+};
+
 export const UserCountContext = createContext<UserCountContextType>({} as UserCountContextType);
 
+export const GlobalContext = createContext<GlobalContextType>({} as GlobalContextType);
+
 export default function App({ Component, pageProps }: AppProps) {
+  const [count, setCount] = useState(0);
+  
   const userCountValue = useUserCount();
 
   return (
     <QueryClientProvider client={queryClient}>
       <RecoilRoot>
-        <UserCountContext.Provider value={userCountValue}>
-          <Component {...pageProps} />
-        </UserCountContext.Provider>
+        <GlobalContext.Provider value={{ count, setCount }}>
+          <UserCountContext.Provider value={userCountValue}>
+            <Component {...pageProps} />
+          </UserCountContext.Provider>
+        </GlobalContext.Provider>
       </RecoilRoot>
     </QueryClientProvider>
   );
