@@ -1,37 +1,18 @@
 import axios from '@/lib/axiosInstance2';
 import { NextPage } from 'next';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styles from './index.module.scss';
+import { useGetBookList } from '@/hooks/useGetBookList';
 
-const Test114: NextPage = () => {
-  type Book = { id: number; title: string; author: string; created_at: string };
-  const [bookList, setBookList] = useState<Book[]>([]);
+const Test117: NextPage = () => {
   const [newTitle, setNewTitle] = useState('');
   const [newAuthor, setNewAuthor] = useState('');
-  const [refetchBookList, setRefetchBookList] = useState(false);
 
-  useEffect(() => {
-    console.log('-----useEffect-------');
-    const getData = async () => {
-      try {
-        console.log('----関数実行したよ！！！！-----');
-        const res = await axios.get('api/books');
-        console.log('----API実行完了!!!!----');
-        setBookList(res.data);
-      } catch (error) {
-        console.log(error);
-        console.log('-----エラー発生------');
-      }
-    };
-
-    console.log('-----今から関数実行するよ！！！！！------');
-    getData();
-    console.log('------注目！！！！-----');
-  }, [refetchBookList]);
+  const { data: bookListData, refetch: bookListRefetch } = useGetBookList();
 
   return (
     <div className={styles.container}>
-      {bookList.map((elem) => (
+      {bookListData.map((elem) => (
         <div key={elem.id}>
           <div>タイトル：{elem.title}</div>
           <div>著者：{elem.author}</div>
@@ -55,9 +36,9 @@ const Test114: NextPage = () => {
               author: newAuthor,
             });
             console.log(res);
-            setRefetchBookList(!refetchBookList);
             setNewTitle('');
             setNewAuthor('');
+            bookListRefetch();
           } catch (error) {
             console.log(error);
           }
@@ -69,4 +50,4 @@ const Test114: NextPage = () => {
   );
 };
 
-export default Test114;
+export default Test117;
