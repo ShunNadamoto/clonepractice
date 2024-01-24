@@ -27,6 +27,7 @@ export const Indeed3: FC<Props> = ({
   recruitingDate,
 }) => {
   const overCount = tagList2.length - 3;
+  console.log('dddddd');
 
   return (
     <div className={styles.container}>
