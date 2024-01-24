@@ -25,6 +25,7 @@ export const Indeed2: FC<Props> = ({
   sponsor,
 }) => {
   const overCount = tagList2.length - 3;
+  console.log('aaaaaa');
 
   return (
     <div className={styles.container}>
