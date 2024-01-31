@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClientProvider } from 'react-query';
 import type { AppProps } from 'next/app';
 import { Dispatch, SetStateAction, createContext, useState } from 'react';
 import { RecoilRoot } from 'recoil';
